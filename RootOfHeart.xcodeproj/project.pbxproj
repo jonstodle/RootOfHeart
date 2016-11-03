@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		FC3FC6951DCB8E6C0069FDED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6941DCB8E6C0069FDED /* AppDelegate.swift */; };
-		FC3FC6971DCB8E6C0069FDED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6961DCB8E6C0069FDED /* ViewController.swift */; };
-		FC3FC69A1DCB8E6C0069FDED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC6981DCB8E6C0069FDED /* Main.storyboard */; };
 		FC3FC69C1DCB8E6C0069FDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */; };
 		FC3FC69F1DCB8E6C0069FDED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */; };
 		FC3FC6AA1DCB8E6C0069FDED /* RootOfHeartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6A91DCB8E6C0069FDED /* RootOfHeartTests.swift */; };
+		FC3FC6BA1DCB8F3B0069FDED /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6B81DCB8F3B0069FDED /* Comic.swift */; };
+		FC3FC6BB1DCB8F3B0069FDED /* XkcdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6B91DCB8F3B0069FDED /* XkcdService.swift */; };
+		FC3FC6C11DCBB8FA0069FDED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6C01DCBB8FA0069FDED /* HomeViewController.swift */; };
+		FC3FC6C41DCBB9520069FDED /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6C31DCBB9520069FDED /* DataService.swift */; };
+		FC3FC6CC1DCBC1270069FDED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6C61DCBC1270069FDED /* Alamofire.framework */; };
+		FC3FC6CE1DCBC1270069FDED /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6C81DCBC1270069FDED /* RealmSwift.framework */; };
+		FC3FC6CF1DCBC1270069FDED /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6C91DCBC1270069FDED /* RxCocoa.framework */; };
+		FC3FC6D01DCBC1270069FDED /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6CA1DCBC1270069FDED /* RxSwift.framework */; };
+		FC3FC6D11DCBC1270069FDED /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6CB1DCBC1270069FDED /* SwiftyJSON.framework */; };
+		FC3FC6D51DCBC50E0069FDED /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6D41DCBC50E0069FDED /* Realm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +36,24 @@
 /* Begin PBXFileReference section */
 		FC3FC6911DCB8E6C0069FDED /* RootOfHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootOfHeart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3FC6941DCB8E6C0069FDED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC3FC6961DCB8E6C0069FDED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FC3FC6991DCB8E6C0069FDED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC3FC69E1DCB8E6C0069FDED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC3FC6A01DCB8E6C0069FDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC3FC6A51DCB8E6C0069FDED /* RootOfHeartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RootOfHeartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3FC6A91DCB8E6C0069FDED /* RootOfHeartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootOfHeartTests.swift; sourceTree = "<group>"; };
 		FC3FC6AB1DCB8E6C0069FDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC3FC6B81DCB8F3B0069FDED /* Comic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comic.swift; path = ../../../Downloads/RootOfHeart/Comic.swift; sourceTree = "<group>"; };
+		FC3FC6B91DCB8F3B0069FDED /* XkcdService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XkcdService.swift; path = ../../../Downloads/RootOfHeart/XkcdService.swift; sourceTree = "<group>"; };
+		FC3FC6C01DCBB8FA0069FDED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../../../Downloads/RootOfHeart/HomeViewController.swift; sourceTree = "<group>"; };
+		FC3FC6C31DCBB9520069FDED /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = ../../../Downloads/RootOfHeart/DataService.swift; sourceTree = "<group>"; };
+		FC3FC6C61DCBC1270069FDED /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Carthage/Checkouts/Alamofire/build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		FC3FC6C71DCBC1270069FDED /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug/Realm.framework"; sourceTree = "<group>"; };
+		FC3FC6C81DCBC1270069FDED /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug/RealmSwift.framework"; sourceTree = "<group>"; };
+		FC3FC6C91DCBC1270069FDED /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxCocoa.framework"; sourceTree = "<group>"; };
+		FC3FC6CA1DCBC1270069FDED /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxSwift.framework"; sourceTree = "<group>"; };
+		FC3FC6CB1DCBC1270069FDED /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Carthage/Checkouts/SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		FC3FC6D21DCBC36C0069FDED /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug-static/Realm.framework"; sourceTree = "<group>"; };
+		FC3FC6D41DCBC50E0069FDED /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug-static/Realm.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +61,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC3FC6D51DCBC50E0069FDED /* Realm.framework in Frameworks */,
+				FC3FC6CC1DCBC1270069FDED /* Alamofire.framework in Frameworks */,
+				FC3FC6CE1DCBC1270069FDED /* RealmSwift.framework in Frameworks */,
+				FC3FC6CF1DCBC1270069FDED /* RxCocoa.framework in Frameworks */,
+				FC3FC6D01DCBC1270069FDED /* RxSwift.framework in Frameworks */,
+				FC3FC6D11DCBC1270069FDED /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +86,7 @@
 				FC3FC6931DCB8E6C0069FDED /* RootOfHeart */,
 				FC3FC6A81DCB8E6C0069FDED /* RootOfHeartTests */,
 				FC3FC6921DCB8E6C0069FDED /* Products */,
+				FC3FC6C51DCBC1270069FDED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +102,9 @@
 		FC3FC6931DCB8E6C0069FDED /* RootOfHeart */ = {
 			isa = PBXGroup;
 			children = (
+				FC3FC6BD1DCB8F8A0069FDED /* ViewControllers */,
+				FC3FC6B61DCB8F160069FDED /* Services */,
 				FC3FC6941DCB8E6C0069FDED /* AppDelegate.swift */,
-				FC3FC6961DCB8E6C0069FDED /* ViewController.swift */,
-				FC3FC6981DCB8E6C0069FDED /* Main.storyboard */,
 				FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */,
 				FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */,
 				FC3FC6A01DCB8E6C0069FDED /* Info.plist */,
@@ -94,6 +119,55 @@
 				FC3FC6AB1DCB8E6C0069FDED /* Info.plist */,
 			);
 			path = RootOfHeartTests;
+			sourceTree = "<group>";
+		};
+		FC3FC6B61DCB8F160069FDED /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FC3FC6C21DCBB9340069FDED /* DataServices */,
+				FC3FC6B71DCB8F1D0069FDED /* XkcdServices */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		FC3FC6B71DCB8F1D0069FDED /* XkcdServices */ = {
+			isa = PBXGroup;
+			children = (
+				FC3FC6B81DCB8F3B0069FDED /* Comic.swift */,
+				FC3FC6B91DCB8F3B0069FDED /* XkcdService.swift */,
+			);
+			name = XkcdServices;
+			sourceTree = "<group>";
+		};
+		FC3FC6BD1DCB8F8A0069FDED /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC3FC6C01DCBB8FA0069FDED /* HomeViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FC3FC6C21DCBB9340069FDED /* DataServices */ = {
+			isa = PBXGroup;
+			children = (
+				FC3FC6C31DCBB9520069FDED /* DataService.swift */,
+			);
+			name = DataServices;
+			sourceTree = "<group>";
+		};
+		FC3FC6C51DCBC1270069FDED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC3FC6D41DCBC50E0069FDED /* Realm.framework */,
+				FC3FC6D21DCBC36C0069FDED /* Realm.framework */,
+				FC3FC6C61DCBC1270069FDED /* Alamofire.framework */,
+				FC3FC6C71DCBC1270069FDED /* Realm.framework */,
+				FC3FC6C81DCBC1270069FDED /* RealmSwift.framework */,
+				FC3FC6C91DCBC1270069FDED /* RxCocoa.framework */,
+				FC3FC6CA1DCBC1270069FDED /* RxSwift.framework */,
+				FC3FC6CB1DCBC1270069FDED /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,7 +257,6 @@
 			files = (
 				FC3FC69F1DCB8E6C0069FDED /* LaunchScreen.storyboard in Resources */,
 				FC3FC69C1DCB8E6C0069FDED /* Assets.xcassets in Resources */,
-				FC3FC69A1DCB8E6C0069FDED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,8 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC3FC6971DCB8E6C0069FDED /* ViewController.swift in Sources */,
+				FC3FC6BB1DCB8F3B0069FDED /* XkcdService.swift in Sources */,
 				FC3FC6951DCB8E6C0069FDED /* AppDelegate.swift in Sources */,
+				FC3FC6BA1DCB8F3B0069FDED /* Comic.swift in Sources */,
+				FC3FC6C11DCBB8FA0069FDED /* HomeViewController.swift in Sources */,
+				FC3FC6C41DCBB9520069FDED /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,14 +301,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FC3FC6981DCB8E6C0069FDED /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC3FC6991DCB8E6C0069FDED /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -328,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -342,6 +410,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X93LMNWC9P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Alamofire/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/realm-cocoa/build/Debug",
+					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyJSON/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/realm-cocoa/build/Debug-static",
+				);
 				INFOPLIST_FILE = RootOfHeart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonstodle.RootOfHeart;
@@ -355,6 +431,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X93LMNWC9P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Alamofire/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/realm-cocoa/build/Debug",
+					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyJSON/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/realm-cocoa/build/Debug-static",
+				);
 				INFOPLIST_FILE = RootOfHeart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonstodle.RootOfHeart;
@@ -412,6 +496,7 @@
 				FC3FC6B01DCB8E6C0069FDED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC3FC6B11DCB8E6C0069FDED /* Build configuration list for PBXNativeTarget "RootOfHeartTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +505,7 @@
 				FC3FC6B31DCB8E6C0069FDED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

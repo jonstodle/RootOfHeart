@@ -1,0 +1,1 @@
+carthage update --no-build --no-use-binaries

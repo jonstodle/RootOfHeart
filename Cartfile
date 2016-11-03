@@ -1,0 +1,4 @@
+github "ReactiveX/RxSwift" ~> 3.0
+github "SwiftyJSON/SwiftyJSON" ~> 3.0
+github "Alamofire/Alamofire" ~> 4.0
+github "realm/realm-cocoa"
