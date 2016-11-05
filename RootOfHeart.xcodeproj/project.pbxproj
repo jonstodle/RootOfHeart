@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC3FC6951DCB8E6C0069FDED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6941DCB8E6C0069FDED /* AppDelegate.swift */; };
 		FC3FC69C1DCB8E6C0069FDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */; };
 		FC3FC69F1DCB8E6C0069FDED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */; };
 		FC3FC6AA1DCB8E6C0069FDED /* RootOfHeartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6A91DCB8E6C0069FDED /* RootOfHeartTests.swift */; };
-		FC3FC6BA1DCB8F3B0069FDED /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6B81DCB8F3B0069FDED /* Comic.swift */; };
-		FC3FC6BB1DCB8F3B0069FDED /* XkcdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6B91DCB8F3B0069FDED /* XkcdService.swift */; };
-		FC3FC6C11DCBB8FA0069FDED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6C01DCBB8FA0069FDED /* HomeViewController.swift */; };
-		FC3FC6C41DCBB9520069FDED /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6C31DCBB9520069FDED /* DataService.swift */; };
 		FC3FC6CC1DCBC1270069FDED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6C61DCBC1270069FDED /* Alamofire.framework */; };
 		FC3FC6CE1DCBC1270069FDED /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6C81DCBC1270069FDED /* RealmSwift.framework */; };
 		FC3FC6CF1DCBC1270069FDED /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6C91DCBC1270069FDED /* RxCocoa.framework */; };
 		FC3FC6D01DCBC1270069FDED /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6CA1DCBC1270069FDED /* RxSwift.framework */; };
 		FC3FC6D11DCBC1270069FDED /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6CB1DCBC1270069FDED /* SwiftyJSON.framework */; };
 		FC3FC6D51DCBC50E0069FDED /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6D41DCBC50E0069FDED /* Realm.framework */; };
+		FC7801841DCE526900B9A925 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801821DCE526900B9A925 /* Comic.swift */; };
+		FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801831DCE526900B9A925 /* XkcdService.swift */; };
+		FC7801871DCE527200B9A925 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801861DCE527200B9A925 /* DataService.swift */; };
+		FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801881DCE528B00B9A925 /* AppDelegate.swift */; };
+		FC78018B1DCE529600B9A925 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78018A1DCE529600B9A925 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,17 +35,12 @@
 
 /* Begin PBXFileReference section */
 		FC3FC6911DCB8E6C0069FDED /* RootOfHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootOfHeart.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC3FC6941DCB8E6C0069FDED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC3FC69E1DCB8E6C0069FDED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC3FC6A01DCB8E6C0069FDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC3FC6A51DCB8E6C0069FDED /* RootOfHeartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RootOfHeartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3FC6A91DCB8E6C0069FDED /* RootOfHeartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootOfHeartTests.swift; sourceTree = "<group>"; };
 		FC3FC6AB1DCB8E6C0069FDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC3FC6B81DCB8F3B0069FDED /* Comic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comic.swift; path = ../../../Downloads/RootOfHeart/Comic.swift; sourceTree = "<group>"; };
-		FC3FC6B91DCB8F3B0069FDED /* XkcdService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XkcdService.swift; path = ../../../Downloads/RootOfHeart/XkcdService.swift; sourceTree = "<group>"; };
-		FC3FC6C01DCBB8FA0069FDED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../../../Downloads/RootOfHeart/HomeViewController.swift; sourceTree = "<group>"; };
-		FC3FC6C31DCBB9520069FDED /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = ../../../Downloads/RootOfHeart/DataService.swift; sourceTree = "<group>"; };
 		FC3FC6C61DCBC1270069FDED /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Carthage/Checkouts/Alamofire/build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		FC3FC6C71DCBC1270069FDED /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug/Realm.framework"; sourceTree = "<group>"; };
 		FC3FC6C81DCBC1270069FDED /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug/RealmSwift.framework"; sourceTree = "<group>"; };
@@ -54,6 +49,11 @@
 		FC3FC6CB1DCBC1270069FDED /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Carthage/Checkouts/SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		FC3FC6D21DCBC36C0069FDED /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug-static/Realm.framework"; sourceTree = "<group>"; };
 		FC3FC6D41DCBC50E0069FDED /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug-static/Realm.framework"; sourceTree = "<group>"; };
+		FC7801821DCE526900B9A925 /* Comic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
+		FC7801831DCE526900B9A925 /* XkcdService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XkcdService.swift; sourceTree = "<group>"; };
+		FC7801861DCE527200B9A925 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		FC7801881DCE528B00B9A925 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FC78018A1DCE529600B9A925 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +102,9 @@
 		FC3FC6931DCB8E6C0069FDED /* RootOfHeart */ = {
 			isa = PBXGroup;
 			children = (
+				FC7801881DCE528B00B9A925 /* AppDelegate.swift */,
 				FC3FC6BD1DCB8F8A0069FDED /* ViewControllers */,
 				FC3FC6B61DCB8F160069FDED /* Services */,
-				FC3FC6941DCB8E6C0069FDED /* AppDelegate.swift */,
 				FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */,
 				FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */,
 				FC3FC6A01DCB8E6C0069FDED /* Info.plist */,
@@ -133,8 +133,8 @@
 		FC3FC6B71DCB8F1D0069FDED /* XkcdServices */ = {
 			isa = PBXGroup;
 			children = (
-				FC3FC6B81DCB8F3B0069FDED /* Comic.swift */,
-				FC3FC6B91DCB8F3B0069FDED /* XkcdService.swift */,
+				FC7801821DCE526900B9A925 /* Comic.swift */,
+				FC7801831DCE526900B9A925 /* XkcdService.swift */,
 			);
 			name = XkcdServices;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 		FC3FC6BD1DCB8F8A0069FDED /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FC3FC6C01DCBB8FA0069FDED /* HomeViewController.swift */,
+				FC78018A1DCE529600B9A925 /* HomeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -150,7 +150,7 @@
 		FC3FC6C21DCBB9340069FDED /* DataServices */ = {
 			isa = PBXGroup;
 			children = (
-				FC3FC6C31DCBB9520069FDED /* DataService.swift */,
+				FC7801861DCE527200B9A925 /* DataService.swift */,
 			);
 			name = DataServices;
 			sourceTree = "<group>";
@@ -274,11 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC3FC6BB1DCB8F3B0069FDED /* XkcdService.swift in Sources */,
-				FC3FC6951DCB8E6C0069FDED /* AppDelegate.swift in Sources */,
-				FC3FC6BA1DCB8F3B0069FDED /* Comic.swift in Sources */,
-				FC3FC6C11DCBB8FA0069FDED /* HomeViewController.swift in Sources */,
-				FC3FC6C41DCBB9520069FDED /* DataService.swift in Sources */,
+				FC78018B1DCE529600B9A925 /* HomeViewController.swift in Sources */,
+				FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */,
+				FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */,
+				FC7801841DCE526900B9A925 /* Comic.swift in Sources */,
+				FC7801871DCE527200B9A925 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
