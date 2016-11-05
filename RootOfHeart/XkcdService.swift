@@ -37,22 +37,27 @@ public class XkcdClient{
         return Observable.create{ observer in
             var disposed = false
             
-            let requestUrlInfix = number == 0 ? "" : "/\(number)"
-            Alamofire.request("\(xkcdUrl)\(requestUrlInfix)\(infoSuffix)").responseJSON{ response in
-                defer{
-                    observer.onCompleted()
+            if number >= 0{
+                observer.onNext(nil)
+                observer.onCompleted()
+            } else{
+                let requestUrlInfix = number == 0 ? "" : "/\(number)"
+                Alamofire.request("\(xkcdUrl)\(requestUrlInfix)\(infoSuffix)").responseJSON{ response in
+                    defer{
+                        observer.onCompleted()
+                    }
+                    
+                    guard !disposed else{
+                        return
+                    }
+                    
+                    guard response.result.isSuccess else{
+                        observer.onNext(nil)
+                        return
+                    }
+                    
+                    observer.onNext(createComic(from: JSON(response.result.value!)))
                 }
-                
-                guard !disposed else{
-                    return
-                }
-                
-                guard response.result.isSuccess else{
-                    observer.onNext(nil)
-                    return
-                }
-                
-                observer.onNext(createComic(from: JSON(response.result.value!)))
             }
             
             return Disposables.create{
