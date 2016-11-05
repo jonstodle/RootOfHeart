@@ -73,7 +73,10 @@ class DataService{
     private func getNewComics(from newestComic: Int?) -> Observable<Comic?>{
         return XkcdClient.getCurrentComic()
             .filter{ $0 != nil }
-            .flatMap{ comic in XkcdClient.get(comics: Array((newestComic ?? comic!.number)...comic!.number)) }
+            .flatMap{ comic in
+                Observable.just(comic)
+                    .concat(XkcdClient.get(comics: Array(((newestComic ?? (comic!.number - 1)) + 1)..<comic!.number)))
+            }
     }
     
     private func getOldComics(from oldestComic: Int?) -> Observable<Comic?>{
