@@ -71,7 +71,7 @@ public class XkcdClient{
     }
     
     static func get(comics: [Int]) -> Observable<Comic?>{
-        return Observable.from(comics).map{get(comic: $0)}.flatMap{$0}
+        return Observable.from(comics).flatMap{get(comic: $0)}
     }
     
     
