@@ -20,9 +20,9 @@ class DataService{
     
     //MARK: - Private Properties
     
-    private let disposeBag = DisposeBag()
-    private let realm: Realm!
-    private let addSubject = PublishSubject<Comic?>()
+    private let _disposeBag = DisposeBag()
+    private let _realm: Realm!
+    private let _addSubject = PublishSubject<Comic?>()
     
     
     
@@ -36,14 +36,14 @@ class DataService{
     
     func refresh() -> Void{
         getNewComics(from: comics.first?.number)
-            .subscribe(onNext: {self.addSubject.onNext($0)})
-            .addDisposableTo(disposeBag)
+            .subscribe(onNext: {self._addSubject.onNext($0)})
+            .addDisposableTo(_disposeBag)
     }
     
     func loadOldComics() -> Void{
         getOldComics(from: comics.last?.number)
-            .subscribe(onNext: {self.addSubject.onNext($0)})
-            .addDisposableTo(disposeBag)
+            .subscribe(onNext: {self._addSubject.onNext($0)})
+            .addDisposableTo(_disposeBag)
     }
     
     
@@ -51,19 +51,21 @@ class DataService{
     //MARK: - Initializer
     
     private init?(){
-        realm = try! Realm()
+        _realm = try! Realm()
         
-        comics = realm.objects(Comic.self).sorted(byProperty: "number", ascending: false)
+        comics = _realm.objects(Comic.self).sorted(byProperty: "number", ascending: false)
         
-        addSubject
+        _addSubject
             .filter{ $0 != nil }
-            .subscribe(onNext: {self.realm.add($0!)})
-            .addDisposableTo(disposeBag)
+            .subscribe(onNext: {
+                self._realm.add($0!)
+            })
+            .addDisposableTo(_disposeBag)
         
         getNewComics(from: comics.first?.number)
             .concat(getOldComics(from: comics.last?.number))
-            .subscribe(onNext: {self.addSubject.onNext($0)})
-            .addDisposableTo(disposeBag)
+            .subscribe(onNext: {self._addSubject.onNext($0)})
+            .addDisposableTo(_disposeBag)
     }
     
     

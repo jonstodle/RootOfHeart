@@ -8,12 +8,16 @@
 
 import UIKit
 import RxSwift
+import RealmSwift
 
 class HomeViewController: UITableViewController {
     
-    private let cellIdentifier = "default"
+    //MARK: - Private Properties
     
-    private var comics = [Comic]()
+    private let _cellIdentifier = "default"
+    private var _notificationToken: NotificationToken?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,26 +26,43 @@ class HomeViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
         title = "√♥︎"
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: _cellIdentifier)
         
-        _ = XkcdClient.get(comics: Array(1337...1345))
-            .subscribe(
-                onNext: { x in
-                    if let comic = x{
-                        let ip = IndexPath(row: self.comics.count, section: 0)
-                        self.comics.append(comic)
-                        self.tableView.insertRows(at: [ip], with: .bottom)
-                    }
-                },
-                onError: nil,
-                onCompleted: nil,
-                onDisposed: nil)
+        _notificationToken = DataService.instance.comics.addNotificationBlock({ changes in
+            guard let tableView = self.tableView else{return}
+            
+            switch changes{
+            case .initial:
+                tableView.reloadData()
+                break
+            case .update(_, deletions: let deletions, insertions: let insertions, modifications: let modifcations):
+                tableView.beginUpdates()
+                tableView.insertRows(at: insertions.map{IndexPath(row: $0, section: 0)}, with: .automatic)
+                tableView.deleteRows(at: deletions.map{IndexPath(row: $0, section: 0)}, with: .automatic)
+                tableView.reloadRows(at: modifcations.map{IndexPath(row: $0, section: 0)}, with: .automatic)
+                tableView.endUpdates()
+                break
+            case .error:
+                // Handle error
+                break
+            }
+        })
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    // MARK: - Initializers
+    
+    deinit {
+        _notificationToken?.stop()
+    }
+    
+    
     
     // MARK: - Table view data source
     
@@ -52,13 +73,13 @@ class HomeViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return comics.count
+        return DataService.instance.comics.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: _cellIdentifier, for: indexPath)
         
-        cell.textLabel?.text = comics[indexPath.row].title
+        cell.textLabel?.text = DataService.instance.comics[indexPath.row].title
         
         return cell
     }
