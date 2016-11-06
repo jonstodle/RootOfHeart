@@ -37,7 +37,7 @@ public class XkcdClient{
         return Observable.create{ observer in
             var disposed = false
             
-            if number >= 0{
+            if number < 0{
                 observer.onNext(nil)
                 observer.onCompleted()
             } else{
