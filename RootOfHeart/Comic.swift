@@ -35,4 +35,8 @@ class Comic : Object{
     override static func ignoredProperties() -> [String]{
         return ["webUrl", "imageUrl"]
     }
+    
+    override static func primaryKey() -> String?{
+        return "number"
+    }
 }
