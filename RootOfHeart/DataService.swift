@@ -57,8 +57,13 @@ class DataService{
         
         _addSubject
             .filter{ $0 != nil }
-            .subscribe(onNext: {
-                self._realm.add($0!)
+            .buffer(timeSpan: 5, count: 10, scheduler: ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { comics -> Void in
+                let realm = self._realm!
+                try! realm.write {
+                    realm.add(comics.map{$0!})
+                }
             })
             .addDisposableTo(_disposeBag)
         
@@ -73,11 +78,18 @@ class DataService{
     // MARK: - Helper Methods
     
     private func getNewComics(from newestComic: Int?) -> Observable<Comic?>{
+        func getNewComicsRange(from comic: Comic) -> Observable<Comic?>{
+            return Observable.just(newestComic ?? comic.number - 1)
+                .map{$0 + 1}
+                .filter{$0 < comic.number}
+                .flatMap{XkcdClient.get(comics: Array($0..<comic.number))}
+        }
+        
         return XkcdClient.getCurrentComic()
             .filter{ $0 != nil }
             .flatMap{ comic in
                 Observable.just(comic)
-                    .concat(XkcdClient.get(comics: Array(((newestComic ?? (comic!.number - 1)) + 1)..<comic!.number)))
+                    .concat(getNewComicsRange(from: comic!))
             }
     }
     
