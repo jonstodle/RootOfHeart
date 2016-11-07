@@ -81,7 +81,8 @@ class HomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: _cellIdentifier, for: indexPath)
         
-        cell.textLabel?.text = DataService.instance.comics[indexPath.row].title
+        let comic = DataService.instance.comics[indexPath.row]
+        cell.textLabel?.text = "#\(comic.number) - \(comic.title)"
         
         return cell
     }
