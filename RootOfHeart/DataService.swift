@@ -94,6 +94,8 @@ class DataService{
     }
     
     private func getOldComics(from oldestComic: Int?) -> Observable<Comic?>{
-        return XkcdClient.get(comics: Array(1..<(oldestComic ?? 2)).reversed())
+        var comicNumber = oldestComic ?? 2
+        if comicNumber == 1 {comicNumber = 2}
+        return XkcdClient.get(comics: Array(1..<comicNumber).reversed())
     }
 }
