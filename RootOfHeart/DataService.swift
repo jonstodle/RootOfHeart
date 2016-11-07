@@ -29,6 +29,8 @@ class DataService{
     //MARK: - Public Properties
     
     let comics: Results<Comic>
+    let favoritedComics: Results<Comic>
+    let unreadComics: Results<Comic>
     
     
     
@@ -54,6 +56,8 @@ class DataService{
         _realm = try! Realm()
         
         comics = _realm.objects(Comic.self).sorted(byProperty: "number", ascending: false)
+        favoritedComics = comics.filter("favorite == true")
+        unreadComics = comics.filter("read == false")
         
         _addSubject
             .filter{ $0 != nil }
