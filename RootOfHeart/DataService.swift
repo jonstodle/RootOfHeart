@@ -62,7 +62,7 @@ class DataService{
             .subscribe(onNext: { comics -> Void in
                 let realm = self._realm!
                 try! realm.write {
-                    realm.add(comics.map{$0!})
+                    realm.add(comics.map{$0!}, update: true)
                 }
             })
             .addDisposableTo(_disposeBag)
