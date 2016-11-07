@@ -67,15 +67,28 @@ class DataService{
             })
             .addDisposableTo(_disposeBag)
         
-        getNewComics(from: comics.first?.number)
-            .concat(getOldComics(from: comics.last?.number))
-            .subscribe(onNext: {self._addSubject.onNext($0)})
-            .addDisposableTo(_disposeBag)
+        if comics.count == 0 {
+            XkcdClient.get(comic: 0)
+                .filter({$0 != nil})
+                .flatMap{comic in
+                    return Observable.just(comic)
+                        .concat(XkcdClient.get(comics: Array((comic!.number - 10)..<comic!.number)))
+                }
+                .subscribe(onNext: {self._addSubject.onNext($0)})
+                .addDisposableTo(_disposeBag)
+        } else { loadComics(fromNewestComic: comics.first?.number, toOldestComic: comics.last?.number) }
     }
     
     
     
-    // MARK: - Helper Methods
+    // MARK: - Private Methods
+    
+    private func loadComics(fromNewestComic: Int?, toOldestComic: Int?) -> Void{
+        getNewComics(from: fromNewestComic)
+            .concat(getOldComics(from: toOldestComic))
+            .subscribe(onNext: {self._addSubject.onNext($0)})
+            .addDisposableTo(_disposeBag)
+    }
     
     private func getNewComics(from newestComic: Int?) -> Observable<Comic?>{
         func getNewComicsRange(from comic: Comic) -> Observable<Comic?>{
