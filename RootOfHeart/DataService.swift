@@ -48,13 +48,13 @@ class DataService{
             .addDisposableTo(_disposeBag)
     }
     
-    func set(comic: Comic, asFavorite: Bool) -> Void{
+    func setComic(_ comic: Comic, asFavorite: Bool) -> Void{
         try! _realm.write {
             comic.favorite = asFavorite
         }
     }
     
-    func set(comic: Comic, asRead: Bool) -> Void {
+    func setComic(_ comic: Comic, asRead: Bool) -> Void {
         try! _realm.write {
             comic.read = asRead
         }
