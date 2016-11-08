@@ -21,6 +21,9 @@
 		FC7801871DCE527200B9A925 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801861DCE527200B9A925 /* DataService.swift */; };
 		FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801881DCE528B00B9A925 /* AppDelegate.swift */; };
 		FC78018B1DCE529600B9A925 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78018A1DCE529600B9A925 /* HomeViewController.swift */; };
+		FCD51AAC1DD0D00200CB0AC7 /* ComicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD51AAB1DD0D00200CB0AC7 /* ComicTableViewCell.swift */; };
+		FCD51AAE1DD2563900CB0AC7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = FCD51AAD1DD2563900CB0AC7 /* Cartfile */; };
+		FCD51AB01DD2584E00CB0AC7 /* LayoutKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD51AAF1DD2584E00CB0AC7 /* LayoutKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		FC7801861DCE527200B9A925 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		FC7801881DCE528B00B9A925 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC78018A1DCE529600B9A925 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FCD51AAB1DD0D00200CB0AC7 /* ComicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicTableViewCell.swift; sourceTree = "<group>"; };
+		FCD51AAD1DD2563900CB0AC7 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		FCD51AAF1DD2584E00CB0AC7 /* LayoutKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LayoutKit.framework; path = "Carthage/Checkouts/LayoutKit/build/Debug-iphoneos/LayoutKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD51AB01DD2584E00CB0AC7 /* LayoutKit.framework in Frameworks */,
 				FC3FC6D51DCBC50E0069FDED /* Realm.framework in Frameworks */,
 				FC3FC6CC1DCBC1270069FDED /* Alamofire.framework in Frameworks */,
 				FC3FC6CE1DCBC1270069FDED /* RealmSwift.framework in Frameworks */,
@@ -83,6 +90,7 @@
 		FC3FC6881DCB8E6C0069FDED = {
 			isa = PBXGroup;
 			children = (
+				FCD51AAD1DD2563900CB0AC7 /* Cartfile */,
 				FC3FC6931DCB8E6C0069FDED /* RootOfHeart */,
 				FC3FC6A81DCB8E6C0069FDED /* RootOfHeartTests */,
 				FC3FC6921DCB8E6C0069FDED /* Products */,
@@ -102,6 +110,7 @@
 		FC3FC6931DCB8E6C0069FDED /* RootOfHeart */ = {
 			isa = PBXGroup;
 			children = (
+				FCD51AAA1DD0CF9F00CB0AC7 /* Views */,
 				FC7801881DCE528B00B9A925 /* AppDelegate.swift */,
 				FC3FC6BD1DCB8F8A0069FDED /* ViewControllers */,
 				FC3FC6B61DCB8F160069FDED /* Services */,
@@ -158,6 +167,7 @@
 		FC3FC6C51DCBC1270069FDED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCD51AAF1DD2584E00CB0AC7 /* LayoutKit.framework */,
 				FC3FC6D41DCBC50E0069FDED /* Realm.framework */,
 				FC3FC6D21DCBC36C0069FDED /* Realm.framework */,
 				FC3FC6C61DCBC1270069FDED /* Alamofire.framework */,
@@ -168,6 +178,14 @@
 				FC3FC6CB1DCBC1270069FDED /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCD51AAA1DD0CF9F00CB0AC7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCD51AAB1DD0D00200CB0AC7 /* ComicTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD51AAE1DD2563900CB0AC7 /* Cartfile in Resources */,
 				FC3FC69F1DCB8E6C0069FDED /* LaunchScreen.storyboard in Resources */,
 				FC3FC69C1DCB8E6C0069FDED /* Assets.xcassets in Resources */,
 			);
@@ -275,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC78018B1DCE529600B9A925 /* HomeViewController.swift in Sources */,
+				FCD51AAC1DD0D00200CB0AC7 /* ComicTableViewCell.swift in Sources */,
 				FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */,
 				FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */,
 				FC7801841DCE526900B9A925 /* Comic.swift in Sources */,
@@ -417,6 +437,7 @@
 					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyJSON/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Carthage/Checkouts/realm-cocoa/build/Debug-static",
+					"$(PROJECT_DIR)/Carthage/Checkouts/LayoutKit/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = RootOfHeart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -438,6 +459,7 @@
 					"$(PROJECT_DIR)/Carthage/Checkouts/RxSwift/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyJSON/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Carthage/Checkouts/realm-cocoa/build/Debug-static",
+					"$(PROJECT_DIR)/Carthage/Checkouts/LayoutKit/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = RootOfHeart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
