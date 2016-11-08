@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RealmSwift
 
-class HomeViewController: UITableViewController {
+class HomeUITableViewController: UITableViewController {
     
     //MARK: - Private Properties
     

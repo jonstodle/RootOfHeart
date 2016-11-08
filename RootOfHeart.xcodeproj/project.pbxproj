@@ -20,8 +20,7 @@
 		FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801831DCE526900B9A925 /* XkcdService.swift */; };
 		FC7801871DCE527200B9A925 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801861DCE527200B9A925 /* DataService.swift */; };
 		FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801881DCE528B00B9A925 /* AppDelegate.swift */; };
-		FC78018B1DCE529600B9A925 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78018A1DCE529600B9A925 /* HomeViewController.swift */; };
-		FCD51AAC1DD0D00200CB0AC7 /* ComicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD51AAB1DD0D00200CB0AC7 /* ComicTableViewCell.swift */; };
+		FC78018B1DCE529600B9A925 /* HomeUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78018A1DCE529600B9A925 /* HomeUITableViewController.swift */; };
 		FCD51AAE1DD2563900CB0AC7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = FCD51AAD1DD2563900CB0AC7 /* Cartfile */; };
 		FCD51AB01DD2584E00CB0AC7 /* LayoutKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD51AAF1DD2584E00CB0AC7 /* LayoutKit.framework */; };
 /* End PBXBuildFile section */
@@ -56,8 +55,7 @@
 		FC7801831DCE526900B9A925 /* XkcdService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XkcdService.swift; sourceTree = "<group>"; };
 		FC7801861DCE527200B9A925 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		FC7801881DCE528B00B9A925 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC78018A1DCE529600B9A925 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		FCD51AAB1DD0D00200CB0AC7 /* ComicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicTableViewCell.swift; sourceTree = "<group>"; };
+		FC78018A1DCE529600B9A925 /* HomeUITableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUITableViewController.swift; sourceTree = "<group>"; };
 		FCD51AAD1DD2563900CB0AC7 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		FCD51AAF1DD2584E00CB0AC7 /* LayoutKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LayoutKit.framework; path = "Carthage/Checkouts/LayoutKit/build/Debug-iphoneos/LayoutKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,7 +149,7 @@
 		FC3FC6BD1DCB8F8A0069FDED /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FC78018A1DCE529600B9A925 /* HomeViewController.swift */,
+				FC78018A1DCE529600B9A925 /* HomeUITableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -183,7 +181,6 @@
 		FCD51AAA1DD0CF9F00CB0AC7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FCD51AAB1DD0D00200CB0AC7 /* ComicTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -293,8 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC78018B1DCE529600B9A925 /* HomeViewController.swift in Sources */,
-				FCD51AAC1DD0D00200CB0AC7 /* ComicTableViewCell.swift in Sources */,
+				FC78018B1DCE529600B9A925 /* HomeUITableViewController.swift in Sources */,
 				FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */,
 				FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */,
 				FC7801841DCE526900B9A925 /* Comic.swift in Sources */,
