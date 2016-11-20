@@ -23,9 +23,7 @@ class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        title = "√♥︎"
+        // self.clearsSelectionOnViewWillAppear = false´
         
         _notificationToken = DataService.instance.comics.addNotificationBlock({ changes in
             guard let tableView = self.tableView else{return}
@@ -81,7 +79,9 @@ class HomeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: _comicCellIdentifier, for: indexPath) as! ComicTableViewCell
         
         let comic = DataService.instance.comics[indexPath.row]
-        cell.titleLabel?.text = "#\(comic.number) - \(comic.title)"
+        
+        cell.numberLabel?.text = "#\(comic.number)"
+        cell.titleLabel?.text = comic.title
         
         return cell
     }
