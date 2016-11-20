@@ -9,11 +9,17 @@
 import UIKit
 
 class ComicTableViewCell: UITableViewCell {
+    
+    // MARK: - Outlets
 
     @IBOutlet weak var comicImageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
+    
+    
+    // MARK: - Implementation
     
     override func awakeFromNib() {
         super.awakeFromNib()
