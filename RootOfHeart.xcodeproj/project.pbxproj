@@ -16,6 +16,8 @@
 		FC3FC6D01DCBC1270069FDED /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6CA1DCBC1270069FDED /* RxSwift.framework */; };
 		FC3FC6D11DCBC1270069FDED /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6CB1DCBC1270069FDED /* SwiftyJSON.framework */; };
 		FC3FC6D51DCBC50E0069FDED /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6D41DCBC50E0069FDED /* Realm.framework */; };
+		FC4E07A31DE2282C002CEB4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4E07A21DE2282C002CEB4C /* Main.storyboard */; };
+		FC4E07A51DE22D4C002CEB4C /* ComicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */; };
 		FC7801841DCE526900B9A925 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801821DCE526900B9A925 /* Comic.swift */; };
 		FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801831DCE526900B9A925 /* XkcdService.swift */; };
 		FC7801871DCE527200B9A925 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801861DCE527200B9A925 /* DataService.swift */; };
@@ -51,6 +53,8 @@
 		FC3FC6CB1DCBC1270069FDED /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Carthage/Checkouts/SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		FC3FC6D21DCBC36C0069FDED /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug-static/Realm.framework"; sourceTree = "<group>"; };
 		FC3FC6D41DCBC50E0069FDED /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug-static/Realm.framework"; sourceTree = "<group>"; };
+		FC4E07A21DE2282C002CEB4C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicTableViewCell.swift; sourceTree = "<group>"; };
 		FC7801821DCE526900B9A925 /* Comic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		FC7801831DCE526900B9A925 /* XkcdService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XkcdService.swift; sourceTree = "<group>"; };
 		FC7801861DCE527200B9A925 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */,
 				FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */,
 				FC3FC6A01DCB8E6C0069FDED /* Info.plist */,
+				FC4E07A21DE2282C002CEB4C /* Main.storyboard */,
 			);
 			path = RootOfHeart;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				FC78018A1DCE529600B9A925 /* HomeTableViewController.swift */,
+				FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -273,6 +279,7 @@
 				FCD51AAE1DD2563900CB0AC7 /* Cartfile in Resources */,
 				FC3FC69F1DCB8E6C0069FDED /* LaunchScreen.storyboard in Resources */,
 				FC3FC69C1DCB8E6C0069FDED /* Assets.xcassets in Resources */,
+				FC4E07A31DE2282C002CEB4C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC78018B1DCE529600B9A925 /* HomeTableViewController.swift in Sources */,
+				FC4E07A51DE22D4C002CEB4C /* ComicTableViewCell.swift in Sources */,
 				FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */,
 				FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */,
 				FC7801841DCE526900B9A925 /* Comic.swift in Sources */,
