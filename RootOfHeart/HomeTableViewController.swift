@@ -14,7 +14,7 @@ class HomeTableViewController: UITableViewController {
     
     //MARK: - Private Properties
     
-    private let _cellIdentifier = "default"
+    private let _comicCellIdentifier = "comicCell"
     private var _notificationToken: NotificationToken?
     
     
@@ -26,7 +26,6 @@ class HomeTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
         title = "√♥︎"
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: _cellIdentifier)
         
         _notificationToken = DataService.instance.comics.addNotificationBlock({ changes in
             guard let tableView = self.tableView else{return}
@@ -79,10 +78,10 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: _cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: _comicCellIdentifier, for: indexPath) as! ComicTableViewCell
         
         let comic = DataService.instance.comics[indexPath.row]
-        cell.textLabel?.text = "#\(comic.number) - \(comic.title)"
+        cell.titleLabel?.text = "#\(comic.number) - \(comic.title)"
         
         return cell
     }
