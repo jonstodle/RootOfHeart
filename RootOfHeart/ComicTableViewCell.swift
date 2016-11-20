@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ComicTableViewCell: UITableViewCell {
     
@@ -16,6 +17,18 @@ class ComicTableViewCell: UITableViewCell {
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
+    
+    
+    // MARK: - Methods
+    
+    func setImage(from url: String) -> Void{
+        Alamofire.request(url).responseData{response in
+            guard response.result.isSuccess else{ return}
+            
+            self.comicImageView.image = UIImage(data: response.data!)
+        }
+    }
     
     
     
