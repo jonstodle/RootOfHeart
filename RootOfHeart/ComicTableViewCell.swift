@@ -10,6 +10,9 @@ import UIKit
 
 class ComicTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var comicImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
