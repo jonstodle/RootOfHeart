@@ -82,6 +82,7 @@ class HomeTableViewController: UITableViewController {
         
         cell.numberLabel?.text = "#\(comic.number)"
         cell.titleLabel?.text = comic.title
+        cell.dateLabel?.text = "\(comic.day).\(comic.month).\(comic.year)"
         
         return cell
     }
