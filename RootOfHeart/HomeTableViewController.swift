@@ -51,8 +51,8 @@ class HomeTableViewController: UITableViewController {
             .itemSelected
             .subscribe(
                 onNext:{ indexPath in
-                   let newVc = ComicViewController()
-                    newVc.set(comic: DataService.instance.comics[indexPath.row])
+                    let newVc = self.storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
+                    newVc.comic = DataService.instance.comics[indexPath.row]
                     self.navigationController?.pushViewController(newVc, animated: true)
                 })
             .addDisposableTo(_disposeBag)

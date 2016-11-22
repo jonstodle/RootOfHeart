@@ -10,9 +10,15 @@ import UIKit
 
 class ComicViewController: UIViewController {
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var comicImageView: UIImageView!
+    
+    
+    
     // MARK: - Private Properties
     
-    private var _comic: Comic?
+    var comic: Comic = Comic()
 
     
     
@@ -22,21 +28,12 @@ class ComicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        title = comic.title
+        comicImageView.imageFromUrl(comic.imageWebUrl)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    // MARK: - Public Methods
-    
-    func set(comic: Comic){
-        _comic = comic
-        
-        title = _comic?.title
     }
 }
