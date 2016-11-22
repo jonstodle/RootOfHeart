@@ -8,12 +8,14 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import RealmSwift
 
 class HomeTableViewController: UITableViewController {
     
     //MARK: - Private Properties
     
+    private let _disposeBag = DisposeBag()
     private let _comicCellIdentifier = "comicCell"
     private var _notificationToken: NotificationToken?
     
@@ -45,7 +47,15 @@ class HomeTableViewController: UITableViewController {
             }
         })
         
-        
+        self.tableView.rx
+            .itemSelected
+            .subscribe(
+                onNext:{ indexPath in
+                   let newVc = ComicViewController()
+                    newVc.set(comic: DataService.instance.comics[indexPath.row])
+                    self.navigationController?.pushViewController(newVc, animated: true)
+                })
+            .addDisposableTo(_disposeBag)
     }
     
     override func didReceiveMemoryWarning() {
