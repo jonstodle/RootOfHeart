@@ -20,18 +20,6 @@ class ComicTableViewCell: UITableViewCell {
     
     
     
-    // MARK: - Methods
-    
-    func setImage(from url: String) -> Void{
-        Alamofire.request(url).responseData{response in
-            guard response.result.isSuccess else{ return}
-            
-            self.comicImageView.image = UIImage(data: response.data!)
-        }
-    }
-    
-    
-    
     // MARK: - Implementation
     
     override func awakeFromNib() {
