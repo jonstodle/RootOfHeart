@@ -90,7 +90,7 @@ class HomeTableViewController: UITableViewController {
         
         let comic = DataService.instance.comics[indexPath.row]
         
-        cell.setImage(from: comic.imageWebUrl)
+        cell.comicImageView.imageFromUrl(comic.imageWebUrl)
         cell.numberLabel?.text = "#\(comic.number)"
         cell.titleLabel?.text = comic.title
         cell.dateLabel?.text = "\(comic.day).\(comic.month).\(comic.year)"
