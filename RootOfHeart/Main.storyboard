@@ -96,7 +96,7 @@
         <!--Comic View Controller-->
         <scene sceneID="zPV-JX-htK">
             <objects>
-                <viewController storyboardIdentifier="ComicViewController" id="uh0-y8-fH6" customClass="ComicViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComicViewController" automaticallyAdjustsScrollViewInsets="NO" id="uh0-y8-fH6" customClass="ComicViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rnz-bx-qYi"/>
                         <viewControllerLayoutGuide type="bottom" id="cfq-Bj-k3B"/>
@@ -105,20 +105,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-Gd-AIP">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="f1c-JW-JYd">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-Gd-AIP">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cfq-Bj-k3B" firstAttribute="top" secondItem="Khb-Gd-AIP" secondAttribute="bottom" id="5OE-sG-fBc"/>
-                            <constraint firstItem="Khb-Gd-AIP" firstAttribute="top" secondItem="rnz-bx-qYi" secondAttribute="bottom" id="GTc-Sh-RwW"/>
-                            <constraint firstItem="Khb-Gd-AIP" firstAttribute="leading" secondItem="u1p-Zk-z0E" secondAttribute="leading" id="LIf-Wd-nlo"/>
-                            <constraint firstAttribute="trailing" secondItem="Khb-Gd-AIP" secondAttribute="trailing" id="lrS-pd-Pdu"/>
+                            <constraint firstItem="f1c-JW-JYd" firstAttribute="top" secondItem="rnz-bx-qYi" secondAttribute="bottom" id="QtX-GE-M9T"/>
+                            <constraint firstItem="cfq-Bj-k3B" firstAttribute="top" secondItem="f1c-JW-JYd" secondAttribute="bottom" id="TiA-Fl-RDI"/>
+                            <constraint firstItem="f1c-JW-JYd" firstAttribute="leading" secondItem="u1p-Zk-z0E" secondAttribute="leading" id="Uqz-SK-Y9d"/>
+                            <constraint firstAttribute="trailing" secondItem="f1c-JW-JYd" secondAttribute="trailing" id="fBt-5Y-CsE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="comicImageView" destination="Khb-Gd-AIP" id="ZrG-be-ypS"/>
+                        <outlet property="scrollView" destination="f1c-JW-JYd" id="Rbm-zd-n1h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UX7-cf-weT" userLabel="First Responder" sceneMemberID="firstResponder"/>
