@@ -5,9 +5,6 @@
       location = "container:"
       name = "Dependencies">
       <FileRef
-         location = "group:Carthage/Checkouts/LayoutKit/LayoutKit.xcodeproj">
-      </FileRef>
-      <FileRef
          location = "group:Carthage/Checkouts/RxSwift/Rx.xcodeproj">
       </FileRef>
       <FileRef

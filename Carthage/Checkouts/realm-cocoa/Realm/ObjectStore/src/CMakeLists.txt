@@ -32,9 +32,9 @@ set(HEADERS
     shared_realm.hpp
     thread_confined.hpp
 
-    impl/android/external_commit_helper.hpp
     impl/apple/external_commit_helper.hpp
     impl/apple/keychain_helper.hpp
+    impl/epoll/external_commit_helper.hpp
     impl/generic/external_commit_helper.hpp
 
     impl/collection_change_builder.hpp
@@ -53,7 +53,7 @@ set(HEADERS
     util/android/event_loop_signal.hpp
     util/apple/event_loop_signal.hpp
     util/generic/event_loop_signal.hpp
-    util/node/event_loop_signal.hpp
+    util/uv/event_loop_signal.hpp
 
     util/atomic_shared_ptr.hpp
     util/compiler.hpp
@@ -62,8 +62,8 @@ set(HEADERS
 
 if(APPLE)
     list(APPEND SOURCES impl/apple/external_commit_helper.cpp impl/apple/keychain_helper.cpp)
-elseif(REALM_PLATFORM STREQUAL "Android")
-    list(APPEND SOURCES impl/android/external_commit_helper.cpp)
+elseif(REALM_HAVE_EPOLL)
+    list(APPEND SOURCES impl/epoll/external_commit_helper.cpp)
 else()
     list(APPEND SOURCES impl/generic/external_commit_helper.cpp)
 endif()
@@ -76,8 +76,20 @@ set(INCLUDE_DIRS
 
 if(REALM_ENABLE_SYNC)
     # Add the sync files separately to reduce merge conflicts.
-    list(APPEND HEADERS sync_config.hpp sync_manager.hpp sync_metadata.hpp sync_session.hpp impl/sync_client.hpp)
-    list(APPEND SOURCES sync_manager.cpp sync_metadata.cpp sync_session.cpp)
+    list(APPEND HEADERS
+        sync/sync_config.hpp
+        sync/sync_manager.hpp
+        sync/sync_session.hpp
+        sync/sync_user.hpp
+        sync/impl/sync_client.hpp
+        sync/impl/sync_file.hpp
+        sync/impl/sync_metadata.hpp)
+    list(APPEND SOURCES
+        sync/sync_manager.cpp
+        sync/sync_session.cpp
+        sync/sync_user.cpp
+        sync/impl/sync_file.cpp
+        sync/impl/sync_metadata.cpp)
     find_package(ZLIB REQUIRED)
     list(APPEND INCLUDE_DIRS ${REALM_SYNC_INCLUDE_DIR} ${ZLIB_INCLUDE_DIRS})
 endif()
