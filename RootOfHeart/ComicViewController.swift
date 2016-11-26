@@ -23,7 +23,6 @@ class ComicViewController: UIViewController {
 
     
     
-    
     // MARK: - Implementation
     
     override func viewDidLoad() {
