@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ComicViewController: UIViewController {
     
@@ -20,6 +22,12 @@ class ComicViewController: UIViewController {
     // MARK: - Properties
     
     var comic: Comic = Comic()
+    
+    
+    
+    // MARK: - Private Properties
+    
+    let _disposeBag = DisposeBag()
 
     
     
@@ -29,6 +37,18 @@ class ComicViewController: UIViewController {
         super.viewDidLoad()
         
         scrollView.delegate = self
+        
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.numberOfTapsRequired = 2
+        tapRecognizer.rx
+            .event
+            .subscribe(onNext: {_ in
+                let sv = self.scrollView!
+                
+                sv.setZoomScale(sv.zoomScale > sv.minimumZoomScale ? sv.minimumZoomScale : sv.maximumZoomScale, animated: true)
+            })
+            .addDisposableTo(_disposeBag)
+        view.addGestureRecognizer(tapRecognizer)
 
         title = comic.title
         comicImageView.imageFromUrl(comic.imageWebUrl, completion:{
