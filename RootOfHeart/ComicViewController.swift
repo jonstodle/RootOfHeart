@@ -32,6 +32,7 @@ class ComicViewController: UIViewController {
 
         title = comic.title
         comicImageView.imageFromUrl(comic.imageWebUrl, completion:{
+            self.comicImageView.sizeToFit()
             self.scrollView.contentSize = self.comicImageView.bounds.size
             self.setZoomLimits()
             self.setInsets()
@@ -49,10 +50,10 @@ class ComicViewController: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        let center = CGPoint(x: (scrollView.bounds.size.width / 2) + scrollView.contentOffset.x, y: (scrollView.bounds.size.height / 2) + scrollView.contentOffset.y)
+        let center = CGPoint(x: (scrollView.bounds.width / 2) + scrollView.contentOffset.x, y: (scrollView.bounds.height / 2) + scrollView.contentOffset.y)
         
         coordinator.animate(alongsideTransition: { context -> Void in
-            self.scrollView.contentOffset = CGPoint(x: center.x - (size.width / 2), y: center.y - (size.height / 2))
+            self.scrollView.contentOffset = CGPoint(x: center.x - (size.width / 2), y: center.y - ((size.height - self.topLayoutGuide.length) / 2))
         }, completion: nil)
     }
     
