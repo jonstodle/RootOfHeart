@@ -73,6 +73,9 @@ class ComicViewController: UIViewController {
         
         scrollView.minimumZoomScale = min(horizontalMinimum, verticalMinimum) * 0.95
         scrollView.maximumZoomScale = 3
+        if scrollView.zoomScale < scrollView.minimumZoomScale {
+            scrollView.zoomScale = scrollView.minimumZoomScale
+        }
     }
     
     fileprivate func setInsets(){
