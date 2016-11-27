@@ -64,6 +64,7 @@ class ComicViewController: UIViewController {
         scrollView.contentSize = comicImageView.bounds.size
         setZoomLimits()
         setInsets()
+        scrollView.zoomScale = scrollView.minimumZoomScale
     }
     
     fileprivate func setZoomLimits(){
