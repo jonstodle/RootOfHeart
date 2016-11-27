@@ -32,10 +32,7 @@ class ComicViewController: UIViewController {
 
         title = comic.title
         comicImageView.imageFromUrl(comic.imageWebUrl, completion:{
-            self.comicImageView.sizeToFit()
-            self.scrollView.contentSize = self.comicImageView.bounds.size
-            self.setZoomLimits()
-            self.setInsets()
+            self.postImageLoadSetup()
         })
     }
 
@@ -61,6 +58,13 @@ class ComicViewController: UIViewController {
     
     
     // MARK: - Helper Methods
+    
+    private func postImageLoadSetup(){
+        comicImageView.sizeToFit()
+        scrollView.contentSize = comicImageView.bounds.size
+        setZoomLimits()
+        setInsets()
+    }
     
     fileprivate func setZoomLimits(){
         let horizontalMinimum = (scrollView.frame.width / comicImageView.bounds.width)
