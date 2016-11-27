@@ -51,9 +51,10 @@ class ComicViewController: UIViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         let center = CGPoint(x: (scrollView.bounds.width / 2) + scrollView.contentOffset.x, y: (scrollView.bounds.height / 2) + scrollView.contentOffset.y)
+        let layoutGuidesHeight = topLayoutGuide.length + bottomLayoutGuide.length
         
         coordinator.animate(alongsideTransition: { context -> Void in
-            self.scrollView.contentOffset = CGPoint(x: center.x - (size.width / 2), y: center.y - ((size.height - self.topLayoutGuide.length) / 2))
+            self.scrollView.contentOffset = CGPoint(x: center.x - (size.width / 2), y: center.y - ((size.height - layoutGuidesHeight) / 2))
         }, completion: nil)
     }
     
