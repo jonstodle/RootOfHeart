@@ -31,7 +31,7 @@ class ComicViewController: UIViewController {
         scrollView.delegate = self
 
         title = comic.title
-        comicImageView.imageFromUrl(comic.imageWebUrl, completionHandler:{
+        comicImageView.imageFromUrl(comic.imageWebUrl, completion:{
             self.scrollView.contentSize = self.comicImageView.bounds.size
             self.setZoomLimits()
             self.setInsets()
