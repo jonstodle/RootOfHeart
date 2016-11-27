@@ -17,7 +17,7 @@ class ComicViewController: UIViewController {
     
     
     
-    // MARK: - Private Properties
+    // MARK: - Properties
     
     var comic: Comic = Comic()
 
