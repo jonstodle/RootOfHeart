@@ -48,6 +48,10 @@ class DataService{
             .addDisposableTo(_disposeBag)
     }
     
+    func getComic(number: Int) -> Comic?{
+        return comics.first(where: {$0.number == number})
+    }
+    
     func setComic(_ comic: Comic, asFavorite: Bool) -> Void{
         try! _realm.write {
             comic.favorite = asFavorite
