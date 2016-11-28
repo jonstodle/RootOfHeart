@@ -21,7 +21,11 @@ class ComicViewController: UIViewController {
     
     // MARK: - Properties
     
-    var comic: Comic = Comic()
+    var comic: Comic = Comic(){
+        didSet{
+            
+        }
+    }
     
     
     
@@ -73,6 +77,11 @@ class ComicViewController: UIViewController {
         coordinator.animate(alongsideTransition: { context -> Void in
             self.scrollView.contentOffset = CGPoint(x: center.x - (size.width / 2), y: center.y - ((size.height - layoutGuidesHeight) / 2))
         }, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! ComicOverlayViewController
+        destination.comic = comic
     }
     
     

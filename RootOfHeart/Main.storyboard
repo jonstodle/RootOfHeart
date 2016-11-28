@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mls-GC-WVf" id="U55-rz-uYC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hmr-cf-bQi">
@@ -114,13 +114,23 @@
                                     </imageView>
                                 </subviews>
                             </scrollView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmt-rL-Em5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <segue destination="Rnq-Bc-X0Y" kind="embed" id="l0d-WK-3Ev"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cfq-Bj-k3B" firstAttribute="top" secondItem="hmt-rL-Em5" secondAttribute="bottom" id="7XK-vA-fgX"/>
                             <constraint firstItem="f1c-JW-JYd" firstAttribute="top" secondItem="rnz-bx-qYi" secondAttribute="bottom" id="QtX-GE-M9T"/>
                             <constraint firstItem="cfq-Bj-k3B" firstAttribute="top" secondItem="f1c-JW-JYd" secondAttribute="bottom" id="TiA-Fl-RDI"/>
                             <constraint firstItem="f1c-JW-JYd" firstAttribute="leading" secondItem="u1p-Zk-z0E" secondAttribute="leading" id="Uqz-SK-Y9d"/>
+                            <constraint firstAttribute="trailing" secondItem="hmt-rL-Em5" secondAttribute="trailing" id="Wjb-J2-qOh"/>
                             <constraint firstAttribute="trailing" secondItem="f1c-JW-JYd" secondAttribute="trailing" id="fBt-5Y-CsE"/>
+                            <constraint firstItem="hmt-rL-Em5" firstAttribute="leading" secondItem="u1p-Zk-z0E" secondAttribute="leading" id="it3-RD-E1v"/>
+                            <constraint firstItem="hmt-rL-Em5" firstAttribute="top" secondItem="rnz-bx-qYi" secondAttribute="bottom" id="qOe-Xj-ner"/>
                         </constraints>
                     </view>
                     <connections>
@@ -130,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UX7-cf-weT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="730" y="204"/>
+            <point key="canvasLocation" x="689" y="204"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uDU-ja-php">
@@ -147,6 +157,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cs3-hB-bqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-994" y="204"/>
+        </scene>
+        <!--Comic Overlay View Controller-->
+        <scene sceneID="u9i-oz-QDZ">
+            <objects>
+                <viewController id="Rnq-Bc-X0Y" customClass="ComicOverlayViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zaU-w5-Uph">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kq3-6R-3ub">
+                                <rect key="frame" x="16" y="313" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kq3-6R-3ub" firstAttribute="leading" secondItem="zaU-w5-Uph" secondAttribute="leadingMargin" id="6s9-5m-nfC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kq3-6R-3ub" secondAttribute="trailing" id="S9a-lk-g7g"/>
+                            <constraint firstItem="kq3-6R-3ub" firstAttribute="centerY" secondItem="zaU-w5-Uph" secondAttribute="centerY" id="iEd-ns-E2T"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="altTextLabel" destination="kq3-6R-3ub" id="8Kr-3d-AmP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FP0-eq-aq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1421" y="203"/>
         </scene>
     </scenes>
 </document>

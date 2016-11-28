@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC09E8461DEC7EAA00AF3C07 /* ComicOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09E8451DEC7EAA00AF3C07 /* ComicOverlayViewController.swift */; };
 		FC3FC69C1DCB8E6C0069FDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */; };
 		FC3FC69F1DCB8E6C0069FDED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */; };
 		FC3FC6AA1DCB8E6C0069FDED /* RootOfHeartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6A91DCB8E6C0069FDED /* RootOfHeartTests.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC09E8451DEC7EAA00AF3C07 /* ComicOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicOverlayViewController.swift; sourceTree = "<group>"; };
 		FC3FC6911DCB8E6C0069FDED /* RootOfHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootOfHeart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC3FC69E1DCB8E6C0069FDED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				FC78018A1DCE529600B9A925 /* HomeTableViewController.swift */,
 				FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */,
 				FC4E07A61DE4546C002CEB4C /* ComicViewController.swift */,
+				FC09E8451DEC7EAA00AF3C07 /* ComicOverlayViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */,
 				FC4E07AC1DE46AB7002CEB4C /* UIExtensions.swift in Sources */,
 				FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */,
+				FC09E8461DEC7EAA00AF3C07 /* ComicOverlayViewController.swift in Sources */,
 				FC4E07A71DE4546C002CEB4C /* ComicViewController.swift in Sources */,
 				FC7801841DCE526900B9A925 /* Comic.swift in Sources */,
 				FC7801871DCE527200B9A925 /* DataService.swift in Sources */,
