@@ -12,7 +12,12 @@ class ComicOverlayViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var altTextLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     
     
     
