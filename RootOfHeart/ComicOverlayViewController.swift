@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ComicOverlayViewController: UIViewController {
     
@@ -21,6 +23,12 @@ class ComicOverlayViewController: UIViewController {
     
     
     
+    // MARK - Private Properties
+    
+    let _disposeBag = DisposeBag()
+    
+    
+    
     // MARK - Properties
     
     var comic = Comic()
@@ -32,11 +40,31 @@ class ComicOverlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        numberLabel.text = "#\(comic.number)"
+        dateLabel.text = "\(comic.day).\(comic.month).\(comic.year)"
         altTextLabel.text = comic.alt
+        setFavoriteButtonImage()
+        
+        favoriteButton.rx
+            .tap
+            .subscribe(onNext:{event in
+                DataService.instance.setComic(self.comic, asFavorite: !self.comic.favorite)
+                self.comic = DataService.instance.getComic(number: self.comic.number)!
+                self.setFavoriteButtonImage()
+            })
+            .addDisposableTo(_disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    // MARK: - Helper Methods
+    
+    private func setFavoriteButtonImage(){
+        favoriteButton.setImage(comic.favorite ? #imageLiteral(resourceName: "Favorite-Filled") : #imageLiteral(resourceName: "Favorite"), for: .normal)
     }
 }

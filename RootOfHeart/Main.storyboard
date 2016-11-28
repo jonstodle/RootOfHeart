@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -185,19 +186,29 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jmz-CW-6pW">
-                                <rect key="frame" x="111" y="597" width="158" height="30"/>
+                                <rect key="frame" x="114" y="583" width="152" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6G-H7-03r">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6G-H7-03r">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="OFy-XU-Vs4"/>
+                                            <constraint firstAttribute="width" secondItem="w6G-H7-03r" secondAttribute="height" multiplier="1:1" id="R6c-N3-BZA"/>
+                                        </constraints>
+                                        <state key="normal" image="Favorite"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWZ-Wi-myu">
-                                        <rect key="frame" x="56" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWZ-Wi-myu">
+                                        <rect key="frame" x="54" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="EWZ-Wi-myu" secondAttribute="height" multiplier="1:1" id="Yb6-f0-UNH"/>
+                                        </constraints>
+                                        <state key="normal" image="Save"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUd-Iv-MvF">
-                                        <rect key="frame" x="112" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUd-Iv-MvF">
+                                        <rect key="frame" x="108" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="KUd-Iv-MvF" secondAttribute="height" multiplier="1:1" id="cj8-SC-FpJ"/>
+                                        </constraints>
+                                        <state key="normal" image="Share"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -231,4 +242,9 @@
             <point key="canvasLocation" x="1420" y="202.84857571214394"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Favorite" width="22" height="22"/>
+        <image name="Save" width="22" height="22"/>
+        <image name="Share" width="22" height="22"/>
+    </resources>
 </document>
