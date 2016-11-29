@@ -47,10 +47,24 @@ class ComicOverlayViewController: UIViewController {
         
         favoriteButton.rx
             .tap
-            .subscribe(onNext:{event in
+            .subscribe(onNext:{_ in
                 DataService.instance.setComic(self.comic, asFavorite: !self.comic.favorite)
                 self.comic = DataService.instance.getComic(number: self.comic.number)!
                 self.setFavoriteButtonImage()
+            })
+            .addDisposableTo(_disposeBag)
+        
+        saveButton.rx
+            .tap
+            .subscribe(onNext:{_ in
+                // TODO: Save
+            })
+            .addDisposableTo(_disposeBag)
+        
+        shareButton.rx
+            .tap
+            .subscribe(onNext:{_ in
+                // TODO: Share
             })
             .addDisposableTo(_disposeBag)
     }
