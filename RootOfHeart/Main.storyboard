@@ -163,7 +163,7 @@
         <scene sceneID="u9i-oz-QDZ">
             <objects>
                 <viewController id="Rnq-Bc-X0Y" customClass="ComicOverlayViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" hidden="YES" contentMode="scaleToFill" id="zaU-w5-Uph">
+                    <view key="view" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="zaU-w5-Uph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -213,7 +213,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kq3-6R-3ub" firstAttribute="leading" secondItem="zaU-w5-Uph" secondAttribute="leadingMargin" id="6s9-5m-nfC"/>
                             <constraint firstItem="pXr-Mx-lzc" firstAttribute="baseline" secondItem="JAO-pS-ptk" secondAttribute="baseline" id="DeK-by-hJO"/>
