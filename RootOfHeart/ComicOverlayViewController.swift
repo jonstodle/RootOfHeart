@@ -29,7 +29,7 @@ class ComicOverlayViewController: UIViewController {
     
     
     
-    // MARK - Properties
+    // MARK - Public Properties
     
     var comic = Comic()
     
