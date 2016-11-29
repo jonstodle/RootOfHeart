@@ -23,13 +23,13 @@ class ComicOverlayViewController: UIViewController {
     
     
     
-    // MARK - Private Properties
+    // MARK: - Private Properties
     
     let _disposeBag = DisposeBag()
     
     
     
-    // MARK - Public Properties
+    // MARK: - Public Properties
     
     var comic = Comic()
     
