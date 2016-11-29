@@ -35,6 +35,14 @@ class ComicOverlayViewController: UIViewController {
     
     
     
+    // MARK: - Methods
+    
+    func toggleVisibility(){
+        self.view.isHidden = !self.view.isHidden
+    }
+    
+    
+    
     // MARK: - Implementation
 
     override func viewDidLoad() {

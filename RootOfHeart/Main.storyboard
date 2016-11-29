@@ -163,7 +163,7 @@
         <scene sceneID="u9i-oz-QDZ">
             <objects>
                 <viewController id="Rnq-Bc-X0Y" customClass="ComicOverlayViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zaU-w5-Uph">
+                    <view key="view" hidden="YES" contentMode="scaleToFill" id="zaU-w5-Uph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

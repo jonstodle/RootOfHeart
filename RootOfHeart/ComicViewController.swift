@@ -21,17 +21,14 @@ class ComicViewController: UIViewController {
     
     // MARK: - Properties
     
-    var comic: Comic = Comic(){
-        didSet{
-            
-        }
-    }
+    var comic: Comic = Comic()
     
     
     
     // MARK: - Private Properties
     
     let _disposeBag = DisposeBag()
+    var overlayViewController: ComicOverlayViewController = ComicOverlayViewController()
 
     
     
@@ -41,10 +38,15 @@ class ComicViewController: UIViewController {
         super.viewDidLoad()
         
         scrollView.delegate = self
+
+        title = comic.title
+        comicImageView.imageFromUrl(comic.imageWebUrl, completion:{
+            self.postImageLoadSetup()
+        })
         
-        let tapRecognizer = UITapGestureRecognizer()
-        tapRecognizer.numberOfTapsRequired = 2
-        tapRecognizer.rx
+        let doubleTapRecognizer = UITapGestureRecognizer()
+        doubleTapRecognizer.numberOfTapsRequired = 2
+        doubleTapRecognizer.rx
             .event
             .subscribe(onNext: {_ in
                 let sv = self.scrollView!
@@ -52,12 +54,18 @@ class ComicViewController: UIViewController {
                 sv.setZoomScale(sv.zoomScale > sv.minimumZoomScale ? sv.minimumZoomScale : sv.maximumZoomScale, animated: true)
             })
             .addDisposableTo(_disposeBag)
+        view.addGestureRecognizer(doubleTapRecognizer)
+        
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.rx
+            .event
+            .flatMap({Observable.just($0).delay(0.3, scheduler: ConcurrentDispatchQueueScheduler(qos: .background)).takeUntil(doubleTapRecognizer.rx.event)})
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext:{_ in
+                self.overlayViewController.toggleVisibility()
+            })
+            .addDisposableTo(_disposeBag)
         view.addGestureRecognizer(tapRecognizer)
-
-        title = comic.title
-        comicImageView.imageFromUrl(comic.imageWebUrl, completion:{
-            self.postImageLoadSetup()
-        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,8 +88,8 @@ class ComicViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! ComicOverlayViewController
-        destination.comic = comic
+        overlayViewController = segue.destination as! ComicOverlayViewController
+        overlayViewController.comic = comic
     }
     
     
