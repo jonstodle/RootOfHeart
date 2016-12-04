@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mls-GC-WVf" id="U55-rz-uYC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hmr-cf-bQi">
@@ -115,7 +115,7 @@
                                     </imageView>
                                 </subviews>
                             </scrollView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmt-rL-Em5">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmt-rL-Em5">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <connections>
                                     <segue destination="Rnq-Bc-X0Y" kind="embed" id="l0d-WK-3Ev"/>
@@ -136,6 +136,7 @@
                     </view>
                     <connections>
                         <outlet property="comicImageView" destination="Khb-Gd-AIP" id="ZrG-be-ypS"/>
+                        <outlet property="overlayContainerView" destination="hmt-rL-Em5" id="ewf-Yw-UMp"/>
                         <outlet property="scrollView" destination="f1c-JW-JYd" id="Rbm-zd-n1h"/>
                     </connections>
                 </viewController>
@@ -163,7 +164,11 @@
         <scene sceneID="u9i-oz-QDZ">
             <objects>
                 <viewController id="Rnq-Bc-X0Y" customClass="ComicOverlayViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="zaU-w5-Uph">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u6Z-4H-e4I"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zqw-0i-wAo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zaU-w5-Uph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

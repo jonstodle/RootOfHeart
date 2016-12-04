@@ -16,6 +16,7 @@ class ComicViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var comicImageView: UIImageView!
+    @IBOutlet weak var overlayContainerView: UIView!
     
     
     
@@ -50,8 +51,14 @@ class ComicViewController: UIViewController {
             .event
             .subscribe(onNext: {_ in
                 let sv = self.scrollView!
+                let iv = self.comicImageView!
                 
-                sv.setZoomScale(sv.zoomScale > sv.minimumZoomScale ? sv.minimumZoomScale : sv.maximumZoomScale, animated: true)
+                let horizontalFitScale = sv.frame.width / iv.bounds.width;
+                let verticalFitScale = sv.frame.height / iv.bounds.height;
+                let zoomedInScale = max(horizontalFitScale, verticalFitScale) * 0.95
+                
+                
+                sv.setZoomScale(sv.zoomScale < zoomedInScale ? zoomedInScale : sv.minimumZoomScale, animated: true)
             })
             .addDisposableTo(_disposeBag)
         view.addGestureRecognizer(doubleTapRecognizer)
@@ -62,7 +69,9 @@ class ComicViewController: UIViewController {
             .flatMap({Observable.just($0).delay(0.3, scheduler: ConcurrentDispatchQueueScheduler(qos: .background)).takeUntil(doubleTapRecognizer.rx.event)})
             .observeOn(MainScheduler.instance)
             .subscribe(onNext:{_ in
-                self.overlayViewController.toggleVisibility()
+                UIView.transition(with: self.overlayContainerView, duration: 0.3, options: [.transitionCrossDissolve], animations: {
+                    self.overlayContainerView.isHidden = !self.overlayContainerView.isHidden
+                }, completion: nil)
             })
             .addDisposableTo(_disposeBag)
         view.addGestureRecognizer(tapRecognizer)

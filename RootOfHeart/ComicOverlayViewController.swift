@@ -35,19 +35,6 @@ class ComicOverlayViewController: UIViewController {
     
     
     
-    // MARK: - Methods
-    
-    func toggleVisibility(){
-        let isVisible = view.alpha != 0
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            self.view.isUserInteractionEnabled = !isVisible
-            self.view.alpha = !isVisible ? 1 : 0
-        })
-    }
-    
-    
-    
     // MARK: - Implementation
 
     override func viewDidLoad() {
