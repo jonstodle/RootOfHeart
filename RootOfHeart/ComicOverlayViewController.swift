@@ -80,7 +80,9 @@ class ComicOverlayViewController: UIViewController {
         shareButton.rx
             .tap
             .subscribe(onNext:{_ in
-                // TODO: Share
+                var shareData: [Any] = [self.comic.title, self.comic.webUrl.absoluteString]
+                if let image = self.comicImage { shareData.insert(image, at: 0) }
+                self.present(UIActivityViewController(activityItems: shareData, applicationActivities: nil), animated: true, completion: nil)
             })
             .addDisposableTo(_disposeBag)
     }
