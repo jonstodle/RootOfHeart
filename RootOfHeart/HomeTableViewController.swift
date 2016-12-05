@@ -15,9 +15,9 @@ class HomeTableViewController: UITableViewController {
     
     //MARK: - Private Properties
     
-    private let _disposeBag = DisposeBag()
-    private let _comicCellIdentifier = "comicCell"
-    private var _notificationToken: NotificationToken?
+    fileprivate let _disposeBag = DisposeBag()
+    fileprivate let _comicCellIdentifier = "comicCell"
+    fileprivate var _notificationToken: NotificationToken?
     
     
     
@@ -70,11 +70,9 @@ class HomeTableViewController: UITableViewController {
     deinit {
         _notificationToken?.stop()
     }
-    
-    
-    
-    // MARK: - Table view data source
-    
+}
+
+extension HomeTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
