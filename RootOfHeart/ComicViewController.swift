@@ -70,6 +70,7 @@ class ComicViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext:{_ in
                 UIView.transition(with: self.overlayContainerView, duration: 0.3, options: [.transitionCrossDissolve], animations: {
+                    self.overlayViewController.comicImage = self.comicImageView.image
                     self.overlayContainerView.isHidden = !self.overlayContainerView.isHidden
                 }, completion: nil)
             })

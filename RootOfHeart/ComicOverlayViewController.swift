@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 import RxSwift
 import RxCocoa
 
@@ -32,14 +33,15 @@ class ComicOverlayViewController: UIViewController {
     // MARK: - Public Properties
     
     var comic = Comic()
+    var comicImage: UIImage?
     
     
     
     // MARK: - Implementation
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         numberLabel.text = "#\(comic.number)"
         dateLabel.text = "\(comic.day).\(comic.month).\(comic.year)"
         altTextLabel.text = comic.alt
@@ -54,10 +56,24 @@ class ComicOverlayViewController: UIViewController {
             })
             .addDisposableTo(_disposeBag)
         
-        saveButton.rx
+        let saveButtonTaps = saveButton.rx
             .tap
+            .share()
+        
+        saveButtonTaps // Has not access to save photos
+            .filter{PHPhotoLibrary.authorizationStatus() == .denied}
+            .subscribe(onNext:{
+                _ in
+                self.displayMessage(message: "No access to photos")
+            })
+            .addDisposableTo(_disposeBag)
+            
+        saveButtonTaps // Has access to save photos
+            .filter{PHPhotoLibrary.authorizationStatus() != .denied}
+            .observeOn(SerialDispatchQueueScheduler(qos: .userInitiated))
             .subscribe(onNext:{_ in
-                // TODO: Save
+                guard let image = self.comicImage else{return}
+                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             })
             .addDisposableTo(_disposeBag)
         
@@ -68,7 +84,7 @@ class ComicOverlayViewController: UIViewController {
             })
             .addDisposableTo(_disposeBag)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
