@@ -21,6 +21,7 @@
 		FC4E07A51DE22D4C002CEB4C /* ComicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */; };
 		FC4E07A71DE4546C002CEB4C /* ComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07A61DE4546C002CEB4C /* ComicViewController.swift */; };
 		FC4E07AC1DE46AB7002CEB4C /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07AB1DE46AB7002CEB4C /* UIExtensions.swift */; };
+		FC63AB501DF57F2B0058A018 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63AB4F1DF57F2B0058A018 /* FileService.swift */; };
 		FC7801841DCE526900B9A925 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801821DCE526900B9A925 /* Comic.swift */; };
 		FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801831DCE526900B9A925 /* XkcdService.swift */; };
 		FC7801871DCE527200B9A925 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801861DCE527200B9A925 /* DataService.swift */; };
@@ -60,6 +61,7 @@
 		FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicTableViewCell.swift; sourceTree = "<group>"; };
 		FC4E07A61DE4546C002CEB4C /* ComicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicViewController.swift; sourceTree = "<group>"; };
 		FC4E07AB1DE46AB7002CEB4C /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		FC63AB4F1DF57F2B0058A018 /* FileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		FC7801821DCE526900B9A925 /* Comic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		FC7801831DCE526900B9A925 /* XkcdService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XkcdService.swift; sourceTree = "<group>"; };
 		FC7801861DCE527200B9A925 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				FC7801861DCE527200B9A925 /* DataService.swift */,
+				FC63AB4F1DF57F2B0058A018 /* FileService.swift */,
 			);
 			name = DataServices;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				FC78018B1DCE529600B9A925 /* HomeTableViewController.swift in Sources */,
 				FC4E07A51DE22D4C002CEB4C /* ComicTableViewCell.swift in Sources */,
 				FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */,
+				FC63AB501DF57F2B0058A018 /* FileService.swift in Sources */,
 				FC4E07AC1DE46AB7002CEB4C /* UIExtensions.swift in Sources */,
 				FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */,
 				FC09E8461DEC7EAA00AF3C07 /* ComicOverlayViewController.swift in Sources */,
