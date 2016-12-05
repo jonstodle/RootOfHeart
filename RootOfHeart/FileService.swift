@@ -32,7 +32,7 @@ class FileService {
         }
     }
     
-    static func loadImageFromCache(name: String) -> Observable<UIImage> {
+    static func loadImageFromCache(name: String) -> Observable<UIImage?> {
         return Observable.create{
             o in
             var disposed = false
@@ -41,7 +41,7 @@ class FileService {
             let filePath = paths.first!.appending(name)
             
             if !disposed {
-                o.onNext(UIImage(contentsOfFile: filePath)!)
+                o.onNext(UIImage(contentsOfFile: filePath))
                 o.onCompleted()
             }
             
