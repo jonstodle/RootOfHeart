@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC02A8CF1DF772250079FEC9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8CE1DF772250079FEC9 /* RxSwift.framework */; };
+		FC02A8D01DF772250079FEC9 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8CE1DF772250079FEC9 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC02A8D31DF7722E0079FEC9 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8D21DF7722E0079FEC9 /* RxCocoa.framework */; };
+		FC02A8D41DF7722E0079FEC9 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8D21DF7722E0079FEC9 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC02A8D61DF7723D0079FEC9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8D51DF7723D0079FEC9 /* SwiftyJSON.framework */; };
+		FC02A8D71DF7723D0079FEC9 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8D51DF7723D0079FEC9 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC02A8D91DF7725A0079FEC9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8D81DF7725A0079FEC9 /* Realm.framework */; };
+		FC02A8DA1DF7725A0079FEC9 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8D81DF7725A0079FEC9 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC02A8DC1DF7725A0079FEC9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8DB1DF7725A0079FEC9 /* RealmSwift.framework */; };
+		FC02A8DD1DF7725A0079FEC9 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8DB1DF7725A0079FEC9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC02A8DF1DF772680079FEC9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8DE1DF772680079FEC9 /* Alamofire.framework */; };
+		FC02A8E01DF772680079FEC9 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8DE1DF772680079FEC9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC09E8461DEC7EAA00AF3C07 /* ComicOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09E8451DEC7EAA00AF3C07 /* ComicOverlayViewController.swift */; };
 		FC3FC69C1DCB8E6C0069FDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */; };
 		FC3FC69F1DCB8E6C0069FDED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */; };
 		FC3FC6AA1DCB8E6C0069FDED /* RootOfHeartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6A91DCB8E6C0069FDED /* RootOfHeartTests.swift */; };
-		FC3FC6CC1DCBC1270069FDED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6C61DCBC1270069FDED /* Alamofire.framework */; };
-		FC3FC6CE1DCBC1270069FDED /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6C81DCBC1270069FDED /* RealmSwift.framework */; };
-		FC3FC6CF1DCBC1270069FDED /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6C91DCBC1270069FDED /* RxCocoa.framework */; };
-		FC3FC6D01DCBC1270069FDED /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6CA1DCBC1270069FDED /* RxSwift.framework */; };
-		FC3FC6D11DCBC1270069FDED /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6CB1DCBC1270069FDED /* SwiftyJSON.framework */; };
-		FC3FC6D51DCBC50E0069FDED /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3FC6D41DCBC50E0069FDED /* Realm.framework */; };
 		FC4E07A31DE2282C002CEB4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4E07A21DE2282C002CEB4C /* Main.storyboard */; };
 		FC4E07A51DE22D4C002CEB4C /* ComicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */; };
 		FC4E07A71DE4546C002CEB4C /* ComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07A61DE4546C002CEB4C /* ComicViewController.swift */; };
@@ -40,7 +46,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FC02A8D11DF772260079FEC9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FC02A8DA1DF7725A0079FEC9 /* Realm.framework in Embed Frameworks */,
+				FC02A8E01DF772680079FEC9 /* Alamofire.framework in Embed Frameworks */,
+				FC02A8DD1DF7725A0079FEC9 /* RealmSwift.framework in Embed Frameworks */,
+				FC02A8D41DF7722E0079FEC9 /* RxCocoa.framework in Embed Frameworks */,
+				FC02A8D01DF772250079FEC9 /* RxSwift.framework in Embed Frameworks */,
+				FC02A8D71DF7723D0079FEC9 /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		FC02A8CE1DF772250079FEC9 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC02A8D21DF7722E0079FEC9 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC02A8D51DF7723D0079FEC9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC02A8D81DF7725A0079FEC9 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC02A8DB1DF7725A0079FEC9 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC02A8DE1DF772680079FEC9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC09E8451DEC7EAA00AF3C07 /* ComicOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicOverlayViewController.swift; sourceTree = "<group>"; };
 		FC3FC6911DCB8E6C0069FDED /* RootOfHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootOfHeart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,14 +80,6 @@
 		FC3FC6A51DCB8E6C0069FDED /* RootOfHeartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RootOfHeartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3FC6A91DCB8E6C0069FDED /* RootOfHeartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootOfHeartTests.swift; sourceTree = "<group>"; };
 		FC3FC6AB1DCB8E6C0069FDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC3FC6C61DCBC1270069FDED /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Carthage/Checkouts/Alamofire/build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
-		FC3FC6C71DCBC1270069FDED /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug/Realm.framework"; sourceTree = "<group>"; };
-		FC3FC6C81DCBC1270069FDED /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug/RealmSwift.framework"; sourceTree = "<group>"; };
-		FC3FC6C91DCBC1270069FDED /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxCocoa.framework"; sourceTree = "<group>"; };
-		FC3FC6CA1DCBC1270069FDED /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxSwift.framework"; sourceTree = "<group>"; };
-		FC3FC6CB1DCBC1270069FDED /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Carthage/Checkouts/SwiftyJSON/build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
-		FC3FC6D21DCBC36C0069FDED /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug-static/Realm.framework"; sourceTree = "<group>"; };
-		FC3FC6D41DCBC50E0069FDED /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Carthage/Checkouts/realm-cocoa/build/Debug-static/Realm.framework"; sourceTree = "<group>"; };
 		FC4E07A21DE2282C002CEB4C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicTableViewCell.swift; sourceTree = "<group>"; };
 		FC4E07A61DE4546C002CEB4C /* ComicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicViewController.swift; sourceTree = "<group>"; };
@@ -75,12 +98,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC3FC6D51DCBC50E0069FDED /* Realm.framework in Frameworks */,
-				FC3FC6CC1DCBC1270069FDED /* Alamofire.framework in Frameworks */,
-				FC3FC6CE1DCBC1270069FDED /* RealmSwift.framework in Frameworks */,
-				FC3FC6CF1DCBC1270069FDED /* RxCocoa.framework in Frameworks */,
-				FC3FC6D01DCBC1270069FDED /* RxSwift.framework in Frameworks */,
-				FC3FC6D11DCBC1270069FDED /* SwiftyJSON.framework in Frameworks */,
+				FC02A8D91DF7725A0079FEC9 /* Realm.framework in Frameworks */,
+				FC02A8DF1DF772680079FEC9 /* Alamofire.framework in Frameworks */,
+				FC02A8DC1DF7725A0079FEC9 /* RealmSwift.framework in Frameworks */,
+				FC02A8D31DF7722E0079FEC9 /* RxCocoa.framework in Frameworks */,
+				FC02A8CF1DF772250079FEC9 /* RxSwift.framework in Frameworks */,
+				FC02A8D61DF7723D0079FEC9 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,14 +202,12 @@
 		FC3FC6C51DCBC1270069FDED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FC3FC6D41DCBC50E0069FDED /* Realm.framework */,
-				FC3FC6D21DCBC36C0069FDED /* Realm.framework */,
-				FC3FC6C61DCBC1270069FDED /* Alamofire.framework */,
-				FC3FC6C71DCBC1270069FDED /* Realm.framework */,
-				FC3FC6C81DCBC1270069FDED /* RealmSwift.framework */,
-				FC3FC6C91DCBC1270069FDED /* RxCocoa.framework */,
-				FC3FC6CA1DCBC1270069FDED /* RxSwift.framework */,
-				FC3FC6CB1DCBC1270069FDED /* SwiftyJSON.framework */,
+				FC02A8DE1DF772680079FEC9 /* Alamofire.framework */,
+				FC02A8DB1DF7725A0079FEC9 /* RealmSwift.framework */,
+				FC02A8D81DF7725A0079FEC9 /* Realm.framework */,
+				FC02A8D51DF7723D0079FEC9 /* SwiftyJSON.framework */,
+				FC02A8D21DF7722E0079FEC9 /* RxCocoa.framework */,
+				FC02A8CE1DF772250079FEC9 /* RxSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,6 +230,7 @@
 				FC3FC68D1DCB8E6C0069FDED /* Sources */,
 				FC3FC68E1DCB8E6C0069FDED /* Frameworks */,
 				FC3FC68F1DCB8E6C0069FDED /* Resources */,
+				FC02A8D11DF772260079FEC9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
