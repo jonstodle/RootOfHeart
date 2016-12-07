@@ -15,6 +15,7 @@ import Kingfisher
 class HomeTableViewController: UITableViewController {
     
     // MARK: - Outlets
+    
     @IBOutlet weak var settingsBarButton: UIBarButtonItem!
     @IBOutlet weak var searchBarButton: UIBarButtonItem!
     @IBOutlet weak var headerView: UIView!
