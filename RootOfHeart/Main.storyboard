@@ -114,6 +114,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="headerSegmentedControl" destination="1oC-uA-7aJ" id="mJL-fv-CCH"/>
+                        <outlet property="headerView" destination="ceq-xc-vxB" id="RYA-XF-ZEf"/>
                         <outlet property="searchBarButton" destination="e4R-zQ-ueY" id="Eas-W7-HKw"/>
                         <outlet property="settingsBarButton" destination="DIr-xg-p8Z" id="RHy-pU-Db4"/>
                     </connections>

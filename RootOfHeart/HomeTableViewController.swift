@@ -15,9 +15,10 @@ import Kingfisher
 class HomeTableViewController: UITableViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var headerSegmentedControl: UISegmentedControl!
     @IBOutlet weak var settingsBarButton: UIBarButtonItem!
     @IBOutlet weak var searchBarButton: UIBarButtonItem!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerSegmentedControl: UISegmentedControl!
     
     
     
@@ -34,6 +35,8 @@ class HomeTableViewController: UITableViewController {
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false´
+        
+        tableView.contentOffset = CGPoint(x: 0, y: headerView.frame.height)
         
         _notificationToken = DataService.instance.comics.addNotificationBlock({ changes in
             guard let tableView = self.tableView else{return}
