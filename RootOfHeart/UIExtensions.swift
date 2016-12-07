@@ -24,36 +24,6 @@ extension UIImageView{
     func imageFromUrl(_ url: String) -> Void{
         imageFromUrl(url, completion: {})
     }
-    
-    func imageFromCacheOrUrl(name: String, url: String, completion: @escaping () -> Void) -> Void {
-        FileService.loadImageFromCache(name: name)
-            .flatMap{
-                image -> Observable<UIImage?> in
-                if let image = image {
-                    return Observable.just(image)
-                }
-                else {
-                    return Observable<UIImage?>.create{
-                        o in
-                        Alamofire.request(url).responseData{
-                            response in
-                            if response.result.isSuccess {
-                                o.onNext(UIImage(data: response.data!))
-                                o.onCompleted()
-                            }
-                            else{
-                                o.onCompleted()
-                            }
-                        }
-                        
-                        return Disposables.create()
-                    }
-                }
-            }
-            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInitiated))
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { self.image = $0 })
-    }
 }
 
 extension UIViewController{
