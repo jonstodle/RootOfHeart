@@ -72,10 +72,13 @@ class ComicViewController: UIViewController {
             .flatMap({Observable.just($0).delay(0.3, scheduler: ConcurrentDispatchQueueScheduler(qos: .background)).takeUntil(doubleTapRecognizer.rx.event)})
             .observeOn(MainScheduler.instance)
             .subscribe(onNext:{_ in
-                UIView.transition(with: self.overlayContainerView, duration: 0.3, options: [.transitionCrossDissolve], animations: {
-                    self.overlayViewController.comicImage = self.comicImageView.image
-                    self.overlayContainerView.isHidden = !self.overlayContainerView.isHidden
-                }, completion: nil)
+                self.overlayViewController.comicImage = self.comicImageView.image
+                
+                UIView.animate(withDuration: 0.3, animations: {
+                    let isVisible = self.overlayContainerView.alpha != 0
+                    self.overlayContainerView.isUserInteractionEnabled = !isVisible
+                    self.overlayContainerView.alpha = isVisible ? 0 : 1
+                })
             })
             .addDisposableTo(_disposeBag)
         view.addGestureRecognizer(tapRecognizer)
