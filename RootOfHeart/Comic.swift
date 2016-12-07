@@ -23,8 +23,7 @@ class Comic : Object{
     dynamic var news = ""
     dynamic var alt = ""
     dynamic var transcript = ""
-    dynamic var imageWebUrl = ""
-    var imageUrl: String{return ""}
+    dynamic var imageUrl = ""
     dynamic var read = false
     dynamic var favorite = false
     
@@ -33,7 +32,7 @@ class Comic : Object{
     //MARK: - Realm Meta Data
     
     override static func ignoredProperties() -> [String]{
-        return ["webUrl", "imageUrl"]
+        return ["webUrl"]
     }
     
     override static func primaryKey() -> String?{

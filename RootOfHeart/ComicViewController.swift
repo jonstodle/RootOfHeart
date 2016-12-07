@@ -41,7 +41,7 @@ class ComicViewController: UIViewController {
         scrollView.delegate = self
 
         title = comic.title
-        comicImageView.imageFromUrl(comic.imageWebUrl, completion:{
+        comicImageView.imageFromUrl(comic.imageUrl, completion:{
             self.postImageLoadSetup()
         })
         
