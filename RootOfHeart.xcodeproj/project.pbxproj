@@ -21,6 +21,7 @@
 		FC02A8E01DF772680079FEC9 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8DE1DF772680079FEC9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC02A8E41DF82A490079FEC9 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8E11DF829110079FEC9 /* Kingfisher.framework */; };
 		FC02A8E51DF82A490079FEC9 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC02A8E11DF829110079FEC9 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC02A8E71DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02A8E61DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift */; };
 		FC09E8461DEC7EAA00AF3C07 /* ComicOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09E8451DEC7EAA00AF3C07 /* ComicOverlayViewController.swift */; };
 		FC3FC69C1DCB8E6C0069FDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */; };
 		FC3FC69F1DCB8E6C0069FDED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */; };
@@ -76,6 +77,7 @@
 		FC02A8DB1DF7725A0079FEC9 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC02A8DE1DF772680079FEC9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC02A8E11DF829110079FEC9 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC02A8E61DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewHeaderViewController.swift; sourceTree = "<group>"; };
 		FC09E8451DEC7EAA00AF3C07 /* ComicOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicOverlayViewController.swift; sourceTree = "<group>"; };
 		FC3FC6911DCB8E6C0069FDED /* RootOfHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootOfHeart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */,
 				FC4E07A61DE4546C002CEB4C /* ComicViewController.swift */,
 				FC09E8451DEC7EAA00AF3C07 /* ComicOverlayViewController.swift */,
+				FC02A8E61DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				FC4E07A71DE4546C002CEB4C /* ComicViewController.swift in Sources */,
 				FC7801841DCE526900B9A925 /* Comic.swift in Sources */,
 				FC7801871DCE527200B9A925 /* DataService.swift in Sources */,
+				FC02A8E71DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

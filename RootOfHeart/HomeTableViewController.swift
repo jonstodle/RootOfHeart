@@ -14,6 +14,13 @@ import Kingfisher
 
 class HomeTableViewController: UITableViewController {
     
+    // MARK: - Outlets
+    @IBOutlet weak var headerSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var settingsBarButton: UIBarButtonItem!
+    @IBOutlet weak var searchBarButton: UIBarButtonItem!
+    
+    
+    
     //MARK: - Private Properties
     
     fileprivate let _disposeBag = DisposeBag()
