@@ -42,6 +42,9 @@ class ComicViewController: UIViewController {
 
         title = comic.title
         comicImageView.imageFromUrl(comic.imageUrl, completion:{
+            UIView.transition(with: self.comicImageView, duration: 0.3, options: [.transitionCrossDissolve], animations: {
+                self.comicImageView.isHidden = false
+            }, completion: nil)
             self.postImageLoadSetup()
         })
         
