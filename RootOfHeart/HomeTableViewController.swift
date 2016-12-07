@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RealmSwift
+import Kingfisher
 
 class HomeTableViewController: UITableViewController {
     
@@ -89,7 +90,7 @@ extension HomeTableViewController {
         let comic = DataService.instance.comics[indexPath.row]
         
         cell.comicImageView.image = nil
-        cell.comicImageView.imageFromCacheOrUrl(name: String(comic.number), url: comic.imageUrl, completion: {}) //.imageFromUrl(comic.imageWebUrl)
+        cell.comicImageView.kf.setImage(with: URL(string: comic.imageUrl))
         cell.numberLabel?.text = "#\(comic.number)"
         cell.titleLabel?.text = comic.title
         cell.dateLabel?.text = "\(comic.day).\(comic.month).\(comic.year)"
