@@ -142,9 +142,9 @@ extension HomeTableViewController {
         cell.comicImageView.image = nil
         cell.comicImageView.kf.setImage(with: URL(string: comic.imageUrl))
         cell.favoriteImageView.isHidden = !comic.favorite
-        cell.numberLabel?.text = "#\(comic.number)"
-        cell.titleLabel?.text = comic.title
-        cell.dateLabel?.text = "\(comic.day).\(comic.month).\(comic.year)"
+        cell.numberLabel.text = "#\(comic.number)"
+        cell.titleLabel.text = comic.title
+        cell.dateLabel.text = "\(comic.day).\(comic.month).\(comic.year)"
         
         return cell
     }
