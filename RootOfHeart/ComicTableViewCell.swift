@@ -14,6 +14,7 @@ class ComicTableViewCell: UITableViewCell {
     // MARK: - Outlets
 
     @IBOutlet weak var comicImageView: UIImageView!
+    @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

@@ -70,6 +70,13 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
+                                        <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Favorite-Filled" translatesAutoresizingMaskIntoConstraints="NO" id="0d8-ji-jyP">
+                                            <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="0d8-ji-jyP" secondAttribute="height" multiplier="1:1" id="VQR-Dh-2qQ"/>
+                                                <constraint firstAttribute="width" constant="30" id="iF9-wW-UT2"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-fL-oel">
                                             <rect key="frame" x="8" y="176.5" width="359" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -85,12 +92,14 @@
                                         <constraint firstAttribute="trailing" secondItem="BDk-q5-PXD" secondAttribute="trailing" id="O0c-7G-8Hr"/>
                                         <constraint firstItem="BDk-q5-PXD" firstAttribute="top" secondItem="U55-rz-uYC" secondAttribute="top" id="Pgg-fn-jaU"/>
                                         <constraint firstItem="Pst-fL-oel" firstAttribute="leading" secondItem="U55-rz-uYC" secondAttribute="leadingMargin" id="Qmw-Li-Nhe"/>
+                                        <constraint firstItem="0d8-ji-jyP" firstAttribute="top" secondItem="U55-rz-uYC" secondAttribute="topMargin" id="R9e-Hx-NkU"/>
                                         <constraint firstItem="GLS-am-TUS" firstAttribute="top" secondItem="U55-rz-uYC" secondAttribute="topMargin" constant="74" id="Rub-li-5BS"/>
                                         <constraint firstAttribute="bottom" secondItem="Hmr-cf-bQi" secondAttribute="bottom" id="SYD-Eu-qLK"/>
                                         <constraint firstItem="Hmr-cf-bQi" firstAttribute="leading" secondItem="U55-rz-uYC" secondAttribute="leading" id="Sec-Q7-3OL"/>
                                         <constraint firstAttribute="bottom" secondItem="BDk-q5-PXD" secondAttribute="bottom" id="aex-1e-MR5"/>
                                         <constraint firstItem="Hmr-cf-bQi" firstAttribute="top" secondItem="U55-rz-uYC" secondAttribute="top" id="ajp-Mc-Bkh"/>
                                         <constraint firstItem="GLS-am-TUS" firstAttribute="leading" secondItem="U55-rz-uYC" secondAttribute="leadingMargin" id="brY-fV-l02"/>
+                                        <constraint firstItem="0d8-ji-jyP" firstAttribute="leading" secondItem="U55-rz-uYC" secondAttribute="leadingMargin" id="cZ3-lx-VVl"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Pst-fL-oel" secondAttribute="bottom" id="tn3-ku-fc0"/>
                                         <constraint firstItem="BDk-q5-PXD" firstAttribute="leading" secondItem="U55-rz-uYC" secondAttribute="leading" id="vIO-lx-FMe"/>
                                     </constraints>
@@ -98,6 +107,7 @@
                                 <connections>
                                     <outlet property="comicImageView" destination="Hmr-cf-bQi" id="pXL-yL-3vU"/>
                                     <outlet property="dateLabel" destination="Pst-fL-oel" id="pAf-NR-CfB"/>
+                                    <outlet property="favoriteImageView" destination="0d8-ji-jyP" id="buQ-BO-vCz"/>
                                     <outlet property="numberLabel" destination="rsE-6F-emi" id="YP9-9E-AQA"/>
                                     <outlet property="titleLabel" destination="3sx-hg-s6x" id="NX1-UI-wMk"/>
                                 </connections>
@@ -278,6 +288,7 @@
     </scenes>
     <resources>
         <image name="Favorite" width="22" height="22"/>
+        <image name="Favorite-Filled" width="22" height="22"/>
         <image name="Save" width="22" height="22"/>
         <image name="Settings" width="22" height="22"/>
         <image name="Share" width="22" height="22"/>

@@ -39,6 +39,8 @@ class ComicViewController: UIViewController {
         super.viewDidLoad()
         
         scrollView.delegate = self
+        
+        DataService.instance.setComic(comic, asRead: true)
 
         title = comic.title
         comicImageView.imageFromUrl(comic.imageUrl, completion:{
