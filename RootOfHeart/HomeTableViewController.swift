@@ -60,6 +60,15 @@ class HomeTableViewController: UITableViewController {
             }
         })
         
+        searchBarButton.rx
+            .tap
+            .subscribe(onNext:{
+                UIView.transition(with: self.comicSearchBar, duration: 0.3, options: [.transitionCrossDissolve], animations: {
+                    self.comicSearchBar.isHidden = !self.comicSearchBar.isHidden
+                }, completion: nil)
+            })
+            .addDisposableTo(_disposeBag)
+        
         headerSegmentedControl.rx
             .value
             .subscribe(onNext:{
