@@ -50,7 +50,7 @@ class ComicOverlayViewController: UIViewController {
         favoriteButton.rx
             .tap
             .subscribe(onNext:{_ in
-                DataService.instance.setComic(self.comic, asFavorite: !self.comic.favorite)
+                DataService.instance.setComic(self.comic, asFavorite: !self.comic.isFavorite)
                 self.comic = DataService.instance.getComic(number: self.comic.number)!
                 self.setFavoriteButtonImage()
             })
@@ -97,6 +97,6 @@ class ComicOverlayViewController: UIViewController {
     // MARK: - Helper Methods
     
     private func setFavoriteButtonImage(){
-        favoriteButton.setImage(comic.favorite ? #imageLiteral(resourceName: "Favorite-Filled") : #imageLiteral(resourceName: "Favorite"), for: .normal)
+        favoriteButton.setImage(comic.isFavorite ? #imageLiteral(resourceName: "Favorite-Filled") : #imageLiteral(resourceName: "Favorite"), for: .normal)
     }
 }

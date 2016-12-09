@@ -54,13 +54,13 @@ class DataService{
     
     func setComic(_ comic: Comic, asFavorite: Bool) -> Void{
         try! _realm.write {
-            comic.favorite = asFavorite
+            comic.isFavorite = asFavorite
         }
     }
     
     func setComic(_ comic: Comic, asRead: Bool) -> Void {
         try! _realm.write {
-            comic.read = asRead
+            comic.isRead = asRead
         }
     }
     
@@ -72,8 +72,8 @@ class DataService{
         _realm = try! Realm()
         
         comics = _realm.objects(Comic.self).sorted(byProperty: "number", ascending: false)
-        favoritedComics = comics.filter("favorite == true")
-        unreadComics = comics.filter("read == false")
+        favoritedComics = comics.filter("isFavorite == true")
+        unreadComics = comics.filter("isRead == false")
         
         _addSubject
             .filter{ $0 != nil }

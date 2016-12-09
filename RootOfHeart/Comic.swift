@@ -24,8 +24,8 @@ class Comic : Object{
     dynamic var alt = ""
     dynamic var transcript = ""
     dynamic var imageUrl = ""
-    dynamic var read = false
-    dynamic var favorite = false
+    dynamic var isRead = false
+    dynamic var isFavorite = false
     
     
     
