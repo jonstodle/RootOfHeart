@@ -65,6 +65,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6wF-jQ-i6z">
+                                            <rect key="frame" x="169" y="31.5" width="37" height="37"/>
+                                            <color key="color" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </activityIndicatorView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="GLS-am-TUS">
                                             <rect key="frame" x="8" y="82" width="359" height="35"/>
                                             <subviews>
@@ -107,6 +111,7 @@
                                         <constraint firstItem="0d8-ji-jyP" firstAttribute="top" secondItem="U55-rz-uYC" secondAttribute="topMargin" id="4YN-Lp-Aob"/>
                                         <constraint firstItem="Pst-fL-oel" firstAttribute="trailing" secondItem="U55-rz-uYC" secondAttribute="trailingMargin" id="5H0-ct-NTP"/>
                                         <constraint firstAttribute="trailing" secondItem="Hmr-cf-bQi" secondAttribute="trailing" id="KBt-WX-Tcd"/>
+                                        <constraint firstItem="6wF-jQ-i6z" firstAttribute="centerY" secondItem="U55-rz-uYC" secondAttribute="centerY" multiplier="0.5" id="Mch-Hf-sqQ"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="GLS-am-TUS" secondAttribute="trailing" id="Nrf-pN-kdc"/>
                                         <constraint firstAttribute="trailing" secondItem="BDk-q5-PXD" secondAttribute="trailing" id="O0c-7G-8Hr"/>
                                         <constraint firstItem="BDk-q5-PXD" firstAttribute="top" secondItem="U55-rz-uYC" secondAttribute="top" id="Pgg-fn-jaU"/>
@@ -121,6 +126,7 @@
                                         <constraint firstAttribute="bottom" secondItem="BDk-q5-PXD" secondAttribute="bottom" id="aex-1e-MR5"/>
                                         <constraint firstItem="Hmr-cf-bQi" firstAttribute="top" secondItem="U55-rz-uYC" secondAttribute="top" id="ajp-Mc-Bkh"/>
                                         <constraint firstItem="GLS-am-TUS" firstAttribute="leading" secondItem="U55-rz-uYC" secondAttribute="leadingMargin" id="brY-fV-l02"/>
+                                        <constraint firstItem="6wF-jQ-i6z" firstAttribute="centerX" secondItem="U55-rz-uYC" secondAttribute="centerX" id="r3B-e4-i4d"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Pst-fL-oel" secondAttribute="bottom" id="tn3-ku-fc0"/>
                                         <constraint firstItem="BDk-q5-PXD" firstAttribute="leading" secondItem="U55-rz-uYC" secondAttribute="leading" id="vIO-lx-FMe"/>
                                     </constraints>
@@ -129,6 +135,7 @@
                                     <outlet property="comicImageView" destination="Hmr-cf-bQi" id="pXL-yL-3vU"/>
                                     <outlet property="dateLabel" destination="Pst-fL-oel" id="pAf-NR-CfB"/>
                                     <outlet property="favoriteImageView" destination="0d8-ji-jyP" id="buQ-BO-vCz"/>
+                                    <outlet property="loadingActivityIndicator" destination="6wF-jQ-i6z" id="hVZ-XJ-MMu"/>
                                     <outlet property="numberLabel" destination="rsE-6F-emi" id="YP9-9E-AQA"/>
                                     <outlet property="titleLabel" destination="3sx-hg-s6x" id="NX1-UI-wMk"/>
                                     <outlet property="unreadImageView" destination="OCm-ff-5du" id="Exd-Pt-7Vl"/>
