@@ -65,7 +65,16 @@ class HomeTableViewController: UITableViewController {
             .subscribe(onNext:{
                 UIView.transition(with: self.comicSearchBar, duration: 0.3, options: [.transitionCrossDissolve], animations: {
                     self.comicSearchBar.isHidden = !self.comicSearchBar.isHidden
-                }, completion: nil)
+                }, completion: {
+                    finished in
+                    self.comicSearchBar.text = ""
+                    if !self.comicSearchBar.isHidden {
+                        self.comicSearchBar.becomeFirstResponder()
+                    }
+                    else {
+                        self.comicSearchBar.resignFirstResponder()
+                    }
+                })
             })
             .addDisposableTo(_disposeBag)
         
