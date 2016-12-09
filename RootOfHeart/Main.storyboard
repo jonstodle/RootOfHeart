@@ -30,6 +30,7 @@
                                         <segment title="All"/>
                                         <segment title="Unread"/>
                                     </segments>
+                                    <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -198,9 +199,10 @@
         <scene sceneID="uDU-ja-php">
             <objects>
                 <navigationController id="fqM-Y5-Beh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oqC-7z-kTJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oqC-7z-kTJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="eAc-Dz-Bxf" kind="relationship" relationship="rootViewController" id="dQx-rB-STB"/>
