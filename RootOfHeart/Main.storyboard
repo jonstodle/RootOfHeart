@@ -32,10 +32,20 @@
                                     </segments>
                                     <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </segmentedControl>
+                                <searchBar hidden="YES" contentMode="redraw" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1l-3P-EzJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="barTintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="a1l-3P-EzJ" secondAttribute="trailing" id="4fL-yP-plo"/>
                                 <constraint firstItem="1oC-uA-7aJ" firstAttribute="centerY" secondItem="ceq-xc-vxB" secondAttribute="centerY" id="88k-VW-PX6"/>
+                                <constraint firstItem="a1l-3P-EzJ" firstAttribute="leading" secondItem="ceq-xc-vxB" secondAttribute="leading" id="Iss-AA-S4O"/>
+                                <constraint firstItem="a1l-3P-EzJ" firstAttribute="top" secondItem="ceq-xc-vxB" secondAttribute="top" id="PlJ-Fv-5BC"/>
+                                <constraint firstAttribute="bottom" secondItem="a1l-3P-EzJ" secondAttribute="bottom" id="YgN-0w-zVl"/>
                                 <constraint firstItem="1oC-uA-7aJ" firstAttribute="leading" secondItem="ceq-xc-vxB" secondAttribute="leadingMargin" id="cnu-PY-Gay"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="1oC-uA-7aJ" secondAttribute="trailing" id="xvK-Wx-uMq"/>
                             </constraints>
@@ -135,6 +145,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="e4R-zQ-ueY"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="comicSearchBar" destination="a1l-3P-EzJ" id="rnN-ua-W9y"/>
                         <outlet property="headerSegmentedControl" destination="1oC-uA-7aJ" id="mJL-fv-CCH"/>
                         <outlet property="headerView" destination="ceq-xc-vxB" id="RYA-XF-ZEf"/>
                         <outlet property="searchBarButton" destination="e4R-zQ-ueY" id="Eas-W7-HKw"/>
@@ -199,7 +210,7 @@
         <scene sceneID="uDU-ja-php">
             <objects>
                 <navigationController id="fqM-Y5-Beh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oqC-7z-kTJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oqC-7z-kTJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

@@ -20,6 +20,7 @@ class HomeTableViewController: UITableViewController {
     @IBOutlet weak var searchBarButton: UIBarButtonItem!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var comicSearchBar: UISearchBar!
     
     
     
