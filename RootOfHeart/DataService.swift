@@ -64,6 +64,20 @@ class DataService{
         }
     }
     
+    func search(for text: String) -> Results<Comic> {
+        let textParts = text.characters.split(separator: (" ")).map({ String($0)})
+        var predicates: [NSCompoundPredicate] = []
+        
+        for part in textParts {
+            predicates.append(NSCompoundPredicate(orPredicateWithSubpredicates: [
+                NSPredicate(format: "title CONTAINS[c] %@", part),
+                NSPredicate(format: "alt CONTAINS[c] %@", part)
+                ]))
+        }
+        
+        return comics.filter(NSCompoundPredicate(andPredicateWithSubpredicates: predicates))
+    }
+    
     
     
     //MARK: - Initializer

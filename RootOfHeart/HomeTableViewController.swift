@@ -68,12 +68,13 @@ class HomeTableViewController: UITableViewController {
                     self.comicSearchBar.isHidden = !self.comicSearchBar.isHidden
                 }, completion: {
                     finished in
-                    self.comicSearchBar.text = ""
                     if !self.comicSearchBar.isHidden {
                         self.comicSearchBar.becomeFirstResponder()
                     }
                     else {
                         self.comicSearchBar.resignFirstResponder()
+                        self.comicSearchBar.text = ""
+                        self.tableView.reloadData()
                     }
                 })
             })
@@ -87,6 +88,41 @@ class HomeTableViewController: UITableViewController {
             })
             .addDisposableTo(_disposeBag)
         
+        comicSearchBar.rx
+            .text
+            .debounce(0.8, scheduler: MainScheduler.instance)
+            .subscribe(onNext: {
+                _ in
+                self.tableView.reloadData()
+            })
+            .addDisposableTo(_disposeBag)
+        
+        comicSearchBar.rx
+            .text
+            .filter { $0?.isEmpty ?? true }
+            .subscribe(onNext: {
+                _ in
+                self.tableView.reloadData()
+            })
+            .addDisposableTo(_disposeBag)
+        
+        comicSearchBar.rx
+            .searchButtonClicked
+            .subscribe(onNext: {
+                _ in
+                self.comicSearchBar.resignFirstResponder()
+            })
+            .addDisposableTo(_disposeBag)
+        
+        tableView.rx
+            .contentOffset
+            .filter {_ in !self.comicSearchBar.isHidden }
+            .subscribe(onNext:{
+                _ in
+                self.comicSearchBar.resignFirstResponder()
+            })
+            .addDisposableTo(_disposeBag)
+        
         self.tableView.rx
             .itemSelected
             .subscribe(
@@ -94,7 +130,7 @@ class HomeTableViewController: UITableViewController {
                     let newVc = self.storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
                     newVc.comic = self.getCurrentSource()[indexPath.row]
                     self.navigationController?.pushViewController(newVc, animated: true)
-                })
+            })
             .addDisposableTo(_disposeBag)
     }
     
@@ -116,15 +152,20 @@ class HomeTableViewController: UITableViewController {
     // MARK: - Table View Data Source
     
     fileprivate func getCurrentSource() -> Results<Comic> {
-        let i = headerSegmentedControl.selectedSegmentIndex
-        
-        if i == 0 { return DataService.instance.favoritedComics }
-        if i == 2 { return DataService.instance.unreadComics }
-        
-        return DataService.instance.comics
+        if !(comicSearchBar.text?.isEmpty ?? true) {
+            return DataService.instance.search(for: comicSearchBar.text!)
+        }
+        else {
+            let i = headerSegmentedControl.selectedSegmentIndex
+            if i == 0 { return DataService.instance.favoritedComics }
+            if i == 2 { return DataService.instance.unreadComics }
+            return DataService.instance.comics
+        }
     }
     
     fileprivate func updateTableView(with realmChanges: RealmCollectionChange<Results<Comic>>) {
+        guard comicSearchBar.text?.isEmpty ?? true else { return }
+        
         switch realmChanges{
         case .initial:
             tableView.reloadData()
