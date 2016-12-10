@@ -30,7 +30,7 @@ class ComicViewController: UIViewController {
     
     let _disposeBag = DisposeBag()
     var overlayViewController: ComicOverlayViewController = ComicOverlayViewController()
-
+    
     
     
     // MARK: - Implementation
@@ -41,12 +41,10 @@ class ComicViewController: UIViewController {
         scrollView.delegate = self
         
         DataService.instance.setComic(comic, asRead: true)
-
+        
         title = comic.title
-        comicImageView.imageFromUrl(comic.imageUrl, completion:{
-            UIView.transition(with: self.comicImageView, duration: 0.3, options: [.transitionCrossDissolve], animations: {
-                self.comicImageView.isHidden = false
-            }, completion: nil)
+        comicImageView.kf.setImage(with: URL(string: comic.imageUrl), completionHandler: {
+            _, _, _, _ in
             self.postImageLoadSetup()
         })
         
@@ -85,7 +83,7 @@ class ComicViewController: UIViewController {
             .addDisposableTo(_disposeBag)
         view.addGestureRecognizer(tapRecognizer)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
