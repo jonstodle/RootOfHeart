@@ -10,22 +10,6 @@ import UIKit
 import Alamofire
 import RxSwift
 
-extension UIImageView{
-    func imageFromUrl(_ url: String, completion: @escaping () -> Void) -> Void{
-        Alamofire.request(url).responseData{response in
-            guard response.result.isSuccess else{ return}
-            
-            self.image = UIImage(data: response.data!)
-            
-            completion()
-        }
-    }
-    
-    func imageFromUrl(_ url: String) -> Void{
-        imageFromUrl(url, completion: {})
-    }
-}
-
 extension UIViewController{
     func displayMessage(message: String, caption: String? = nil){
         let alert = UIAlertController(title: caption, message: message, preferredStyle: .alert)
