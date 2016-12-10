@@ -37,6 +37,8 @@
 		FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801881DCE528B00B9A925 /* AppDelegate.swift */; };
 		FC78018B1DCE529600B9A925 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78018A1DCE529600B9A925 /* HomeTableViewController.swift */; };
 		FCD51AAE1DD2563900CB0AC7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = FCD51AAD1DD2563900CB0AC7 /* Cartfile */; };
+		FCDCCBF01DFC4DFA00F235FC /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */; };
+		FCDCCBF21DFC4E0B00F235FC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		FC7801881DCE528B00B9A925 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC78018A1DCE529600B9A925 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		FCD51AAD1DD2563900CB0AC7 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,8 @@
 				FC4E07A61DE4546C002CEB4C /* ComicViewController.swift */,
 				FC09E8451DEC7EAA00AF3C07 /* ComicOverlayViewController.swift */,
 				FC02A8E61DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift */,
+				FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */,
+				FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC78018B1DCE529600B9A925 /* HomeTableViewController.swift in Sources */,
+				FCDCCBF21DFC4E0B00F235FC /* SettingsTableViewController.swift in Sources */,
 				FC4E07A51DE22D4C002CEB4C /* ComicTableViewCell.swift in Sources */,
 				FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */,
 				FC63AB501DF57F2B0058A018 /* FileService.swift in Sources */,
@@ -347,6 +354,7 @@
 				FC7801841DCE526900B9A925 /* Comic.swift in Sources */,
 				FC7801871DCE527200B9A925 /* DataService.swift in Sources */,
 				FC02A8E71DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift in Sources */,
+				FCDCCBF01DFC4DFA00F235FC /* AboutTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

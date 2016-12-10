@@ -60,6 +60,15 @@ class HomeTableViewController: UITableViewController {
             }
         })
         
+        settingsBarButton.rx
+            .tap
+            .subscribe(onNext: {
+                _ in
+                let newVc = self.storyboard!.instantiateViewController(withIdentifier: "SettingsTabBarController")
+                self.navigationController?.pushViewController(newVc, animated: true)
+            })
+            .addDisposableTo(_disposeBag)
+        
         searchBarButton.rx
             .tap
             .subscribe(onNext:{
