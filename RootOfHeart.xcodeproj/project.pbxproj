@@ -39,6 +39,8 @@
 		FCD51AAE1DD2563900CB0AC7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = FCD51AAD1DD2563900CB0AC7 /* Cartfile */; };
 		FCDCCBF01DFC4DFA00F235FC /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */; };
 		FCDCCBF21DFC4E0B00F235FC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */; };
+		FCDCCC091DFC6AA800F235FC /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDCCC081DFC6AA800F235FC /* SwiftDate.framework */; };
+		FCDCCC0A1DFC6AA800F235FC /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FCDCCC081DFC6AA800F235FC /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,7 @@
 			files = (
 				FC02A8DA1DF7725A0079FEC9 /* Realm.framework in Embed Frameworks */,
 				FC02A8E51DF82A490079FEC9 /* Kingfisher.framework in Embed Frameworks */,
+				FCDCCC0A1DFC6AA800F235FC /* SwiftDate.framework in Embed Frameworks */,
 				FC02A8E01DF772680079FEC9 /* Alamofire.framework in Embed Frameworks */,
 				FC02A8DD1DF7725A0079FEC9 /* RealmSwift.framework in Embed Frameworks */,
 				FC02A8D41DF7722E0079FEC9 /* RxCocoa.framework in Embed Frameworks */,
@@ -101,6 +104,7 @@
 		FCD51AAD1DD2563900CB0AC7 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		FCDCCC081DFC6AA800F235FC /* SwiftDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 			files = (
 				FC02A8D91DF7725A0079FEC9 /* Realm.framework in Frameworks */,
 				FC02A8E41DF82A490079FEC9 /* Kingfisher.framework in Frameworks */,
+				FCDCCC091DFC6AA800F235FC /* SwiftDate.framework in Frameworks */,
 				FC02A8DF1DF772680079FEC9 /* Alamofire.framework in Frameworks */,
 				FC02A8DC1DF7725A0079FEC9 /* RealmSwift.framework in Frameworks */,
 				FC02A8D31DF7722E0079FEC9 /* RxCocoa.framework in Frameworks */,
@@ -131,6 +136,7 @@
 		FC3FC6881DCB8E6C0069FDED = {
 			isa = PBXGroup;
 			children = (
+				FCDCCC081DFC6AA800F235FC /* SwiftDate.framework */,
 				FCD51AAD1DD2563900CB0AC7 /* Cartfile */,
 				FC3FC6931DCB8E6C0069FDED /* RootOfHeart */,
 				FC3FC6A81DCB8E6C0069FDED /* RootOfHeartTests */,

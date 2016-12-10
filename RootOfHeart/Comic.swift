@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import SwiftDate
 
 class Comic : Object{
     //MARK: - Properties
@@ -15,7 +16,6 @@ class Comic : Object{
     dynamic var title = ""
     dynamic var number = 0
     dynamic var link = ""
-    var webUrl: URL{return URL(string: "http://xkcd.com/\(number)")!}
     dynamic var safeTitle = ""
     dynamic var day = ""
     dynamic var month = ""
@@ -31,11 +31,12 @@ class Comic : Object{
     
     //MARK: - Realm Meta Data
     
-    override static func ignoredProperties() -> [String]{
-        return ["webUrl"]
-    }
-    
     override static func primaryKey() -> String?{
         return "number"
     }
+}
+
+extension Comic {
+    var webUrl: URL{return URL(string: "http://xkcd.com/\(number)")!}
+    var date: DateInRegion { return try! DateInRegion(string: "\(day).\(month).\(year)", format: .custom("dd.MM.yyyy")) }
 }
