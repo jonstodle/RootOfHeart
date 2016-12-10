@@ -1,5 +1,5 @@
 //
-//  SettingsTableViewController.swift
+//  LaunchViewTableViewController.swift
 //  RootOfHeart
 //
 //  Created by Jon Stødle on 10/12/2016.
@@ -10,34 +10,31 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SettingsTableViewController: UITableViewController {
-    
-    // MARK: - Outlets
-    
-    @IBOutlet weak var lauchViewChoiceLabel: UILabel!
-    @IBOutlet weak var languageChoiceLabel: UILabel!
-    
-    
+class LaunchViewTableViewController: UITableViewController {
     
     // MARK: - Private Properties
     
     private let _disposeBag = DisposeBag()
     
+    
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rx
+            .itemDeselected
+            .subscribe(onNext: {
+                indexPath in
+                self.tableView.cellForRow(at: indexPath)?.accessoryType = .none
+            })
+            .addDisposableTo(_disposeBag)
 
         tableView.rx
             .itemSelected
             .subscribe(onNext: {
                 indexPath in
-                var newVc = UIViewController()
-                
-                if indexPath.row == 0  { newVc = self.storyboard!.instantiateViewController(withIdentifier: "LaunchViewTableViewController") as! LaunchViewTableViewController }
-                
-                self.navigationController?.pushViewController(newVc, animated: true)
+                self.tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+                _ = self.navigationController?.popViewController(animated: true)
             })
             .addDisposableTo(_disposeBag)
     }
