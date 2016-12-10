@@ -220,7 +220,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Pz3-ae-Esq" detailTextLabel="trO-S1-uw2" style="IBUITableViewCellStyleSubtitle" id="41i-9Q-Afg">
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Pz3-ae-Esq" detailTextLabel="trO-S1-uw2" style="IBUITableViewCellStyleSubtitle" id="41i-9Q-Afg">
                                         <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="41i-9Q-Afg" id="07u-9B-fQ9">
@@ -255,7 +255,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings" selectedImage="Settings-Filled" id="GII-IF-JNb"/>
                     <connections>
                         <outlet property="languageChoiceLabel" destination="trO-S1-uw2" id="6bU-oN-mFx"/>
-                        <outlet property="lauchViewChoiceLabel" destination="BNp-cT-oJo" id="S94-tP-k1h"/>
+                        <outlet property="launchViewChoiceLabel" destination="BNp-cT-oJo" id="vKJ-UE-4gT"/>
                         <segue destination="I5e-hP-0L5" kind="show" identifier="SettingsToLaunchViewSegue" id="oRf-Bj-l3p"/>
                     </connections>
                 </tableViewController>

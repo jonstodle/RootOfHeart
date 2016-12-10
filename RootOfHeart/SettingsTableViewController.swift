@@ -14,7 +14,7 @@ class SettingsTableViewController: UITableViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var lauchViewChoiceLabel: UILabel!
+    @IBOutlet weak var launchViewChoiceLabel: UILabel!
     @IBOutlet weak var languageChoiceLabel: UILabel!
     
     
@@ -28,6 +28,8 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        launchViewChoiceLabel.text = SettingsService.launchView.stringValue
 
         tableView.rx
             .itemSelected
@@ -45,5 +47,13 @@ class SettingsTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    // MARK: - Implementation
+    
+    override func viewDidAppear(_ animated: Bool) {
+        launchViewChoiceLabel.text = SettingsService.launchView.stringValue
     }
 }

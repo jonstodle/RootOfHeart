@@ -41,6 +41,7 @@ class HomeTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false´
         
         tableView.contentOffset = CGPoint(x: 0, y: headerView.frame.height)
+        headerSegmentedControl.selectedSegmentIndex = SettingsService.launchView.rawValue
         
         _allNotificationToken = DataService.instance.comics.addNotificationBlock({
             if self.headerSegmentedControl.selectedSegmentIndex == 1{
