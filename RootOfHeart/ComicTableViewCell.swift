@@ -30,8 +30,8 @@ class ComicTableViewCell: UITableViewCell {
         didSet{
             guard let comic = comic as Comic! else { return }
             
-            comicImageView.image = nil
-            comicImageView.kf.setImage(with: URL(string: comic.imageUrl))
+            downloadState = .notLoaded
+            downloadImage()
             favoriteImageView.isHidden = !comic.isFavorite
             unreadImageView.isHidden = comic.isRead
             numberLabel.text = "#\(comic.number)"
@@ -39,7 +39,16 @@ class ComicTableViewCell: UITableViewCell {
             dateLabel.text = "\(comic.day).\(comic.month).\(comic.year)"
         }
     }
-    private(set) var downloadState: loadingState = .downloading
+    private(set) var downloadState: loadingState = .notLoaded{
+        didSet {
+            if downloadState == .loading {
+                loadingActivityIndicator.startAnimating()
+            }
+            else {
+                loadingActivityIndicator.stopAnimating()
+            }
+        }
+    }
     
     
     
@@ -51,12 +60,15 @@ class ComicTableViewCell: UITableViewCell {
     
     // MARK: - Public Methods
     
-    func retryImageDownload() {
-        guard downloadState == .notDownloaded,
+    func downloadImage() {
+        guard downloadState == .notLoaded,
             let comic = comic as Comic! else { return }
         
-        comicImageView.kf.setImage(with: URL(string: comic.imageUrl))
-        loadingActivityIndicator.startAnimating()
+        self.downloadState = .loading
+        comicImageView.kf.setImage(with: URL(string: comic.imageUrl), placeholder: UIImage(), options: [.transition(.fade(0.2))], completionHandler: {
+            (image, error, cacheType, imageUrl) in
+            self.downloadState = image != nil ? .loaded : .notLoaded
+        })
     }
     
     
@@ -66,22 +78,6 @@ class ComicTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        
-        downloadState = .downloading
-        
-        comicImageView.rx.observe(UIImage.self, "image")
-            .subscribe(onNext: {
-                image in
-                self.loadingActivityIndicator.stopAnimating()
-                
-                if image != nil {
-                    self.downloadState = .downloaded
-                }
-                else {
-                    self.downloadState = .notDownloaded
-                }
-            })
-            .addDisposableTo(_disposeBag)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -93,7 +89,7 @@ class ComicTableViewCell: UITableViewCell {
 }
 
 enum loadingState {
-    case downloading
-    case downloaded
-    case notDownloaded
+    case loading
+    case loaded
+    case notLoaded
 }

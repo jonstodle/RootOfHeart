@@ -129,13 +129,13 @@ class HomeTableViewController: UITableViewController {
                 onNext:{ indexPath in
                     let cell = self.tableView.cellForRow(at: indexPath) as! ComicTableViewCell
                     
-                    if cell.downloadState == .downloaded {
+                    if cell.downloadState == .loaded {
                         let newVc = self.storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
                         newVc.comic = self.getCurrentSource()[indexPath.row]
                         self.navigationController?.pushViewController(newVc, animated: true)
                     }
                     else {
-                        cell.retryImageDownload()
+                        cell.downloadImage()
                     }
             })
             .addDisposableTo(_disposeBag)
