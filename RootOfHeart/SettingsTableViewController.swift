@@ -53,7 +53,7 @@ class SettingsTableViewController: UITableViewController {
     
     // MARK: - Implementation
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         launchViewChoiceLabel.text = SettingsService.launchView.stringValue
     }
 }
