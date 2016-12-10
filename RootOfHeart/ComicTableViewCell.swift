@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import RxSwift
 
 class ComicTableViewCell: UITableViewCell {
     
@@ -49,12 +47,6 @@ class ComicTableViewCell: UITableViewCell {
             }
         }
     }
-    
-    
-    
-    // MARK: - Private Properties
-    
-    private let _disposeBag = DisposeBag()
     
     
     
