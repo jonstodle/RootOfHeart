@@ -9,7 +9,15 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var lauchViewChoiceLabel: UILabel!
+    @IBOutlet weak var languageChoiceLabel: UILabel!
+    
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
