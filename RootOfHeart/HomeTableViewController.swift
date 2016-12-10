@@ -139,6 +139,17 @@ class HomeTableViewController: UITableViewController {
                     }
             })
             .addDisposableTo(_disposeBag)
+        
+        tableView.rx
+            .willDisplayCell
+            .subscribe(onNext: {
+                _, indexPath in
+                
+                if indexPath.row >= (self.tableView.numberOfRows(inSection: 0) - 3) {
+                    DataService.instance.loadOldComics()
+                }
+            })
+            .addDisposableTo(_disposeBag)
     }
     
     override func didReceiveMemoryWarning() {
