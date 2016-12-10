@@ -127,9 +127,16 @@ class HomeTableViewController: UITableViewController {
             .itemSelected
             .subscribe(
                 onNext:{ indexPath in
-                    let newVc = self.storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
-                    newVc.comic = self.getCurrentSource()[indexPath.row]
-                    self.navigationController?.pushViewController(newVc, animated: true)
+                    let cell = self.tableView.cellForRow(at: indexPath) as! ComicTableViewCell
+                    
+                    if cell.downloadState == .downloaded {
+                        let newVc = self.storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
+                        newVc.comic = self.getCurrentSource()[indexPath.row]
+                        self.navigationController?.pushViewController(newVc, animated: true)
+                    }
+                    else {
+                        cell.retryImageDownload()
+                    }
             })
             .addDisposableTo(_disposeBag)
     }
@@ -198,15 +205,7 @@ extension HomeTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: _comicCellIdentifier, for: indexPath) as! ComicTableViewCell
         
-        let comic = getCurrentSource()[indexPath.row]
-        
-        cell.comicImageView.image = nil
-        cell.comicImageView.kf.setImage(with: URL(string: comic.imageUrl))
-        cell.favoriteImageView.isHidden = !comic.isFavorite
-        cell.unreadImageView.isHidden = comic.isRead
-        cell.numberLabel.text = "#\(comic.number)"
-        cell.titleLabel.text = comic.title
-        cell.dateLabel.text = "\(comic.day).\(comic.month).\(comic.year)"
+        cell.comic = getCurrentSource()[indexPath.row]
         
         return cell
     }

@@ -24,9 +24,40 @@ class ComicTableViewCell: UITableViewCell {
     
     
     
+    // MARK: - Public Properties
+    
+    var comic: Comic?{
+        didSet{
+            guard let comic = comic as Comic! else { return }
+            
+            comicImageView.image = nil
+            comicImageView.kf.setImage(with: URL(string: comic.imageUrl))
+            favoriteImageView.isHidden = !comic.isFavorite
+            unreadImageView.isHidden = comic.isRead
+            numberLabel.text = "#\(comic.number)"
+            titleLabel.text = comic.title
+            dateLabel.text = "\(comic.day).\(comic.month).\(comic.year)"
+        }
+    }
+    private(set) var downloadState: loadingState = .downloading
+    
+    
+    
     // MARK: - Private Properties
     
     private let _disposeBag = DisposeBag()
+    
+    
+    
+    // MARK: - Public Methods
+    
+    func retryImageDownload() {
+        guard downloadState == .notDownloaded,
+            let comic = comic as Comic! else { return }
+        
+        comicImageView.kf.setImage(with: URL(string: comic.imageUrl))
+        loadingActivityIndicator.startAnimating()
+    }
     
     
     
@@ -36,14 +67,18 @@ class ComicTableViewCell: UITableViewCell {
         super.awakeFromNib()
         selectionStyle = .none
         
+        downloadState = .downloading
+        
         comicImageView.rx.observe(UIImage.self, "image")
             .subscribe(onNext: {
                 image in
-                if image == nil {
-                    self.loadingActivityIndicator.startAnimating()
+                self.loadingActivityIndicator.stopAnimating()
+                
+                if image != nil {
+                    self.downloadState = .downloaded
                 }
                 else {
-                    self.loadingActivityIndicator.stopAnimating()
+                    self.downloadState = .notDownloaded
                 }
             })
             .addDisposableTo(_disposeBag)
@@ -55,4 +90,10 @@ class ComicTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+enum loadingState {
+    case downloading
+    case downloaded
+    case notDownloaded
 }
