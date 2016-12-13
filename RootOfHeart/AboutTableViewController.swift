@@ -33,4 +33,8 @@ class AboutTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return section == tableView.numberOfSections - 1 ? bottomLayoutGuide.length : 0
+    }
 }
