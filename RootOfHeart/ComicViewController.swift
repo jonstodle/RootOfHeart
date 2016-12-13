@@ -106,7 +106,9 @@ class ComicViewController: UIViewController {
         let center = CGPoint(x: (scrollView.bounds.width / 2) + scrollView.contentOffset.x, y: (scrollView.bounds.height / 2) + scrollView.contentOffset.y)
         
         coordinator.animate(alongsideTransition: { context -> Void in
+            if self.topImageViewConstraint.constant + self.leadingImageViewConstraint.constant == 0 {
             self.scrollView.contentOffset = CGPoint(x: center.x - (size.width / 2), y: center.y - ((size.height - self.layoutGuides) / 2))
+            }
         }, completion: nil)
     }
     
