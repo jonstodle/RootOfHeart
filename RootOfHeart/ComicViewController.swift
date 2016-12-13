@@ -43,10 +43,6 @@ class ComicViewController: UIViewController {
         DataService.instance.setComic(comic, asRead: true)
         
         title = comic.title
-        comicImageView.kf.setImage(with: URL(string: comic.imageUrl), completionHandler: {
-            _, _, _, _ in
-            self.postImageLoadSetup()
-        })
         
         let doubleTapRecognizer = UITapGestureRecognizer()
         doubleTapRecognizer.numberOfTapsRequired = 2
@@ -92,6 +88,13 @@ class ComicViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         setZoomLimits()
         setInsets()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        comicImageView.kf.setImage(with: URL(string: comic.imageUrl), completionHandler: {
+            _, _, _, _ in
+            self.postImageLoadSetup()
+        })
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
