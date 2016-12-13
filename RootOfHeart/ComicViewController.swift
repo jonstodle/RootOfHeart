@@ -17,6 +17,8 @@ class ComicViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var comicImageView: UIImageView!
     @IBOutlet weak var overlayContainerView: UIView!
+    @IBOutlet weak var topImageViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leadingImageViewConstraint: NSLayoutConstraint!
     
     
     
@@ -137,10 +139,13 @@ class ComicViewController: UIViewController {
     }
     
     fileprivate func setInsets(){
-        let horizontalInset = max(0, (scrollView.frame.width - comicImageView.frame.size.width) / 2)
-        let verticalInset = max(0, ((scrollView.frame.height - layoutGuides) - comicImageView.frame.size.height) / 2)
+        let horizontalInset = max(0, (scrollView.bounds.width - comicImageView.frame.width) / 2)
+        let verticalInset = max(0, (scrollView.bounds.height - comicImageView.frame.height) / 2)
         
-        scrollView.contentInset = UIEdgeInsets(top: verticalInset + topLayoutGuide.length, left: horizontalInset, bottom: verticalInset, right: horizontalInset)
+        topImageViewConstraint.constant = verticalInset
+        leadingImageViewConstraint.constant = horizontalInset
+        
+        scrollView.layoutIfNeeded()
     }
     
     fileprivate var layoutGuides: CGFloat {

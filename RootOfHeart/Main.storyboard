@@ -628,9 +628,9 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Khb-Gd-AIP" firstAttribute="top" secondItem="f1c-JW-JYd" secondAttribute="top" placeholder="YES" id="48V-cj-PAW"/>
+                                    <constraint firstItem="Khb-Gd-AIP" firstAttribute="top" secondItem="f1c-JW-JYd" secondAttribute="top" id="48V-cj-PAW"/>
                                     <constraint firstAttribute="trailing" secondItem="Khb-Gd-AIP" secondAttribute="trailing" placeholder="YES" id="TWc-GL-4wk"/>
-                                    <constraint firstItem="Khb-Gd-AIP" firstAttribute="leading" secondItem="f1c-JW-JYd" secondAttribute="leading" placeholder="YES" id="aNA-Mw-aXq"/>
+                                    <constraint firstItem="Khb-Gd-AIP" firstAttribute="leading" secondItem="f1c-JW-JYd" secondAttribute="leading" id="aNA-Mw-aXq"/>
                                     <constraint firstAttribute="bottom" secondItem="Khb-Gd-AIP" secondAttribute="bottom" placeholder="YES" id="fM1-we-FME"/>
                                 </constraints>
                             </scrollView>
@@ -655,8 +655,10 @@
                     </view>
                     <connections>
                         <outlet property="comicImageView" destination="Khb-Gd-AIP" id="ZrG-be-ypS"/>
+                        <outlet property="leadingImageViewConstraint" destination="aNA-Mw-aXq" id="gcv-vy-iBo"/>
                         <outlet property="overlayContainerView" destination="hmt-rL-Em5" id="ewf-Yw-UMp"/>
                         <outlet property="scrollView" destination="f1c-JW-JYd" id="Rbm-zd-n1h"/>
+                        <outlet property="topImageViewConstraint" destination="48V-cj-PAW" id="CZ4-nL-cpV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UX7-cf-weT" userLabel="First Responder" sceneMemberID="firstResponder"/>
