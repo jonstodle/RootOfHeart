@@ -94,6 +94,9 @@ class ComicViewController: UIViewController {
         comicImageView.kf.setImage(with: URL(string: comic.imageUrl), completionHandler: {
             _, _, _, _ in
             self.postImageLoadSetup()
+            UIView.animate(withDuration: 0.1, animations: {
+                self.comicImageView.alpha = 1
+            })
         })
     }
     
