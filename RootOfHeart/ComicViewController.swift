@@ -102,10 +102,9 @@ class ComicViewController: UIViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         let center = CGPoint(x: (scrollView.bounds.width / 2) + scrollView.contentOffset.x, y: (scrollView.bounds.height / 2) + scrollView.contentOffset.y)
-        let layoutGuidesHeight = topLayoutGuide.length + bottomLayoutGuide.length
         
         coordinator.animate(alongsideTransition: { context -> Void in
-            self.scrollView.contentOffset = CGPoint(x: center.x - (size.width / 2), y: center.y - ((size.height - layoutGuidesHeight) / 2))
+            self.scrollView.contentOffset = CGPoint(x: center.x - (size.width / 2), y: center.y - ((size.height - self.layoutGuides) / 2))
         }, completion: nil)
     }
     
@@ -128,7 +127,7 @@ class ComicViewController: UIViewController {
     
     fileprivate func setZoomLimits(){
         let horizontalMinimum = (scrollView.frame.width / comicImageView.bounds.width)
-        let verticalMinimum = (scrollView.frame.height / comicImageView.bounds.height)
+        let verticalMinimum = ((scrollView.frame.height - layoutGuides) / comicImageView.bounds.height)
         
         scrollView.minimumZoomScale = min(horizontalMinimum, verticalMinimum) * 0.95
         scrollView.maximumZoomScale = 3
@@ -139,9 +138,13 @@ class ComicViewController: UIViewController {
     
     fileprivate func setInsets(){
         let horizontalInset = max(0, (scrollView.frame.width - comicImageView.frame.size.width) / 2)
-        let verticalInset = max(0, (scrollView.frame.height - comicImageView.frame.size.height) / 2)
+        let verticalInset = max(0, ((scrollView.frame.height - layoutGuides) - comicImageView.frame.size.height) / 2)
         
-        scrollView.contentInset = UIEdgeInsets(top: verticalInset, left: horizontalInset, bottom: verticalInset, right: horizontalInset)
+        scrollView.contentInset = UIEdgeInsets(top: verticalInset + topLayoutGuide.length, left: horizontalInset, bottom: verticalInset, right: horizontalInset)
+    }
+    
+    fileprivate var layoutGuides: CGFloat {
+        return topLayoutGuide.length + bottomLayoutGuide.length
     }
 }
 
