@@ -25,3 +25,10 @@ extension SettingsService {
         set { SettingsService.setSetting(value: newValue.rawValue, forKey: "launchView") }
     }
 }
+
+extension SettingsService {
+    static var backgroundTime: Int64 {
+        get { return SettingsService.getSetting(forKey: "backgroundTime", orDefaultValue: Int64.max) }
+        set { SettingsService.setSetting(value: newValue, forKey: "backgroundTime") }
+    }
+}
