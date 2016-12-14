@@ -20,7 +20,7 @@ class DataService{
     
     //MARK: - Private Properties
     
-    private let _disposeBag = DisposeBag()
+    private var _disposeBag = DisposeBag()
     private let _realm: Realm!
     private let _addSubject = PublishSubject<Comic?>()
     
@@ -78,6 +78,23 @@ class DataService{
         return comics.filter(NSCompoundPredicate(andPredicateWithSubpredicates: predicates))
     }
     
+    func startLoadingComics() {
+        if comics.count == 0 {
+            XkcdClient.get(comic: 0)
+                .filter({$0 != nil})
+                .flatMap{comic in
+                    return Observable.just(comic)
+                        .concat(XkcdClient.get(comics: Array((comic!.number - 10)..<comic!.number)))
+                }
+                .subscribe(onNext: {self._addSubject.onNext($0)})
+                .addDisposableTo(_disposeBag)
+        } else { loadComics(fromNewestComic: comics.first?.number, toOldestComic: comics.last?.number) }
+    }
+    
+    func cancelAllOperations() {
+        _disposeBag = DisposeBag()
+    }
+    
     
     
     //MARK: - Initializer
@@ -100,17 +117,6 @@ class DataService{
                 }
             })
             .addDisposableTo(_disposeBag)
-        
-        if comics.count == 0 {
-            XkcdClient.get(comic: 0)
-                .filter({$0 != nil})
-                .flatMap{comic in
-                    return Observable.just(comic)
-                        .concat(XkcdClient.get(comics: Array((comic!.number - 10)..<comic!.number)))
-                }
-                .subscribe(onNext: {self._addSubject.onNext($0)})
-                .addDisposableTo(_disposeBag)
-        } else { loadComics(fromNewestComic: comics.first?.number, toOldestComic: comics.last?.number) }
     }
     
     
