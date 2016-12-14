@@ -32,6 +32,8 @@ class DataService{
     let favoritedComics: Results<Comic>
     let unreadComics: Results<Comic>
     
+    let isLoadingOldComics = Variable(false)
+    
     
     
     //MARK: - Public Methods
@@ -154,9 +156,10 @@ class DataService{
     }
     
     private func getOldComics(from oldestComic: Int?) -> Observable<Comic?>{
-        guard let oldestComic = oldestComic,
+        guard !isLoadingOldComics.value,
+            let oldestComic = oldestComic,
             oldestComic != 1 else { return Observable.just(nil) }
         
-        return XkcdClient.get(comics: Array(1..<oldestComic).reversed())
+        return Observable.just(nil).do(onNext: { _ in self.isLoadingOldComics.value = true }).concat(XkcdClient.get(comics: Array(1..<oldestComic).reversed()).do(onError: { _ in self.isLoadingOldComics.value = false }, onCompleted: { self.isLoadingOldComics.value = false }, onDispose: {self.isLoadingOldComics.value = false}))
     }
 }
