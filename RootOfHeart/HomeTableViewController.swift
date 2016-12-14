@@ -73,7 +73,7 @@ class HomeTableViewController: UITableViewController {
         searchBarButton.rx
             .tap
             .subscribe(onNext:{
-                if self.comicSearchBar.isHidden { self.tableView.setContentOffset(CGPoint(x: 0, y: -60), animated: true) }
+                if self.comicSearchBar.isHidden { self.tableView.setContentOffset(CGPoint(x: 0, y: -self.topLayoutGuide.length), animated: true) }
                 UIView.transition(with: self.comicSearchBar, duration: 0.3, options: [.transitionCrossDissolve], animations: {
                     self.comicSearchBar.isHidden = !self.comicSearchBar.isHidden
                 }, completion: {
