@@ -57,10 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DataService.instance.startLoadingComics()
         if let isPast12Hours = (Calendar.current.date(byAdding: .hour, value: 6, to: Date(timeIntervalSinceReferenceDate: TimeInterval(integerLiteral: SettingsService.backgroundTime)))?.isBefore(date: Date(), granularity: .hour)),
             isPast12Hours {
-            let navController = window!.rootViewController as! UINavigationController
+            if let navController = window!.rootViewController as? UINavigationController,
+                let homeController = navController.viewControllers.first as? HomeTableViewController {
             navController.popToRootViewController(animated: false)
-            let homeController = navController.viewControllers.first! as! HomeTableViewController
             homeController.headerSegmentedControl.selectedSegmentIndex = SettingsService.launchView.rawValue
+            }
         }
     }
 }
