@@ -124,15 +124,6 @@ class HomeTableViewController: UITableViewController {
             })
             .addDisposableTo(_disposeBag)
         
-        tableView.rx
-            .contentOffset
-            .filter {_ in !self.comicSearchBar.isHidden }
-            .subscribe(onNext:{
-                _ in
-                self.comicSearchBar.resignFirstResponder()
-            })
-            .addDisposableTo(_disposeBag)
-        
         self.tableView.rx
             .itemSelected
             .subscribe(
