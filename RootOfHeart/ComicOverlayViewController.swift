@@ -43,7 +43,7 @@ class ComicOverlayViewController: UIViewController {
         super.viewDidLoad()
         
         numberLabel.text = "#\(comic.number)"
-        dateLabel.text = comic.date.string(dateStyle: .short, timeStyle: .none)// "\(comic.day).\(comic.month).\(comic.year)"
+        dateLabel.text = comic.date.string(dateStyle: .short, timeStyle: .none)
         altTextLabel.text = comic.alt
         setFavoriteButtonImage()
         

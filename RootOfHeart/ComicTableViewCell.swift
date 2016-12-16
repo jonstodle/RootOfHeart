@@ -34,7 +34,7 @@ class ComicTableViewCell: UITableViewCell {
             unreadImageView.isHidden = comic.isRead
             numberLabel.text = "#\(comic.number)"
             titleLabel.text = comic.title
-            dateLabel.text = comic.date.string(dateStyle: .short, timeStyle: .none)// "\(comic.day).\(comic.month).\(comic.year)"
+            dateLabel.text = comic.date.string(dateStyle: .short, timeStyle: .none)
         }
     }
     private(set) var downloadState: loadingState = .notLoaded{
