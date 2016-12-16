@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let navController = window!.rootViewController as? UINavigationController,
                 let homeController = navController.viewControllers.first as? HomeTableViewController {
             navController.popToRootViewController(animated: false)
-            homeController.headerSegmentedControl.selectedSegmentIndex = SettingsService.launchView.rawValue
+            homeController.headerSegmentedControl?.selectedSegmentIndex = SettingsService.launchView.rawValue
             }
         }
     }
