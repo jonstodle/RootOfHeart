@@ -19,7 +19,7 @@ class AboutTableViewController: UITableViewController {
     private let textInSection1 = ["Jon Stødle"]
     
     private let textInSection2 = [
-        "Without the help of these libraries, making this app would be a lot harder",
+        "Without the help of these libraries, making this app would be a lot harder".localized,
         "Alamofire",
         "DateSeift",
         "Kingfisher",
@@ -59,11 +59,11 @@ class AboutTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
-        case 0: return "Version"
-        case 1: return "Developer"
-        case 2: return "Libraries"
-        case 3: return "Icons"
-        case 4: return "Translators"
+        case 0: return "Version".localized
+        case 1: return "Developer".localized
+        case 2: return "Libraries".localized
+        case 3: return "Icons".localized
+        case 4: return "Translators".localized
         default: return ""
         }
     }

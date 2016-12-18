@@ -64,7 +64,7 @@ class ComicOverlayViewController: UIViewController {
             .filter{PHPhotoLibrary.authorizationStatus() == .denied}
             .subscribe(onNext:{
                 _ in
-                self.displayMessage(message: "Go to Settings > √♥︎ and allow access to Photos", caption: "No access to photos")
+                self.displayMessage(message: "Go to Settings > √♥︎ and allow access to Photos".localized, caption: "No access to photos".localized)
             })
             .addDisposableTo(_disposeBag)
             

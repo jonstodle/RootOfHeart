@@ -40,6 +40,7 @@
 		FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801881DCE528B00B9A925 /* AppDelegate.swift */; };
 		FC78018B1DCE529600B9A925 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78018A1DCE529600B9A925 /* HomeTableViewController.swift */; };
 		FCA90B2D1E04AE92005DD0A7 /* Translators.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B2C1E04AE92005DD0A7 /* Translators.plist */; };
+		FCA90B311E070C29005DD0A7 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA90B301E070C29005DD0A7 /* FoundationExtensions.swift */; };
 		FCD51AAE1DD2563900CB0AC7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = FCD51AAD1DD2563900CB0AC7 /* Cartfile */; };
 		FCDCCBF01DFC4DFA00F235FC /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */; };
 		FCDCCBF21DFC4E0B00F235FC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */; };
@@ -109,6 +110,7 @@
 		FC7801881DCE528B00B9A925 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC78018A1DCE529600B9A925 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		FCA90B2C1E04AE92005DD0A7 /* Translators.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Translators.plist; sourceTree = "<group>"; };
+		FCA90B301E070C29005DD0A7 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		FCD51AAD1DD2563900CB0AC7 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				FC4E07AB1DE46AB7002CEB4C /* UIExtensions.swift */,
+				FCA90B301E070C29005DD0A7 /* FoundationExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				FC7321871DFC946300F3CC6E /* LaunchViewTableViewController.swift in Sources */,
 				FC02A8E71DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift in Sources */,
 				FCDCCBF01DFC4DFA00F235FC /* AboutTableViewController.swift in Sources */,
+				FCA90B311E070C29005DD0A7 /* FoundationExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
