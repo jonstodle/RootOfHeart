@@ -26,7 +26,6 @@
 		FC3FC69C1DCB8E6C0069FDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */; };
 		FC3FC69F1DCB8E6C0069FDED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */; };
 		FC3FC6AA1DCB8E6C0069FDED /* RootOfHeartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC6A91DCB8E6C0069FDED /* RootOfHeartTests.swift */; };
-		FC4E07A31DE2282C002CEB4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4E07A21DE2282C002CEB4C /* Main.storyboard */; };
 		FC4E07A51DE22D4C002CEB4C /* ComicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */; };
 		FC4E07A71DE4546C002CEB4C /* ComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07A61DE4546C002CEB4C /* ComicViewController.swift */; };
 		FC4E07AC1DE46AB7002CEB4C /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07AB1DE46AB7002CEB4C /* UIExtensions.swift */; };
@@ -41,6 +40,10 @@
 		FC78018B1DCE529600B9A925 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78018A1DCE529600B9A925 /* HomeTableViewController.swift */; };
 		FCA90B2D1E04AE92005DD0A7 /* Translators.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B2C1E04AE92005DD0A7 /* Translators.plist */; };
 		FCA90B311E070C29005DD0A7 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA90B301E070C29005DD0A7 /* FoundationExtensions.swift */; };
+		FCA90B6F1E072DE1005DD0A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B711E072DE1005DD0A7 /* Main.storyboard */; };
+		FCA90B771E072E07005DD0A7 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B741E072E07005DD0A7 /* Base.lproj */; };
+		FCA90B781E072E07005DD0A7 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B751E072E07005DD0A7 /* en.lproj */; };
+		FCA90B791E072E07005DD0A7 /* nb.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B761E072E07005DD0A7 /* nb.lproj */; };
 		FCD51AAE1DD2563900CB0AC7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = FCD51AAD1DD2563900CB0AC7 /* Cartfile */; };
 		FCDCCBF01DFC4DFA00F235FC /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */; };
 		FCDCCBF21DFC4E0B00F235FC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */; };
@@ -96,7 +99,6 @@
 		FC3FC6A51DCB8E6C0069FDED /* RootOfHeartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RootOfHeartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3FC6A91DCB8E6C0069FDED /* RootOfHeartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootOfHeartTests.swift; sourceTree = "<group>"; };
 		FC3FC6AB1DCB8E6C0069FDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC4E07A21DE2282C002CEB4C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicTableViewCell.swift; sourceTree = "<group>"; };
 		FC4E07A61DE4546C002CEB4C /* ComicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicViewController.swift; sourceTree = "<group>"; };
 		FC4E07AB1DE46AB7002CEB4C /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
@@ -111,6 +113,11 @@
 		FC78018A1DCE529600B9A925 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		FCA90B2C1E04AE92005DD0A7 /* Translators.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Translators.plist; sourceTree = "<group>"; };
 		FCA90B301E070C29005DD0A7 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		FCA90B701E072DE1005DD0A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCA90B721E072DED005DD0A7 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
+		FCA90B741E072E07005DD0A7 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		FCA90B751E072E07005DD0A7 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
+		FCA90B761E072E07005DD0A7 /* nb.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nb.lproj; sourceTree = "<group>"; };
 		FCD51AAD1DD2563900CB0AC7 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +173,7 @@
 		FC3FC6931DCB8E6C0069FDED /* RootOfHeart */ = {
 			isa = PBXGroup;
 			children = (
+				FCA90B731E072DFA005DD0A7 /* Localization */,
 				FC73218A1DFCAAB500F3CC6E /* Models */,
 				FC4E07A81DE46A7A002CEB4C /* Extensions */,
 				FC7801881DCE528B00B9A925 /* AppDelegate.swift */,
@@ -174,7 +182,7 @@
 				FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */,
 				FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */,
 				FC3FC6A01DCB8E6C0069FDED /* Info.plist */,
-				FC4E07A21DE2282C002CEB4C /* Main.storyboard */,
+				FCA90B711E072DE1005DD0A7 /* Main.storyboard */,
 				FCA90B2C1E04AE92005DD0A7 /* Translators.plist */,
 			);
 			path = RootOfHeart;
@@ -264,6 +272,16 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		FCA90B731E072DFA005DD0A7 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				FCA90B741E072E07005DD0A7 /* Base.lproj */,
+				FCA90B751E072E07005DD0A7 /* en.lproj */,
+				FCA90B761E072E07005DD0A7 /* nb.lproj */,
+			);
+			name = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -350,11 +368,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA90B781E072E07005DD0A7 /* en.lproj in Resources */,
 				FCA90B2D1E04AE92005DD0A7 /* Translators.plist in Resources */,
 				FCD51AAE1DD2563900CB0AC7 /* Cartfile in Resources */,
 				FC3FC69F1DCB8E6C0069FDED /* LaunchScreen.storyboard in Resources */,
 				FC3FC69C1DCB8E6C0069FDED /* Assets.xcassets in Resources */,
-				FC4E07A31DE2282C002CEB4C /* Main.storyboard in Resources */,
+				FCA90B791E072E07005DD0A7 /* nb.lproj in Resources */,
+				FCA90B771E072E07005DD0A7 /* Base.lproj in Resources */,
+				FCA90B6F1E072DE1005DD0A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +440,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		FCA90B711E072DE1005DD0A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCA90B701E072DE1005DD0A7 /* Base */,
+				FCA90B721E072DED005DD0A7 /* nb */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -426,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -476,6 +507,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

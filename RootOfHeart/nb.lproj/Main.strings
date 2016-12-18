@@ -1,0 +1,45 @@
+
+/* Class = "UISegmentedControl"; 1oC-uA-7aJ.segmentTitles[0] = "Favorites"; ObjectID = "1oC-uA-7aJ"; */
+"1oC-uA-7aJ.segmentTitles[0]" = "Favoritter";
+
+/* Class = "UISegmentedControl"; 1oC-uA-7aJ.segmentTitles[1] = "All"; ObjectID = "1oC-uA-7aJ"; */
+"1oC-uA-7aJ.segmentTitles[1]" = "Alle";
+
+/* Class = "UISegmentedControl"; 1oC-uA-7aJ.segmentTitles[2] = "Unread"; ObjectID = "1oC-uA-7aJ"; */
+"1oC-uA-7aJ.segmentTitles[2]" = "Uleste";
+
+/* Class = "UILabel"; text = "Thanks for downloading √♥︎"; ObjectID = "5dC-Lo-vaz"; */
+"5dC-Lo-vaz.text" = "Takk for at du lastet ned √♥︎";
+
+/* Class = "UILabel"; text = "All"; ObjectID = "74k-Os-JnN"; */
+"74k-Os-JnN.text" = "Alle";
+
+/* Class = "UITabBarItem"; title = "About"; ObjectID = "8cf-g2-yvE"; */
+"8cf-g2-yvE.title" = "Om";
+
+/* Class = "UITabBarController"; title = "√♥︎"; ObjectID = "DZw-RF-bdP"; */
+"DZw-RF-bdP.title" = "√♥︎";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "GII-IF-JNb"; */
+"GII-IF-JNb.title" = "Innstillinger";
+
+/* Class = "UITableViewController"; title = "Launch view"; ObjectID = "I5e-hP-0L5"; */
+"I5e-hP-0L5.title" = "Oppstartsvisning";
+
+/* Class = "UILabel"; text = "Unread"; ObjectID = "K4z-MK-EZp"; */
+"K4z-MK-EZp.text" = "Uleste";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "Pz3-ae-Esq"; */
+"Pz3-ae-Esq.text" = "Språk";
+
+/* Class = "UILabel"; text = "Favorites"; ObjectID = "djp-gh-8Zj"; */
+"djp-gh-8Zj.text" = "Favoritter";
+
+/* Class = "UITableViewController"; title = "√♥︎"; ObjectID = "eAc-Dz-Bxf"; */
+"eAc-Dz-Bxf.title" = "√♥︎";
+
+/* Class = "UILabel"; text = "Launch view"; ObjectID = "izy-ID-gu7"; */
+"izy-ID-gu7.text" = "Oppstartsvisning";
+
+/* Class = "UINavigationItem"; title = "√♥︎"; ObjectID = "kUa-eC-NNY"; */
+"kUa-eC-NNY.title" = "√♥︎";
