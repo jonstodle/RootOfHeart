@@ -105,7 +105,7 @@ class AboutTableViewController: UITableViewController {
             let cell = getRightDetailCell()
             let translator = translators[indexPath.row] as! NSDictionary
             cell.detailTextLabel?.text = translator["Name"] as? String
-            cell.textLabel?.text = currentLocale.displayName(forKey: .identifier, value: translator["Language"]!)
+            cell.textLabel?.text = currentLocale.displayName(forKey: .identifier, value: translator["Language"]!)?.localizedCapitalized
             
             return cell
         default:
