@@ -16,11 +16,11 @@ enum LaunchView: Int {
     var stringValue: String {
         switch self {
         case .favorites:
-            return "Favorites"
+            return NSLocalizedString("Favorites", comment: "")
         case .all:
-            return "All"
+            return NSLocalizedString("All", comment: "")
         case .unread:
-            return "Unread"
+            return NSLocalizedString("Unread", comment: "")
         }
     }
 }

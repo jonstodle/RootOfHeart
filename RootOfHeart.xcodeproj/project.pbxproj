@@ -39,7 +39,6 @@
 		FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801881DCE528B00B9A925 /* AppDelegate.swift */; };
 		FC78018B1DCE529600B9A925 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78018A1DCE529600B9A925 /* HomeTableViewController.swift */; };
 		FCA90B2D1E04AE92005DD0A7 /* Translators.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B2C1E04AE92005DD0A7 /* Translators.plist */; };
-		FCA90B311E070C29005DD0A7 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA90B301E070C29005DD0A7 /* FoundationExtensions.swift */; };
 		FCA90B6F1E072DE1005DD0A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B711E072DE1005DD0A7 /* Main.storyboard */; };
 		FCA90B771E072E07005DD0A7 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B741E072E07005DD0A7 /* Base.lproj */; };
 		FCA90B781E072E07005DD0A7 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B751E072E07005DD0A7 /* en.lproj */; };
@@ -112,7 +111,6 @@
 		FC7801881DCE528B00B9A925 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC78018A1DCE529600B9A925 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		FCA90B2C1E04AE92005DD0A7 /* Translators.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Translators.plist; sourceTree = "<group>"; };
-		FCA90B301E070C29005DD0A7 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		FCA90B701E072DE1005DD0A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCA90B721E072DED005DD0A7 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
 		FCA90B741E072E07005DD0A7 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				FC4E07AB1DE46AB7002CEB4C /* UIExtensions.swift */,
-				FCA90B301E070C29005DD0A7 /* FoundationExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -409,7 +406,6 @@
 				FC7321871DFC946300F3CC6E /* LaunchViewTableViewController.swift in Sources */,
 				FC02A8E71DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift in Sources */,
 				FCDCCBF01DFC4DFA00F235FC /* AboutTableViewController.swift in Sources */,
-				FCA90B311E070C29005DD0A7 /* FoundationExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
