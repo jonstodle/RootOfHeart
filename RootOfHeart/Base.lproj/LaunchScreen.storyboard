@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,18 +22,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√♥︎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXt-11-9dd">
-                                <rect key="frame" x="16" y="274.5" width="343" height="119.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="l1l-Dn-CaF">
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="l1l-Dn-CaF" secondAttribute="height" multiplier="1:1" id="IXq-v7-80V"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-Iy-hWL">
+                                <rect key="frame" x="0.0" y="521" width="375" height="146"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JON STØDLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9t-1V-vda">
+                                        <rect key="frame" x="8" y="63" width="359" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="G9t-1V-vda" firstAttribute="leading" secondItem="pcl-Iy-hWL" secondAttribute="leadingMargin" id="G7d-lA-aPu"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="G9t-1V-vda" secondAttribute="trailing" id="uup-yC-Hhm"/>
+                                    <constraint firstItem="G9t-1V-vda" firstAttribute="centerY" secondItem="pcl-Iy-hWL" secondAttribute="centerY" id="yka-rm-jEe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="JXt-11-9dd" secondAttribute="trailing" id="db5-C4-cIg"/>
-                            <constraint firstItem="JXt-11-9dd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rXt-2I-XyT"/>
-                            <constraint firstItem="JXt-11-9dd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="xVZ-o5-LCB"/>
+                            <constraint firstAttribute="trailing" secondItem="pcl-Iy-hWL" secondAttribute="trailing" id="E5F-D2-dBi"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="pcl-Iy-hWL" secondAttribute="bottom" id="FSy-me-L2a"/>
+                            <constraint firstItem="pcl-Iy-hWL" firstAttribute="top" secondItem="l1l-Dn-CaF" secondAttribute="bottom" id="NvY-JN-zU3"/>
+                            <constraint firstAttribute="trailing" secondItem="l1l-Dn-CaF" secondAttribute="trailing" id="gwA-5J-C7P"/>
+                            <constraint firstItem="pcl-Iy-hWL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="lsH-0P-RWK"/>
+                            <constraint firstItem="l1l-Dn-CaF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="zLo-Jh-0Sx"/>
+                            <constraint firstItem="l1l-Dn-CaF" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="zjQ-CY-tZf"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -41,4 +63,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchImage" width="512" height="512"/>
+    </resources>
 </document>
