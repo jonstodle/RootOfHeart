@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             if SettingsService.showAppIconBadge {
-                UIApplication.shared.applicationIconBadgeNumber = notifications.count
+                NotificationService.setBadgeToNewUnreadCount()
             }
             
             completionHandler(result == .success ? .newData : .failed)

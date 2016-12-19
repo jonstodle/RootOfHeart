@@ -28,6 +28,17 @@ class NotificationService {
         UIApplication.shared.scheduleLocalNotification(notification)
     }
     
+    static func setBadgeToNewUnreadCount() {
+        var unreadCount = 0
+        
+        for comic in DataService.instance.comics {
+            if !comic.isRead { unreadCount += 1 }
+            else { break }
+        }
+        
+        UIApplication.shared.applicationIconBadgeNumber = unreadCount
+    }
+    
     static func clearAllNotifications() {
         UIApplication.shared.cancelAllLocalNotifications()
     }
