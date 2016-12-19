@@ -38,15 +38,19 @@ class DataService{
     
     //MARK: - Public Methods
     
-    func refresh() -> Void{
+    func refresh(completionHandler: (() -> Void)? = nil) -> Void{
         getNewComics(from: comics.first?.number)
-            .subscribe(onNext: {self._addSubject.onNext($0)})
+            .subscribe(
+                onNext: {self._addSubject.onNext($0)},
+                onCompleted: { if let completion = completionHandler { completion() } })
             .addDisposableTo(_disposeBag)
     }
     
-    func loadOldComics() -> Void{
+    func loadOldComics(completionHandler: (() -> Void)? = nil) -> Void{
         getOldComics(from: comics.last?.number)
-            .subscribe(onNext: {self._addSubject.onNext($0)})
+            .subscribe(
+                onNext: {self._addSubject.onNext($0)},
+                onCompleted: { if let completion = completionHandler { completion() } })
             .addDisposableTo(_disposeBag)
     }
     
