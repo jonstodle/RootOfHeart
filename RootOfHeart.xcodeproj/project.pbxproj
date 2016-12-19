@@ -101,6 +101,7 @@
 		FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicTableViewCell.swift; sourceTree = "<group>"; };
 		FC4E07A61DE4546C002CEB4C /* ComicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicViewController.swift; sourceTree = "<group>"; };
 		FC4E07AB1DE46AB7002CEB4C /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		FC4E90B71E07B7E5000CBA16 /* RootOfHeart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RootOfHeart.entitlements; sourceTree = "<group>"; };
 		FC63AB4F1DF57F2B0058A018 /* FileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		FC7321861DFC946300F3CC6E /* LaunchViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewTableViewController.swift; sourceTree = "<group>"; };
 		FC7321881DFC9F5400F3CC6E /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
@@ -171,6 +172,7 @@
 		FC3FC6931DCB8E6C0069FDED /* RootOfHeart */ = {
 			isa = PBXGroup;
 			children = (
+				FC4E90B71E07B7E5000CBA16 /* RootOfHeart.entitlements */,
 				FCA90B731E072DFA005DD0A7 /* Localization */,
 				FC73218A1DFCAAB500F3CC6E /* Models */,
 				FC4E07A81DE46A7A002CEB4C /* Extensions */,
@@ -332,6 +334,14 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = X93LMNWC9P;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					FC3FC6A41DCB8E6C0069FDED = {
 						CreatedOnToolsVersion = 8.1;

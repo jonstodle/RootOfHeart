@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UIApplication.shared.setMinimumBackgroundFetchInterval(60 * 60 * 6) // 6 hours
+        
         return true
     }
 
@@ -47,6 +49,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        DataService.instance.refresh(completionHandler: {
+            result in
+            completionHandler(result == .success ? .newData : .failed)
+        })
+    }
+    
+    
+    
+    // MARK: - Helper Methods
 
     func prepareForBackground(){
         DataService.instance.cancelAllOperations()
