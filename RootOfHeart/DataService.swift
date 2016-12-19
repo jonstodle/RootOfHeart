@@ -76,6 +76,7 @@ class DataService{
             comic.isRead = asRead
         }
         NotificationService.setBadgeToUnreadCount()
+        NotificationService.clearNotification(forComic: comic)
     }
     
     func search(for text: String) -> Results<Comic> {
