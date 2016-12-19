@@ -172,5 +172,10 @@ class DataService{
             oldestComic != 1 else { return Observable.just(nil) }
         
         return Observable.just(nil).do(onNext: { _ in self.isLoadingOldComics.value = true }).concat(XkcdClient.get(comics: Array(1..<oldestComic).reversed()).do(onError: { _ in self.isLoadingOldComics.value = false }, onCompleted: { self.isLoadingOldComics.value = false }, onDispose: {self.isLoadingOldComics.value = false}))
+            .map({
+                comic in
+                comic?.isRead = true
+                return comic
+            })
     }
 }
