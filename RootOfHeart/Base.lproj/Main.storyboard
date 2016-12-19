@@ -249,62 +249,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Notifications" id="ZMA-6G-9hv">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="axZ-wh-Q5d">
-                                        <rect key="frame" x="0.0" y="180" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="axZ-wh-Q5d" id="g6z-Ah-Yxo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show app icon badge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q4-Kp-WBz">
-                                                    <rect key="frame" x="8" y="11" width="302" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHl-Pn-3Oh">
-                                                    <rect key="frame" x="318" y="6" width="51" height="31"/>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="7Q4-Kp-WBz" firstAttribute="centerY" secondItem="ZHl-Pn-3Oh" secondAttribute="centerY" id="7HS-3G-OIT"/>
-                                                <constraint firstItem="ZHl-Pn-3Oh" firstAttribute="leading" secondItem="7Q4-Kp-WBz" secondAttribute="trailing" constant="8" id="Aai-HZ-Zew"/>
-                                                <constraint firstItem="7Q4-Kp-WBz" firstAttribute="centerY" secondItem="g6z-Ah-Yxo" secondAttribute="centerY" id="hJj-gi-jIm"/>
-                                                <constraint firstItem="ZHl-Pn-3Oh" firstAttribute="trailing" secondItem="g6z-Ah-Yxo" secondAttribute="trailingMargin" id="lU2-Rf-sxX"/>
-                                                <constraint firstItem="7Q4-Kp-WBz" firstAttribute="leading" secondItem="g6z-Ah-Yxo" secondAttribute="leadingMargin" id="xgX-YF-cUS"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="c09-0U-m8N">
-                                        <rect key="frame" x="0.0" y="224" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c09-0U-m8N" id="D50-vi-kM4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show in Notification Center" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fi5-qv-RwX">
-                                                    <rect key="frame" x="8" y="11" width="302" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KKs-cA-Iwu">
-                                                    <rect key="frame" x="318" y="6" width="51" height="31"/>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="fi5-qv-RwX" firstAttribute="leading" secondItem="D50-vi-kM4" secondAttribute="leadingMargin" id="dFr-Qe-Fhz"/>
-                                                <constraint firstItem="KKs-cA-Iwu" firstAttribute="trailing" secondItem="D50-vi-kM4" secondAttribute="trailingMargin" id="kp2-cl-OD5"/>
-                                                <constraint firstItem="fi5-qv-RwX" firstAttribute="centerY" secondItem="KKs-cA-Iwu" secondAttribute="centerY" id="sAO-nl-NZb"/>
-                                                <constraint firstItem="KKs-cA-Iwu" firstAttribute="leading" secondItem="fi5-qv-RwX" secondAttribute="trailing" constant="8" id="tE2-5u-esm"/>
-                                                <constraint firstItem="fi5-qv-RwX" firstAttribute="centerY" secondItem="D50-vi-kM4" secondAttribute="centerY" id="zwG-if-6ff"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="chF-8g-KbQ" id="nPM-jm-eT3"/>
@@ -315,8 +259,6 @@
                     <connections>
                         <outlet property="languageChoiceLabel" destination="trO-S1-uw2" id="6bU-oN-mFx"/>
                         <outlet property="launchViewChoiceLabel" destination="BNp-cT-oJo" id="vKJ-UE-4gT"/>
-                        <outlet property="showBadgeSwitch" destination="ZHl-Pn-3Oh" id="ApY-hp-1WY"/>
-                        <outlet property="showInNotificationCenterSwitch" destination="KKs-cA-Iwu" id="B2i-ZE-X1T"/>
                         <segue destination="I5e-hP-0L5" kind="show" identifier="SettingsToLaunchViewSegue" id="oRf-Bj-l3p"/>
                     </connections>
                 </tableViewController>
