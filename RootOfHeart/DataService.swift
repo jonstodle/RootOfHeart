@@ -75,6 +75,7 @@ class DataService{
         try! _realm.write {
             comic.isRead = asRead
         }
+        NotificationService.setBadgeToUnreadCount()
     }
     
     func search(for text: String) -> Results<Comic> {
