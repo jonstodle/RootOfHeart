@@ -10,6 +10,11 @@ import Foundation
 import RealmSwift
 import RxSwift
 
+enum LoadResult {
+    case success
+    case failed
+}
+
 class DataService{
     //MARK: - Singleton
     
@@ -38,19 +43,21 @@ class DataService{
     
     //MARK: - Public Methods
     
-    func refresh(completionHandler: (() -> Void)? = nil) -> Void{
+    func refresh(completionHandler: ((LoadResult) -> Void)? = nil) -> Void{
         getNewComics(from: comics.first?.number)
             .subscribe(
                 onNext: {self._addSubject.onNext($0)},
-                onCompleted: { if let completion = completionHandler { completion() } })
+                onError: { if let completion = completionHandler { completion(.failed) } },
+                onCompleted: { if let completion = completionHandler { completion(.success) } })
             .addDisposableTo(_disposeBag)
     }
     
-    func loadOldComics(completionHandler: (() -> Void)? = nil) -> Void{
+    func loadOldComics(completionHandler: ((LoadResult) -> Void)? = nil) -> Void{
         getOldComics(from: comics.last?.number)
             .subscribe(
                 onNext: {self._addSubject.onNext($0)},
-                onCompleted: { if let completion = completionHandler { completion() } })
+                onError: { if let completion = completionHandler { completion(.failed) } },
+                onCompleted: { if let completion = completionHandler { completion(.success) } })
             .addDisposableTo(_disposeBag)
     }
     
