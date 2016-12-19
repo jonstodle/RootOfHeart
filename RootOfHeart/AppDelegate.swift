@@ -54,10 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         DataService.instance.refresh(completionHandler: {
             result in
-            let unreadCount = DataService.instance.unreadComics.count
             if SettingsService.useBannerNotification {
-                for i in 1...min(5, unreadCount) {
-                    NotificationService.scheduleNotification(forComic: DataService.instance.unreadComics[unreadCount - i])
+                for comic in DataService.instance.unreadComics.reversed() {
+                    NotificationService.scheduleNotification(forComic: comic)
                 }
             }
             
