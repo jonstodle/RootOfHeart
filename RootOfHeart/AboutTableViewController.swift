@@ -21,7 +21,7 @@ class AboutTableViewController: UITableViewController {
     private let textInSection2 = [
         NSLocalizedString("Without the help of these libraries, making this app would be a lot harder", comment: ""),
         "Alamofire",
-        "DateSeift",
+        "DateSwift",
         "Kingfisher",
         "Realm",
         "RxSwift",
