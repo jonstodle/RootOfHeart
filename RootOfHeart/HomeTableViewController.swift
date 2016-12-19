@@ -34,6 +34,8 @@ class HomeTableViewController: UITableViewController {
     
     
     
+    // MARK: - Implementation
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -156,6 +158,10 @@ class HomeTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
     
     
