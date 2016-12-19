@@ -25,7 +25,7 @@ class NotificationService {
     }
     
     static func scheduleNotification(_ notification: UILocalNotification) {
-        UIApplication.shared.scheduleLocalNotification(notification)
+        UIApplication.shared.presentLocalNotificationNow(notification)
     }
     
     static func getNotification(forComic comic: Comic) -> UILocalNotification? {
