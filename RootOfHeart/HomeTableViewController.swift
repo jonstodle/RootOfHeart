@@ -92,6 +92,17 @@ class HomeTableViewController: UITableViewController {
             })
             .addDisposableTo(_disposeBag)
         
+        refreshControl?.rx
+            .controlEvent(UIControlEvents.valueChanged)
+            .subscribe(onNext: {
+                event in
+                DataService.instance.refresh(completionHandler: {
+                    _ in
+                    self.refreshControl?.endRefreshing()
+                })
+            })
+            .addDisposableTo(_disposeBag)
+        
         headerSegmentedControl.rx
             .value
             .subscribe(onNext:{
@@ -159,6 +170,8 @@ class HomeTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     
     
