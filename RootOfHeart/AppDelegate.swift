@@ -62,6 +62,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     }
     
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        guard application.applicationState != .active else { return }
+        
+        guard let navController = window?.rootViewController as? UINavigationController,
+            let homeController = navController.viewControllers.first as? HomeTableViewController,
+            let comicNumber = notification.userInfo?["number"] as? Int else { return }
+        
+        navController.popViewController(animated: false)
+        let newVc = homeController.storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
+        newVc.comic = DataService.instance.getComic(number: comicNumber)!
+        navController.pushViewController(newVc, animated: true)
+    }
+    
     
     
     // MARK: - Helper Methods
