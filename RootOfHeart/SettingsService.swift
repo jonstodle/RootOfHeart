@@ -9,11 +9,11 @@
 import Foundation
 
 class SettingsService {
-    fileprivate static func setSetting<T>(value: T, forKey: String) {
+    static func setSetting<T>(value: T, forKey: String) {
         UserDefaults.standard.setValue(value, forKey: forKey)
     }
     
-    fileprivate static func getSetting<T>(forKey: String, orDefaultValue defaultValue: T) -> T {
+    static func getSetting<T>(forKey: String, orDefaultValue defaultValue: T) -> T {
         if let returnValue = UserDefaults.standard.object(forKey: forKey) { return returnValue as! T }
         else { return defaultValue }
     }
