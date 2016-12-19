@@ -54,22 +54,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         DataService.instance.refresh(completionHandler: {
             result in
-            
-            var notifications: [UILocalNotification] = []
-            
-            for comic in DataService.instance.comics {
-                if !comic.isRead { notifications.append(NotificationService.createNotification(forComic: comic)) }
-                else { break }
-            }
-            
+            let unreadCount = DataService.instance.unreadComics.count
             if SettingsService.useBannerNotification {
-                for i in 0..<min(5, notifications.count) {
-                    NotificationService.scheduleNotification(notifications[i])
+                for i in 1...min(5, unreadCount) {
+                    NotificationService.scheduleNotification(forComic: DataService.instance.unreadComics[unreadCount - i])
                 }
             }
             
             if SettingsService.showAppIconBadge {
-                NotificationService.setBadgeToNewUnreadCount()
+                NotificationService.setBadgeToUnreadCount()
             }
             
             completionHandler(result == .success ? .newData : .failed)
