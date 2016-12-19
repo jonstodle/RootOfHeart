@@ -55,7 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DataService.instance.refresh(completionHandler: {
             result in
             for comic in DataService.instance.unreadComics.reversed() {
-                NotificationService.scheduleNotification(forComic: comic)
+                if NotificationService.getNotification(forComic: comic) == nil {
+                    NotificationService.scheduleNotification(forComic: comic)
+                }
             }
             
             NotificationService.setBadgeToUnreadCount()
