@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.setMinimumBackgroundFetchInterval(60 * 60 * 6) // 6 hours
+        UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .alert], categories: nil))
         
         return true
     }
@@ -53,6 +54,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         DataService.instance.refresh(completionHandler: {
             result in
+            
+            if SettingsService.showAppIconBadge {
+                var unreadCount = 0
+                for comic in DataService.instance.comics {
+                    if !comic.isRead { unreadCount += 1 }
+                    else { break }
+                }
+                UIApplication.shared.applicationIconBadgeNumber = unreadCount
+            }
+            
             completionHandler(result == .success ? .newData : .failed)
         })
     }

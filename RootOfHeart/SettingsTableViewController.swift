@@ -16,6 +16,7 @@ class SettingsTableViewController: UITableViewController {
     
     @IBOutlet weak var launchViewChoiceLabel: UILabel!
     @IBOutlet weak var languageChoiceLabel: UILabel!
+    @IBOutlet weak var showBadgeSwitch: UISwitch!
     
     
     
@@ -40,6 +41,13 @@ class SettingsTableViewController: UITableViewController {
                 if indexPath.row == 0  { newVc = self.storyboard!.instantiateViewController(withIdentifier: "LaunchViewTableViewController") as! LaunchViewTableViewController }
                 
                 self.navigationController?.pushViewController(newVc, animated: true)
+            })
+            .addDisposableTo(_disposeBag)
+        
+        showBadgeSwitch.rx.value
+            .subscribe(onNext: {
+                value in
+                SettingsService.showAppIconBadge = value
             })
             .addDisposableTo(_disposeBag)
     }
