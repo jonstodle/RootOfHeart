@@ -29,6 +29,7 @@
 		FC4E07A51DE22D4C002CEB4C /* ComicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07A41DE22D4B002CEB4C /* ComicTableViewCell.swift */; };
 		FC4E07A71DE4546C002CEB4C /* ComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07A61DE4546C002CEB4C /* ComicViewController.swift */; };
 		FC4E07AC1DE46AB7002CEB4C /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07AB1DE46AB7002CEB4C /* UIExtensions.swift */; };
+		FC4E90BA1E07EEA9000CBA16 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E90B91E07EEA9000CBA16 /* NotificationService.swift */; };
 		FC63AB501DF57F2B0058A018 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63AB4F1DF57F2B0058A018 /* FileService.swift */; };
 		FC7321871DFC946300F3CC6E /* LaunchViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7321861DFC946300F3CC6E /* LaunchViewTableViewController.swift */; };
 		FC7321891DFC9F5400F3CC6E /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7321881DFC9F5400F3CC6E /* SettingsService.swift */; };
@@ -102,6 +103,7 @@
 		FC4E07A61DE4546C002CEB4C /* ComicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicViewController.swift; sourceTree = "<group>"; };
 		FC4E07AB1DE46AB7002CEB4C /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		FC4E90B71E07B7E5000CBA16 /* RootOfHeart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RootOfHeart.entitlements; sourceTree = "<group>"; };
+		FC4E90B91E07EEA9000CBA16 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		FC63AB4F1DF57F2B0058A018 /* FileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		FC7321861DFC946300F3CC6E /* LaunchViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewTableViewController.swift; sourceTree = "<group>"; };
 		FC7321881DFC9F5400F3CC6E /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		FC3FC6B61DCB8F160069FDED /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FC4E90B81E07EE23000CBA16 /* NotificationServices */,
 				FC3FC6C21DCBB9340069FDED /* DataServices */,
 				FC3FC6B71DCB8F1D0069FDED /* XkcdServices */,
 			);
@@ -261,6 +264,14 @@
 				FC4E07AB1DE46AB7002CEB4C /* UIExtensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FC4E90B81E07EE23000CBA16 /* NotificationServices */ = {
+			isa = PBXGroup;
+			children = (
+				FC4E90B91E07EEA9000CBA16 /* NotificationService.swift */,
+			);
+			name = NotificationServices;
 			sourceTree = "<group>";
 		};
 		FC73218A1DFCAAB500F3CC6E /* Models */ = {
@@ -409,6 +420,7 @@
 				FC63AB501DF57F2B0058A018 /* FileService.swift in Sources */,
 				FC4E07AC1DE46AB7002CEB4C /* UIExtensions.swift in Sources */,
 				FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */,
+				FC4E90BA1E07EEA9000CBA16 /* NotificationService.swift in Sources */,
 				FC09E8461DEC7EAA00AF3C07 /* ComicOverlayViewController.swift in Sources */,
 				FC4E07A71DE4546C002CEB4C /* ComicViewController.swift in Sources */,
 				FC7801841DCE526900B9A925 /* Comic.swift in Sources */,

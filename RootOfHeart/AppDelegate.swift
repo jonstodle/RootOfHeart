@@ -55,13 +55,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DataService.instance.refresh(completionHandler: {
             result in
             
-            if SettingsService.showAppIconBadge {
-                var unreadCount = 0
-                for comic in DataService.instance.comics {
-                    if !comic.isRead { unreadCount += 1 }
-                    else { break }
+            var notifications: [UILocalNotification] = []
+            
+            for comic in DataService.instance.comics {
+                if !comic.isRead { notifications.append(NotificationService.createNotification(forComic: comic)) }
+                else { break }
+            }
+            
+            if SettingsService.useBannerNotification {
+                for i in 0..<min(5, notifications.count) {
+                    NotificationService.scheduleNotification(notifications[i])
                 }
-                UIApplication.shared.applicationIconBadgeNumber = unreadCount
+            }
+            
+            if SettingsService.showAppIconBadge {
+                UIApplication.shared.applicationIconBadgeNumber = notifications.count
             }
             
             completionHandler(result == .success ? .newData : .failed)

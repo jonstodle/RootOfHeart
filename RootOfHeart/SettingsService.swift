@@ -29,6 +29,11 @@ extension SettingsService {
         get { return SettingsService.getSetting(forKey: "showAppIconBadge", orDefaultValue: true) }
         set { SettingsService.setSetting(value: newValue, forKey: "showAppIconBadge") }
     }
+    
+    static var useBannerNotification: Bool {
+        get { return SettingsService.getSetting(forKey: "useBannerNotification", orDefaultValue: true) }
+        set { SettingsService.setSetting(value: newValue, forKey: "useBannerNotification") }
+    }
 }
 
 extension SettingsService {
