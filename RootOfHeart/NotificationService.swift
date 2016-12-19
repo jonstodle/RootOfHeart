@@ -12,7 +12,6 @@ import UIKit
 class NotificationService {
     static func createNotification(forComic comic: Comic) -> UILocalNotification {
         let notification = UILocalNotification()
-        notification.alertTitle = NSLocalizedString("Unread comic", comment: "")
         notification.alertBody = "\(comic.number) - \(comic.title)"
         notification.userInfo = ["number" : comic.number]
         notification.fireDate = Date()
