@@ -10,11 +10,6 @@ import Foundation
 import RealmSwift
 import RxSwift
 
-enum LoadResult {
-    case success
-    case failed
-}
-
 class DataService{
     //MARK: - Singleton
     
@@ -43,21 +38,25 @@ class DataService{
     
     //MARK: - Public Methods
     
-    func refresh(completionHandler: ((LoadResult) -> Void)? = nil) -> Void{
+    func refresh(completionHandler: (([Comic]?) -> Void)? = nil) -> Void{
+        var newComics: [Comic] = []
+        
         getNewComics(from: comics.first?.number)
             .subscribe(
-                onNext: {self._addSubject.onNext($0)},
-                onError: { _ in if let completion = completionHandler { completion(LoadResult.failed) } },
-                onCompleted: { if let completion = completionHandler { completion(.success) } })
+                onNext: {
+                    comic in
+                    self._addSubject.onNext(comic)
+                    if let c = comic { newComics.append(c) }
+                },
+                onError: { _ in if let completion = completionHandler { completion(nil) } },
+                onCompleted: { if let completion = completionHandler { completion(newComics) } })
             .addDisposableTo(_disposeBag)
     }
     
-    func loadOldComics(completionHandler: ((LoadResult) -> Void)? = nil) -> Void{
+    func loadOldComics() {
         getOldComics(from: comics.last?.number)
             .subscribe(
-                onNext: {self._addSubject.onNext($0)},
-                onError: { _ in if let completion = completionHandler { completion(LoadResult.failed) } },
-                onCompleted: { if let completion = completionHandler { completion(.success) } })
+                onNext: {self._addSubject.onNext($0)})
             .addDisposableTo(_disposeBag)
     }
     

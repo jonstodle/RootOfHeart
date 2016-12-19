@@ -50,15 +50,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         DataService.instance.refresh(completionHandler: {
             result in
-            for comic in DataService.instance.unreadComics.reversed() {
-                if NotificationService.getNotification(forComic: comic) == nil {
-                    NotificationService.scheduleNotification(forComic: comic)
-                }
+            guard let result = result else {
+                completionHandler(.failed)
+                return
+            }
+            
+            for comic in result {
+                NotificationService.scheduleNotification(forComic: comic)
             }
             
             NotificationService.setBadgeToUnreadCount()
             
-            completionHandler(result == .success ? .newData : .failed)
+            completionHandler(result.count > 0 ? .newData : .noData)
         })
     }
     
