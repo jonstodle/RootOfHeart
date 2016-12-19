@@ -28,6 +28,14 @@ class NotificationService {
         UIApplication.shared.scheduleLocalNotification(notification)
     }
     
+    static func getNotification(forComic comic: Comic) -> UILocalNotification? {
+        return UIApplication.shared.scheduledLocalNotifications?.first(where: {
+            notification in
+            guard let comicNumber = notification.userInfo?["number"] as? Int else { return false }
+            return comicNumber == comic.number
+        })
+    }
+    
     static func setBadgeToUnreadCount() {
         UIApplication.shared.applicationIconBadgeNumber = DataService.instance.unreadComics.count
     }
@@ -37,14 +45,7 @@ class NotificationService {
     }
     
     static func clearNotification(forComic comic: Comic) {
-        if let notification = UIApplication.shared.scheduledLocalNotifications?.first(where: {
-            if let comicNumber = $0.userInfo?["number"] as? Int {
-                return comicNumber == comic.number
-            }
-            else {
-                return false
-            }
-        }) {
+        if let notification = NotificationService.getNotification(forComic: comic) {
             UIApplication.shared.cancelLocalNotification(notification)
         }
     }
