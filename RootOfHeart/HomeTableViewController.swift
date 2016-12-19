@@ -160,10 +160,6 @@ class HomeTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        UIApplication.shared.applicationIconBadgeNumber = 0
-    }
-    
     
     
     // MARK: - Initializers
