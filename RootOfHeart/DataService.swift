@@ -47,7 +47,7 @@ class DataService{
         getNewComics(from: comics.first?.number)
             .subscribe(
                 onNext: {self._addSubject.onNext($0)},
-                onError: { if let completion = completionHandler { completion(.failed) } },
+                onError: { _ in if let completion = completionHandler { completion(LoadResult.failed) } },
                 onCompleted: { if let completion = completionHandler { completion(.success) } })
             .addDisposableTo(_disposeBag)
     }
@@ -56,7 +56,7 @@ class DataService{
         getOldComics(from: comics.last?.number)
             .subscribe(
                 onNext: {self._addSubject.onNext($0)},
-                onError: { if let completion = completionHandler { completion(.failed) } },
+                onError: { _ in if let completion = completionHandler { completion(LoadResult.failed) } },
                 onCompleted: { if let completion = completionHandler { completion(.success) } })
             .addDisposableTo(_disposeBag)
     }
