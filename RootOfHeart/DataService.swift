@@ -44,8 +44,8 @@ class DataService{
         getNewComics(from: comics.first?.number)
             .subscribe(
                 onNext: {
-                    comic in
-                    self._addSubject.onNext(comic)
+                    [weak self] comic in
+                    self!._addSubject.onNext(comic)
                     if let c = comic { newComics.append(c) }
                 },
                 onError: { _ in if let completion = completionHandler { completion(nil) } },
@@ -56,7 +56,7 @@ class DataService{
     func loadOldComics() {
         getOldComics(from: comics.last?.number)
             .subscribe(
-                onNext: {self._addSubject.onNext($0)})
+                onNext: { [weak self] comic in self!._addSubject.onNext(comic)})
             .addDisposableTo(_disposeBag)
     }
     
@@ -100,7 +100,7 @@ class DataService{
                     return Observable.just(comic)
                         .concat(XkcdClient.get(comics: Array((comic!.number - 10)..<comic!.number)))
                 }
-                .subscribe(onNext: {self._addSubject.onNext($0)})
+                .subscribe(onNext: {[weak self] comic in self!._addSubject.onNext(comic)})
                 .addDisposableTo(_disposeBag)
         } else { loadComics(fromNewestComic: comics.first?.number, toOldestComic: comics.last?.number) }
     }
@@ -124,8 +124,9 @@ class DataService{
             .filter{ $0 != nil }
             .buffer(timeSpan: 5, count: 10, scheduler: ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { comics -> Void in
-                let realm = self._realm!
+            .subscribe(onNext: {
+                [weak self] comics -> Void in
+                let realm = self!._realm!
                 try! realm.write {
                     realm.add(comics.map{$0!}, update: true)
                 }
@@ -140,7 +141,7 @@ class DataService{
     private func loadComics(fromNewestComic: Int?, toOldestComic: Int?) -> Void{
         getNewComics(from: fromNewestComic)
             .concat(getOldComics(from: toOldestComic))
-            .subscribe(onNext: {self._addSubject.onNext($0)})
+            .subscribe(onNext: {[weak self] comic in self!._addSubject.onNext(comic)})
             .addDisposableTo(_disposeBag)
     }
     
@@ -172,7 +173,12 @@ class DataService{
             let oldestComic = oldestComic,
             oldestComic != 1 else { return Observable.just(nil) }
         
-        return Observable.just(nil).do(onNext: { _ in self.isLoadingOldComics.value = true }).concat(XkcdClient.get(comics: Array(1..<oldestComic).reversed()).do(onError: { _ in self.isLoadingOldComics.value = false }, onCompleted: { self.isLoadingOldComics.value = false }, onDispose: {self.isLoadingOldComics.value = false}))
+        return Observable.just(nil)
+            .do(onNext: { [weak self] _ in self!.isLoadingOldComics.value = true })
+            .concat(XkcdClient.get(comics: Array(1..<oldestComic).reversed())
+                .do(onError: { [weak self] _ in self!.isLoadingOldComics.value = false },
+                    onCompleted: { [weak self] in self!.isLoadingOldComics.value = false },
+                    onDispose: { [weak self] in self!.isLoadingOldComics.value = false}))
             .map({
                 comic in
                 comic?.isRead = true

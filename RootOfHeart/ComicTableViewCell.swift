@@ -56,10 +56,10 @@ class ComicTableViewCell: UITableViewCell {
         guard downloadState == .notLoaded,
             let comic = comic as Comic! else { return }
         
-        self.downloadState = .loading
+        downloadState = .loading
         comicImageView.kf.setImage(with: URL(string: comic.imageUrl), placeholder: UIImage(), options: [.transition(.fade(0.2))], completionHandler: {
-            (image, error, cacheType, imageUrl) in
-            self.downloadState = image != nil ? .loaded : .notLoaded
+            [weak self] (image, error, cacheType, imageUrl) in
+            self!.downloadState = image != nil ? .loaded : .notLoaded
         })
     }
     

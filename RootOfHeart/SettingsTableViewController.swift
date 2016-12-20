@@ -34,12 +34,12 @@ class SettingsTableViewController: UITableViewController {
         tableView.rx
             .itemSelected
             .subscribe(onNext: {
-                indexPath in
+                [weak self] indexPath in
                 var newVc = UIViewController()
                 
-                if indexPath.row == 0  { newVc = self.storyboard!.instantiateViewController(withIdentifier: "LaunchViewTableViewController") as! LaunchViewTableViewController }
+                if indexPath.row == 0  { newVc = self!.storyboard!.instantiateViewController(withIdentifier: "LaunchViewTableViewController") as! LaunchViewTableViewController }
                 
-                self.navigationController?.pushViewController(newVc, animated: true)
+                self!.navigationController?.pushViewController(newVc, animated: true)
             })
             .addDisposableTo(_disposeBag)
     }
