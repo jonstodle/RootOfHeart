@@ -98,12 +98,15 @@ class HomeTableViewController: UITableViewController {
         
         refreshControl?.rx
             .controlEvent(UIControlEvents.valueChanged)
+            .flatMap {
+                Observable.combineLatest(
+                    DataService.instance.refresh(),
+                    Observable<Int>.timer(2, scheduler: MainScheduler.instance)) { $0 }
+                .take(1)
+            }
             .subscribe(onNext: {
-                event in
-                DataService.instance.refresh(completionHandler: {
-                    [weak self] _ in
+                [weak self] _ in
                     self!.refreshControl?.endRefreshing()
-                })
             })
             .addDisposableTo(_disposeBag)
         

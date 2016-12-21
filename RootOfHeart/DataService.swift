@@ -38,19 +38,28 @@ class DataService{
     
     //MARK: - Public Methods
     
-    func refresh(completionHandler: (([Comic]?) -> Void)? = nil) -> Void{
-        var newComics: [Comic] = []
-        
-        getNewComics(from: comics.first?.number)
-            .subscribe(
-                onNext: {
-                    [weak self] comic in
-                    self!._addSubject.onNext(comic)
-                    if let c = comic { newComics.append(c) }
-                },
-                onError: { _ in if let completion = completionHandler { completion(nil) } },
-                onCompleted: { if let completion = completionHandler { completion(newComics) } })
-            .addDisposableTo(_disposeBag)
+    func refresh() -> Observable<[Comic]?>{
+        return Observable<[Comic]?>.create{
+            [weak self] o in
+            var newComics: [Comic] = []
+            
+            return self!.getNewComics(from: self!.comics.first?.number)
+                .subscribe(
+                    onNext: {
+                        [weak self] comic in
+                        self!._addSubject.onNext(comic)
+                        if let c = comic { newComics.append(c) }
+                    },
+                    onError: {
+                        _ in
+                        o.onNext([])
+                        o.onCompleted()
+                    },
+                    onCompleted: {
+                        o.onNext(newComics)
+                        o.onCompleted()
+                    })
+        }
     }
     
     func loadOldComics() {

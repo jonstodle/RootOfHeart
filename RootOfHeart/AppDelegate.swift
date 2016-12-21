@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -50,7 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        DataService.instance.refresh(completionHandler: {
+        DataService.instance.refresh()
+            .subscribe(onNext: {
             result in
             guard let result = result else {
                 completionHandler(.failed)
@@ -65,6 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             completionHandler(result.count > 0 ? .newData : .noData)
         })
+        .addDisposableTo(_disposeBag)
     }
     
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
@@ -100,5 +103,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    
+    
+    // MARK: - Private Properties
+    
+    private let _disposeBag = DisposeBag()
 }
 
