@@ -12,6 +12,14 @@ import RxCocoa
 
 class LaunchViewTableViewController: UITableViewController {
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var favoritesLabel: UILabel!
+    @IBOutlet weak var allLabel: UILabel!
+    @IBOutlet weak var unreadLabel: UILabel!
+    
+    
+    
     // MARK: - Private Properties
     
     private let _disposeBag = DisposeBag()
@@ -21,7 +29,10 @@ class LaunchViewTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        title = NSLocalizedString("Launch view", comment: "")
+        favoritesLabel.text = NSLocalizedString("Favorites", comment: "")
+        allLabel.text = NSLocalizedString("All", comment: "")
+        unreadLabel.text = NSLocalizedString("Unread", comment: "")
         
         tableView.rx
             .itemDeselected

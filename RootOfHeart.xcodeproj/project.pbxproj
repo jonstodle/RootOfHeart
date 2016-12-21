@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC0146141E0ACFB000D7AC3C /* LinkButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0146131E0ACFB000D7AC3C /* LinkButtonTableViewCell.swift */; };
+		FC01461C1E0B339200D7AC3C /* SettingsTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01461B1E0B339200D7AC3C /* SettingsTabsViewController.swift */; };
 		FC02A8E71DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02A8E61DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift */; };
 		FC09E8461DEC7EAA00AF3C07 /* ComicOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09E8451DEC7EAA00AF3C07 /* ComicOverlayViewController.swift */; };
 		FC3FC69C1DCB8E6C0069FDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */; };
@@ -63,8 +64,8 @@
 		6C3D6AE060429C704A016224 /* Pods-RootOfHeart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeart/Pods-RootOfHeart.debug.xcconfig"; sourceTree = "<group>"; };
 		9C12D40F5D8CEE4DF8ADB74B /* Pods-RootOfHeartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeartTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeartTests/Pods-RootOfHeartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5DDE96186BB712FB4BDE8B2 /* Pods-RootOfHeart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeart.release.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeart/Pods-RootOfHeart.release.xcconfig"; sourceTree = "<group>"; };
-		FC0146121E0AC94B00D7AC3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		FC0146131E0ACFB000D7AC3C /* LinkButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkButtonTableViewCell.swift; sourceTree = "<group>"; };
+		FC01461B1E0B339200D7AC3C /* SettingsTabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTabsViewController.swift; sourceTree = "<group>"; };
 		FC02A8E61DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewHeaderViewController.swift; sourceTree = "<group>"; };
 		FC09E8451DEC7EAA00AF3C07 /* ComicOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicOverlayViewController.swift; sourceTree = "<group>"; };
 		FC3FC6911DCB8E6C0069FDED /* RootOfHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootOfHeart.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,7 +91,6 @@
 		FC78018A1DCE529600B9A925 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		FCA90B2C1E04AE92005DD0A7 /* Translators.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Translators.plist; sourceTree = "<group>"; };
 		FCA90B701E072DE1005DD0A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FCA90B721E072DED005DD0A7 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
 		FCA90B741E072E07005DD0A7 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		FCA90B751E072E07005DD0A7 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		FCA90B761E072E07005DD0A7 /* nb.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nb.lproj; sourceTree = "<group>"; };
@@ -205,6 +205,7 @@
 				FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */,
 				FC7321861DFC946300F3CC6E /* LaunchViewTableViewController.swift */,
 				FC0146131E0ACFB000D7AC3C /* LinkButtonTableViewCell.swift */,
+				FC01461B1E0B339200D7AC3C /* SettingsTabsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -477,6 +478,7 @@
 				FC4E07A51DE22D4C002CEB4C /* ComicTableViewCell.swift in Sources */,
 				FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */,
 				FC63AB501DF57F2B0058A018 /* FileService.swift in Sources */,
+				FC01461C1E0B339200D7AC3C /* SettingsTabsViewController.swift in Sources */,
 				FC4E07AC1DE46AB7002CEB4C /* UIExtensions.swift in Sources */,
 				FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */,
 				FC4E90BA1E07EEA9000CBA16 /* NotificationService.swift in Sources */,
@@ -522,8 +524,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				FCA90B701E072DE1005DD0A7 /* Base */,
-				FCA90B721E072DED005DD0A7 /* nb */,
-				FC0146121E0AC94B00D7AC3C /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

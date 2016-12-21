@@ -14,7 +14,9 @@ class SettingsTableViewController: UITableViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var launchViewTitleLabel: UILabel!
     @IBOutlet weak var launchViewChoiceLabel: UILabel!
+    @IBOutlet weak var languageTitleLabel: UILabel!
     @IBOutlet weak var languageChoiceLabel: UILabel!
     
     
@@ -29,7 +31,9 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        launchViewTitleLabel.text = NSLocalizedString("Launch view", comment: "")
         launchViewChoiceLabel.text = SettingsService.launchView.stringValue
+        languageTitleLabel.text = NSLocalizedString("Language", comment: "")
 
         tableView.rx
             .itemSelected

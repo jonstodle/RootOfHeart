@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--√♥︎-->
+        <!--Home Table View Controller-->
         <scene sceneID="iRV-pI-IcT">
             <objects>
-                <tableViewController title="√♥︎" id="eAc-Dz-Bxf" customClass="HomeTableViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="eAc-Dz-Bxf" customClass="HomeTableViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="bbS-Zh-M5M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,7 +150,7 @@
                             <outlet property="delegate" destination="eAc-Dz-Bxf" id="W3X-al-N0W"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="√♥︎" id="kUa-eC-NNY">
+                    <navigationItem key="navigationItem" id="kUa-eC-NNY">
                         <barButtonItem key="leftBarButtonItem" image="Settings" id="DIr-xg-p8Z"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="e4R-zQ-ueY"/>
                     </navigationItem>
@@ -172,10 +172,10 @@
             </objects>
             <point key="canvasLocation" x="-42.399999999999999" y="203.74812593703149"/>
         </scene>
-        <!--√♥︎-->
+        <!--Settings Tabs View Controller-->
         <scene sceneID="vKq-hL-LiE">
             <objects>
-                <tabBarController storyboardIdentifier="SettingsTabBarController" title="√♥︎" id="DZw-RF-bdP" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="SettingsTabBarController" id="DZw-RF-bdP" customClass="SettingsTabsViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="NQb-l9-mcm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -192,7 +192,7 @@
             </objects>
             <point key="canvasLocation" x="-42" y="1180"/>
         </scene>
-        <!--Settings-->
+        <!--Settings Table View Controller-->
         <scene sceneID="n9Y-wP-oI0">
             <objects>
                 <tableViewController storyboardIdentifier="SettingsTableViewController" id="chF-8g-KbQ" customClass="SettingsTableViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
@@ -210,8 +210,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Launch view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="izy-ID-gu7">
-                                                    <rect key="frame" x="15" y="4" width="96" height="21"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="izy-ID-gu7">
+                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -234,8 +234,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pz3-ae-Esq">
-                                                    <rect key="frame" x="15" y="4" width="76" height="21"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pz3-ae-Esq">
+                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -259,10 +259,12 @@
                             <outlet property="delegate" destination="chF-8g-KbQ" id="i37-oB-hT7"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" selectedImage="Settings-Filled" id="GII-IF-JNb"/>
+                    <tabBarItem key="tabBarItem" title="" image="Settings" selectedImage="Settings-Filled" id="GII-IF-JNb"/>
                     <connections>
                         <outlet property="languageChoiceLabel" destination="trO-S1-uw2" id="6bU-oN-mFx"/>
+                        <outlet property="languageTitleLabel" destination="Pz3-ae-Esq" id="cVc-gT-Wcy"/>
                         <outlet property="launchViewChoiceLabel" destination="BNp-cT-oJo" id="vKJ-UE-4gT"/>
+                        <outlet property="launchViewTitleLabel" destination="izy-ID-gu7" id="4LY-na-u1n"/>
                         <segue destination="I5e-hP-0L5" kind="show" identifier="SettingsToLaunchViewSegue" id="oRf-Bj-l3p"/>
                     </connections>
                 </tableViewController>
@@ -270,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="968.79999999999995" y="859.52023988005999"/>
         </scene>
-        <!--Launch view-->
+        <!--Launch View Table View Controller-->
         <scene sceneID="g5z-qa-kxk">
             <objects>
-                <tableViewController storyboardIdentifier="LaunchViewTableViewController" title="Launch view" id="I5e-hP-0L5" customClass="LaunchViewTableViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LaunchViewTableViewController" id="I5e-hP-0L5" customClass="LaunchViewTableViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gf2-kf-8mg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,7 +290,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="djp-gh-8Zj">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="djp-gh-8Zj">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -306,7 +308,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="74k-Os-JnN">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="74k-Os-JnN">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -324,7 +326,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Unread" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K4z-MK-EZp">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K4z-MK-EZp">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -343,12 +345,17 @@
                             <outlet property="delegate" destination="I5e-hP-0L5" id="RZn-lU-2r3"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="allLabel" destination="74k-Os-JnN" id="mz6-ev-Wtu"/>
+                        <outlet property="favoritesLabel" destination="djp-gh-8Zj" id="x3H-DC-Gys"/>
+                        <outlet property="unreadLabel" destination="K4z-MK-EZp" id="HTA-H7-Rrm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e88-9E-Hbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1967" y="861"/>
         </scene>
-        <!--About-->
+        <!--About Table View Controller-->
         <scene sceneID="lib-kU-GVH">
             <objects>
                 <tableViewController storyboardIdentifier="AboutTableViewController" id="W7F-kP-sYS" customClass="AboutTableViewController" customModule="RootOfHeart" customModuleProvider="target" sceneMemberID="viewController">
@@ -360,8 +367,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for downloading √♥︎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dC-Lo-vaz">
-                                    <rect key="frame" x="8" y="12" width="359" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dC-Lo-vaz">
+                                    <rect key="frame" x="8" y="22.5" width="359" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -485,7 +492,10 @@
                             <outlet property="delegate" destination="W7F-kP-sYS" id="ktV-Jk-Iw2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="About" image="Info" selectedImage="Info-Filled" id="8cf-g2-yvE"/>
+                    <tabBarItem key="tabBarItem" title="" image="Info" selectedImage="Info-Filled" id="8cf-g2-yvE"/>
+                    <connections>
+                        <outlet property="headerLabel" destination="5dC-Lo-vaz" id="Bkz-3t-ct2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oj3-Tj-SRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

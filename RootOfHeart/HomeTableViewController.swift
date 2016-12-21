@@ -39,8 +39,8 @@ class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false´
+        title = "√♥︎"
+        navigationItem.title = title
         
         tableView.contentOffset = CGPoint(x: 0, y: headerView.frame.height)
         headerSegmentedControl.selectedSegmentIndex = SettingsService.launchView.rawValue

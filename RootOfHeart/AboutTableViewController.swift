@@ -10,6 +10,12 @@ import UIKit
 
 class AboutTableViewController: UITableViewController {
     
+    // MARK: - Outlets
+
+    @IBOutlet weak var headerLabel: UILabel!
+    
+    
+    
     // MARK: - Private Properties
     
     private var translators: NSArray = []
@@ -38,11 +44,7 @@ class AboutTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        headerLabel.text = NSLocalizedString("Thanks for downloading √♥︎", comment: "")
         
         let translatorsPath = Bundle.main.path(forResource: "Translators", ofType: "plist")
         translators = NSArray(contentsOfFile: translatorsPath!)!
