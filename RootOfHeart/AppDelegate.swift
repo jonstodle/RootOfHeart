@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         prepareForForeground()
         
-        UIApplication.shared.setMinimumBackgroundFetchInterval(60 * 60 * 6) // 6 hours
+        UIApplication.shared.setMinimumBackgroundFetchInterval(60 * 60 * 4) // 4 hours
         UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .alert], categories: nil))
         
         return true
