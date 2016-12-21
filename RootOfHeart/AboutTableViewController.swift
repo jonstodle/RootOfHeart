@@ -74,7 +74,7 @@ class AboutTableViewController: UITableViewController {
         case 1: return textInSection1.count
         case 2: return textInSection2.count
         case 3: return textInSection3.count
-        case 4: return translators.count
+        case 4: return translators.count + 1
         default: return 0
         }
     }
@@ -102,12 +102,20 @@ class AboutTableViewController: UITableViewController {
             cell.textLabel?.text = textInSection3[indexPath.row]
             return cell
         case 4:
+            if indexPath.row == translators.count {
+                let cell = getLinkButtonCell()
+                cell.linkButton.setTitle(NSLocalizedString("Help translate", comment: ""), for: .normal)
+                cell.link = "https://poeditor.com/join/project/d30Zf6wupR"
+                return cell
+            }
+            else {
             let cell = getRightDetailCell()
             let translator = translators[indexPath.row] as! NSDictionary
             cell.detailTextLabel?.text = translator["Name"] as? String
             cell.textLabel?.text = currentLocale.displayName(forKey: .identifier, value: translator["Language"]!)?.localizedCapitalized
             
             return cell
+            }
         default:
             return tableView.dequeueReusableCell(withIdentifier: "Basic")!
         }
@@ -125,4 +133,5 @@ class AboutTableViewController: UITableViewController {
     private func getSubtitleCell() -> UITableViewCell { return tableView.dequeueReusableCell(withIdentifier: "Subtitle")! }
     private func getBasicInfoCell() -> UITableViewCell { return tableView.dequeueReusableCell(withIdentifier: "BasicInfo")! }
     private func getRightDetailCell() -> UITableViewCell { return tableView.dequeueReusableCell(withIdentifier: "RightDetail")! }
+    private func getLinkButtonCell() -> LinkButtonTableViewCell { return tableView.dequeueReusableCell(withIdentifier: "LinkButton") as! LinkButtonTableViewCell }
 }

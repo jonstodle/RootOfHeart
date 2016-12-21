@@ -155,6 +155,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="e4R-zQ-ueY"/>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="HuX-N7-Ou0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
@@ -455,6 +456,27 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LinkButton" id="ma3-ek-29V" customClass="LinkButtonTableViewCell" customModule="RootOfHeart" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="276" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ma3-ek-29V" id="CG7-Go-LoG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICR-dh-Dcm">
+                                            <rect key="frame" x="8" y="7" width="359" height="30"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ICR-dh-Dcm" firstAttribute="leading" secondItem="CG7-Go-LoG" secondAttribute="leadingMargin" id="4s5-UV-vzs"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ICR-dh-Dcm" secondAttribute="trailing" id="kUt-dN-Nkn"/>
+                                        <constraint firstItem="ICR-dh-Dcm" firstAttribute="centerY" secondItem="CG7-Go-LoG" secondAttribute="centerY" id="r65-BX-BSP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="linkButton" destination="ICR-dh-Dcm" id="BO1-jZ-U2r"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
