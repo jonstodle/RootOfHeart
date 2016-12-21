@@ -101,9 +101,11 @@ class HomeTableViewController: UITableViewController {
             .flatMap {
                 Observable.combineLatest(
                     DataService.instance.refresh(),
-                    Observable<Int>.timer(2, scheduler: MainScheduler.instance)) { $0 }
+                    Observable<Int>.timer(2, scheduler: ConcurrentDispatchQueueScheduler.init(qos: .utility))) { $0 }
                 .take(1)
             }
+            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: {
                 [weak self] _ in
                     self!.refreshControl?.endRefreshing()
