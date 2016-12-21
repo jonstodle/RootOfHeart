@@ -62,6 +62,7 @@
 		6C3D6AE060429C704A016224 /* Pods-RootOfHeart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeart/Pods-RootOfHeart.debug.xcconfig"; sourceTree = "<group>"; };
 		9C12D40F5D8CEE4DF8ADB74B /* Pods-RootOfHeartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeartTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeartTests/Pods-RootOfHeartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5DDE96186BB712FB4BDE8B2 /* Pods-RootOfHeart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeart.release.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeart/Pods-RootOfHeart.release.xcconfig"; sourceTree = "<group>"; };
+		FC0146121E0AC94B00D7AC3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		FC02A8E61DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewHeaderViewController.swift; sourceTree = "<group>"; };
 		FC09E8451DEC7EAA00AF3C07 /* ComicOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicOverlayViewController.swift; sourceTree = "<group>"; };
 		FC3FC6911DCB8E6C0069FDED /* RootOfHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootOfHeart.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -518,6 +519,7 @@
 			children = (
 				FCA90B701E072DE1005DD0A7 /* Base */,
 				FCA90B721E072DED005DD0A7 /* nb */,
+				FC0146121E0AC94B00D7AC3C /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
