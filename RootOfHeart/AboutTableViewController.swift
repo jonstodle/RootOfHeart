@@ -36,7 +36,7 @@ class AboutTableViewController: UITableViewController {
     
     private let textInSection3 = ["Icons8"]
     
-    private var currentLocale = NSLocale(localeIdentifier: Bundle.main.preferredLocalizations.first!)
+    private let currentLocale = NSLocale(localeIdentifier: Bundle.main.preferredLocalizations.first!)
     
     
     
