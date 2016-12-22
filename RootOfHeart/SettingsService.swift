@@ -24,6 +24,20 @@ extension SettingsService {
         get { return LaunchView(rawValue: SettingsService.getSetting(forKey: "launchView", orDefaultValue: 1))! }
         set { SettingsService.setSetting(value: newValue.rawValue, forKey: "launchView") }
     }
+    
+    static var languageOverride: String {
+        get { return SettingsService.getSetting(forKey: "languageOverride", orDefaultValue: "") }
+        set {
+            if !newValue.isEmpty {
+                SettingsService.setSetting(value: newValue, forKey: "languageOverride")
+                SettingsService.setSetting(value: [newValue], forKey: "AppleLanguages")
+            }
+            else {
+                UserDefaults.standard.removeObject(forKey: "languageOverride")
+                UserDefaults.standard.removeObject(forKey: "AppleLanguages")
+            }
+        }
+    }
 }
 
 extension SettingsService {

@@ -32,7 +32,6 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         launchViewTitleLabel.text = NSLocalizedString("Launch view", comment: "")
-        launchViewChoiceLabel.text = SettingsService.launchView.stringValue
         languageTitleLabel.text = NSLocalizedString("Language", comment: "")
 
         tableView.rx
@@ -41,7 +40,12 @@ class SettingsTableViewController: UITableViewController {
                 [weak self] indexPath in
                 var newVc = UIViewController()
                 
-                if indexPath.row == 0  { newVc = self!.storyboard!.instantiateViewController(withIdentifier: "LaunchViewTableViewController") as! LaunchViewTableViewController }
+                switch indexPath.row {
+                case 0: newVc = self!.storyboard!.instantiateViewController(withIdentifier: "LaunchViewTableViewController") as! LaunchViewTableViewController; break
+                case 1: newVc = self!.storyboard!.instantiateViewController(withIdentifier: "LanguageTableViewController") as! LanguageTableViewController; break
+                default: return
+                }
+                
                 
                 self!.navigationController?.pushViewController(newVc, animated: true)
             })
@@ -59,5 +63,12 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         launchViewChoiceLabel.text = SettingsService.launchView.stringValue
+        languageChoiceLabel.text = getCurrentLanguage()
     }
+    
+    
+    
+    // MARK: - Helper Methods
+    
+    private func getCurrentLanguage() -> String? { return NSLocale(localeIdentifier: Bundle.main.preferredLocalizations.first!).displayName(forKey: .identifier, value: !SettingsService.languageOverride.isEmpty ? SettingsService.languageOverride : Bundle.main.preferredLocalizations.first!)?.localizedCapitalized }
 }

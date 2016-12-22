@@ -32,6 +32,8 @@
 		FCA90B771E072E07005DD0A7 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B741E072E07005DD0A7 /* Base.lproj */; };
 		FCA90B781E072E07005DD0A7 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B751E072E07005DD0A7 /* en.lproj */; };
 		FCA90B791E072E07005DD0A7 /* nb.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B761E072E07005DD0A7 /* nb.lproj */; };
+		FCAFCA501E0C1372000CB490 /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAFCA4F1E0C1372000CB490 /* LanguageTableViewController.swift */; };
+		FCAFCA521E0C14BC000CB490 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAFCA511E0C14BC000CB490 /* Language.swift */; };
 		FCDCCBF01DFC4DFA00F235FC /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */; };
 		FCDCCBF21DFC4E0B00F235FC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +96,8 @@
 		FCA90B741E072E07005DD0A7 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		FCA90B751E072E07005DD0A7 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		FCA90B761E072E07005DD0A7 /* nb.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nb.lproj; sourceTree = "<group>"; };
+		FCAFCA4F1E0C1372000CB490 /* LanguageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
+		FCAFCA511E0C14BC000CB490 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +210,7 @@
 				FC7321861DFC946300F3CC6E /* LaunchViewTableViewController.swift */,
 				FC0146131E0ACFB000D7AC3C /* LinkButtonTableViewCell.swift */,
 				FC01461B1E0B339200D7AC3C /* SettingsTabsViewController.swift */,
+				FCAFCA4F1E0C1372000CB490 /* LanguageTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				FC73218B1DFCAACE00F3CC6E /* LaunchView.swift */,
+				FCAFCA511E0C14BC000CB490 /* Language.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -474,12 +480,14 @@
 				FC7321891DFC9F5400F3CC6E /* SettingsService.swift in Sources */,
 				FC73218C1DFCAACE00F3CC6E /* LaunchView.swift in Sources */,
 				FC78018B1DCE529600B9A925 /* HomeTableViewController.swift in Sources */,
+				FCAFCA521E0C14BC000CB490 /* Language.swift in Sources */,
 				FCDCCBF21DFC4E0B00F235FC /* SettingsTableViewController.swift in Sources */,
 				FC4E07A51DE22D4C002CEB4C /* ComicTableViewCell.swift in Sources */,
 				FC7801891DCE528B00B9A925 /* AppDelegate.swift in Sources */,
 				FC63AB501DF57F2B0058A018 /* FileService.swift in Sources */,
 				FC01461C1E0B339200D7AC3C /* SettingsTabsViewController.swift in Sources */,
 				FC4E07AC1DE46AB7002CEB4C /* UIExtensions.swift in Sources */,
+				FCAFCA501E0C1372000CB490 /* LanguageTableViewController.swift in Sources */,
 				FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */,
 				FC4E90BA1E07EEA9000CBA16 /* NotificationService.swift in Sources */,
 				FC09E8461DEC7EAA00AF3C07 /* ComicOverlayViewController.swift in Sources */,
