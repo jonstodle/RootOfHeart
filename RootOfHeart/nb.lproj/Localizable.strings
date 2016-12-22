@@ -49,3 +49,18 @@
 
 /*No comment provided by engineer.*/
 "Without the help of these libraries, making this app would be a lot harder" = "Uten hjelpen fra disse bibliotekene ville det vært my vanskeligere å lage denne appen";
+
+/*Used in alert when changing language in app settings*/
+"Changing language" = "Bytting av språk";
+
+/*No comment provided by engineer.*/
+"Exit now" = "Avslutt nå";
+
+/*No comment provided by engineer.*/
+"Later" = "Senere";
+
+/*No comment provided by engineer.*/
+"System" = "System";
+
+/*No comment provided by engineer.*/
+"The app needs to exit and be launched again to change language" = "Appen må avslutte og startes på ny for å bytte språk";
