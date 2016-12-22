@@ -47,7 +47,7 @@ class LanguageTableViewController: UITableViewController {
                 if SettingsService.languageOverride != self!.currentLanguageOverride
                     && !self!.hasShownWarning{
                     self!.hasShownWarning = true
-                    let alert = UIAlertController(title: NSLocalizedString("Changing language", comment: "Used in alert when changing language in app settings"), message: NSLocalizedString("The app needs to exit and launched again to change language", comment: ""), preferredStyle: .alert)
+                    let alert = UIAlertController(title: NSLocalizedString("Changing language", comment: "Used in alert when changing language in app settings"), message: NSLocalizedString("The app needs to exit and be launched again to change language", comment: ""), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: NSLocalizedString("Exit now", comment: ""), style: .destructive, handler: { _ in exit(0) }))
                     alert.addAction(UIAlertAction(title: NSLocalizedString("Later", comment: ""), style: .default, handler: nil))
                     self!.present(alert, animated: true, completion: nil)
