@@ -43,7 +43,7 @@ class HomeTableViewController: UITableViewController {
         navigationItem.title = title
         
         tableView.contentOffset = CGPoint(x: 0, y: headerView.frame.height)
-        headerSegmentedControl.selectedSegmentIndex = SettingsService.launchView.rawValue
+        headerSegmentedControl.selectedSegmentIndex = StateService.instance.launchView.value.rawValue
         
         _allNotificationToken = DataService.instance.comics.addNotificationBlock({
             [weak self] in

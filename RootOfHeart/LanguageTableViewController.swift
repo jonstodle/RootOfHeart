@@ -42,9 +42,9 @@ class LanguageTableViewController: UITableViewController {
                 [weak self] indexPath in
                 self!.tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
                 let language = self!.languages[indexPath.row]
-                SettingsService.languageOverride = language.code
+                StateService.instance.languageOverride.value = language.code
                 
-                if SettingsService.languageOverride != self!.currentLanguageOverride
+                if StateService.instance.languageOverride.value != self!.currentLanguageOverride
                     && !self!.hasShownWarning{
                     self!.hasShownWarning = true
                     let alert = UIAlertController(title: NSLocalizedString("Changing language", comment: "Used in alert when changing language in app settings"), message: NSLocalizedString("The app needs to exit and be launched again to change language", comment: ""), preferredStyle: .alert)
@@ -78,7 +78,7 @@ class LanguageTableViewController: UITableViewController {
         
         cell.textLabel?.text = languages[indexPath.row].displayName
         
-        if languages[indexPath.row].code == SettingsService.languageOverride {
+        if languages[indexPath.row].code == StateService.instance.languageOverride.value {
             cell.accessoryType = .checkmark
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
@@ -91,7 +91,7 @@ class LanguageTableViewController: UITableViewController {
     
     // MARK: - Private Properites
     
-    private let currentLanguageOverride = SettingsService.languageOverride
+    private let currentLanguageOverride = StateService.instance.languageOverride.value
     private var hasShownWarning = false
     private var languages = [Language]()
     private let _disposeBag = DisposeBag()

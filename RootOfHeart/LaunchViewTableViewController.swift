@@ -47,7 +47,7 @@ class LaunchViewTableViewController: UITableViewController {
             .subscribe(onNext: {
                 [weak self] indexPath in
                 self!.tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-                SettingsService.launchView = LaunchView(rawValue: indexPath.row)!
+                StateService.instance.launchView.value = LaunchView(rawValue: indexPath.row)!
                 _ = self!.navigationController?.popViewController(animated: true)
             })
             .addDisposableTo(_disposeBag)
@@ -59,6 +59,6 @@ class LaunchViewTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tableView.cellForRow(at: IndexPath(row: SettingsService.launchView.rawValue, section: 0))?.accessoryType = .checkmark
+        tableView.cellForRow(at: IndexPath(row: StateService.instance.launchView.value.rawValue, section: 0))?.accessoryType = .checkmark
     }
 }

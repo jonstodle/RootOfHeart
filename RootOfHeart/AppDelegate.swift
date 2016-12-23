@@ -89,17 +89,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func prepareForBackground(){
         DataService.instance.cancelAllOperations()
-        SettingsService.backgroundTime = Int64(Date().timeIntervalSinceReferenceDate)
+        StateService.instance.backgroundTime.value = Int64(Date().timeIntervalSinceReferenceDate)
     }
     
     func prepareForForeground(){
         DataService.instance.startLoadingComics()
-        if let isPast12Hours = (Calendar.current.date(byAdding: .hour, value: 6, to: Date(timeIntervalSinceReferenceDate: TimeInterval(integerLiteral: SettingsService.backgroundTime)))?.isBefore(date: Date(), granularity: .hour)),
+        if let isPast12Hours = (Calendar.current.date(byAdding: .hour, value: 6, to: Date(timeIntervalSinceReferenceDate: TimeInterval(integerLiteral: StateService.instance.backgroundTime.value)))?.isBefore(date: Date(), granularity: .hour)),
             isPast12Hours {
             if let navController = window!.rootViewController as? UINavigationController,
                 let homeController = navController.viewControllers.first as? HomeTableViewController {
                 navController.popToRootViewController(animated: false)
-                homeController.headerSegmentedControl?.selectedSegmentIndex = SettingsService.launchView.rawValue
+                homeController.headerSegmentedControl?.selectedSegmentIndex = StateService.instance.launchView.value.rawValue
             }
         }
     }

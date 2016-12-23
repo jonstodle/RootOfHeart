@@ -33,7 +33,17 @@ class SettingsTableViewController: UITableViewController {
         
         launchViewTitleLabel.text = NSLocalizedString("Launch view", comment: "")
         languageTitleLabel.text = NSLocalizedString("Language", comment: "")
-
+        
+        StateService.instance.launchView.asDriver()
+            .map { $0.stringValue }
+            .drive(launchViewChoiceLabel.rx.text)
+            .addDisposableTo(_disposeBag)
+        StateService.instance.languageOverride.asDriver()
+            .map { !$0.isEmpty ? $0 : Bundle.main.preferredLocalizations.first! }
+            .map { NSLocale(localeIdentifier: Bundle.main.preferredLocalizations.first!).displayName(forKey: .identifier, value: $0)?.localizedCapitalized }
+            .drive(languageChoiceLabel.rx.text)
+            .addDisposableTo(_disposeBag)
+        
         tableView.rx
             .itemSelected
             .subscribe(onNext: {
@@ -56,19 +66,4 @@ class SettingsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-    // MARK: - Implementation
-    
-    override func viewWillAppear(_ animated: Bool) {
-        launchViewChoiceLabel.text = SettingsService.launchView.stringValue
-        languageChoiceLabel.text = getCurrentLanguage()
-    }
-    
-    
-    
-    // MARK: - Helper Methods
-    
-    private func getCurrentLanguage() -> String? { return NSLocale(localeIdentifier: Bundle.main.preferredLocalizations.first!).displayName(forKey: .identifier, value: !SettingsService.languageOverride.isEmpty ? SettingsService.languageOverride : Bundle.main.preferredLocalizations.first!)?.localizedCapitalized }
 }

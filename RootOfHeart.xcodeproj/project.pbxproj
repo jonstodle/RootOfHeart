@@ -20,7 +20,7 @@
 		FC4E90BA1E07EEA9000CBA16 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E90B91E07EEA9000CBA16 /* NotificationService.swift */; };
 		FC63AB501DF57F2B0058A018 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63AB4F1DF57F2B0058A018 /* FileService.swift */; };
 		FC7321871DFC946300F3CC6E /* LaunchViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7321861DFC946300F3CC6E /* LaunchViewTableViewController.swift */; };
-		FC7321891DFC9F5400F3CC6E /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7321881DFC9F5400F3CC6E /* SettingsService.swift */; };
+		FC7321891DFC9F5400F3CC6E /* StateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7321881DFC9F5400F3CC6E /* StateService.swift */; };
 		FC73218C1DFCAACE00F3CC6E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73218B1DFCAACE00F3CC6E /* LaunchView.swift */; };
 		FC7801841DCE526900B9A925 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801821DCE526900B9A925 /* Comic.swift */; };
 		FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801831DCE526900B9A925 /* XkcdService.swift */; };
@@ -84,7 +84,7 @@
 		FC4E90B91E07EEA9000CBA16 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		FC63AB4F1DF57F2B0058A018 /* FileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		FC7321861DFC946300F3CC6E /* LaunchViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewTableViewController.swift; sourceTree = "<group>"; };
-		FC7321881DFC9F5400F3CC6E /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		FC7321881DFC9F5400F3CC6E /* StateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateService.swift; sourceTree = "<group>"; };
 		FC73218B1DFCAACE00F3CC6E /* LaunchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		FC7801821DCE526900B9A925 /* Comic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		FC7801831DCE526900B9A925 /* XkcdService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XkcdService.swift; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 			children = (
 				FC7801861DCE527200B9A925 /* DataService.swift */,
 				FC63AB4F1DF57F2B0058A018 /* FileService.swift */,
-				FC7321881DFC9F5400F3CC6E /* SettingsService.swift */,
+				FC7321881DFC9F5400F3CC6E /* StateService.swift */,
 			);
 			name = DataServices;
 			sourceTree = "<group>";
@@ -477,7 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC7321891DFC9F5400F3CC6E /* SettingsService.swift in Sources */,
+				FC7321891DFC9F5400F3CC6E /* StateService.swift in Sources */,
 				FC73218C1DFCAACE00F3CC6E /* LaunchView.swift in Sources */,
 				FC78018B1DCE529600B9A925 /* HomeTableViewController.swift in Sources */,
 				FCAFCA521E0C14BC000CB490 /* Language.swift in Sources */,
