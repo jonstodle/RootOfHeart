@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class LinkButtonTableViewCell: UITableViewCell {
+final class LinkButtonTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
     @IBOutlet weak var linkButton: UIButton!

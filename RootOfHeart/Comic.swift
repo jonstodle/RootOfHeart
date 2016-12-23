@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import SwiftDate
 
-class Comic : Object{
+final class Comic : Object{
     //MARK: - Properties
     
     dynamic var title = ""

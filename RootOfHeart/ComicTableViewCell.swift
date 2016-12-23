@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ComicTableViewCell: UITableViewCell {
+final class ComicTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
 

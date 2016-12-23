@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LanguageTableViewController: UITableViewController {
+final class LanguageTableViewController: UITableViewController {
     
     // MARK: - Implementation
     

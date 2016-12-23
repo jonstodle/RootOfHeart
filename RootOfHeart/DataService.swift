@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import RxSwift
 
-class DataService{
+final class DataService{
     //MARK: - Singleton
     
     private static var _instance = DataService()

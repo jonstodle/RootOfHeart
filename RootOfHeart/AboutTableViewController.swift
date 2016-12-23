@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutTableViewController: UITableViewController {
+final class AboutTableViewController: UITableViewController {
     
     // MARK: - Outlets
 

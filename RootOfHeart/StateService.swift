@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class StateService {
+final class StateService {
     
     // MARK: - Singleton
     

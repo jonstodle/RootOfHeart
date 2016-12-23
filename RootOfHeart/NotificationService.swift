@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class NotificationService {
+final class NotificationService {
     static func createNotification(forComic comic: Comic) -> UILocalNotification {
         let notification = UILocalNotification()
         notification.alertBody = "\(comic.number) - \(comic.title)"

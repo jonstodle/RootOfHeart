@@ -11,7 +11,7 @@ import Photos
 import RxSwift
 import RxCocoa
 
-class ComicOverlayViewController: UIViewController {
+final class ComicOverlayViewController: UIViewController {
     
     // MARK: - Outlets
     

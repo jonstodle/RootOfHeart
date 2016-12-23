@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ComicViewController: UIViewController {
+final class ComicViewController: UIViewController {
     
     // MARK: - Outlets
     

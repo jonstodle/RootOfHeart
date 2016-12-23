@@ -11,7 +11,7 @@ import RxSwift
 import Alamofire
 import SwiftyJSON
 
-public class XkcdClient{
+final public class XkcdClient{
     //MARK: - Constants
     
     private static let xkcdUrl = "https://xkcd.com"

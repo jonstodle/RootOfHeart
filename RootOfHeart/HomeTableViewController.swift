@@ -12,7 +12,7 @@ import RxCocoa
 import RealmSwift
 import Kingfisher
 
-class HomeTableViewController: UITableViewController {
+final class HomeTableViewController: UITableViewController {
     
     // MARK: - Outlets
     

@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import RxSwift
 
-class FileService {
+final class FileService {
     static func saveImageToCache(name: String, image: UIImage) -> Observable<Bool>{
         return Observable<Bool>.create{
             o in

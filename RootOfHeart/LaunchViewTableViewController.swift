@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LaunchViewTableViewController: UITableViewController {
+final class LaunchViewTableViewController: UITableViewController {
     
     // MARK: - Outlets
     
