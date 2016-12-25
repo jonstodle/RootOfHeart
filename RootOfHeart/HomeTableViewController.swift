@@ -238,7 +238,32 @@ extension HomeTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if _dataSource.count == 0 {
+            let containerView = UIView()
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            switch headerSegmentedControl.selectedSegmentIndex {
+            case 0: label.text = NSLocalizedString("You don't have any favorites", comment: ""); break
+            case 1: label.text = NSLocalizedString("Couldn't find any comics. Try reloading by pulling down", comment: ""); break
+            case 2: label.text = NSLocalizedString("You've all the recent comics.\nYou'll have to wait for new ones", comment: ""); break
+            default: break
+            }
+            label.numberOfLines = 0
+            label.textAlignment = .center
+            containerView.addSubview(label)
+            
+            label.centerYAnchor.constraint(equalTo: containerView.layoutMarginsGuide.centerYAnchor).isActive = true
+            label.leadingAnchor.constraint(equalTo: containerView.layoutMarginsGuide.leadingAnchor).isActive = true
+            label.trailingAnchor.constraint(equalTo: containerView.layoutMarginsGuide.trailingAnchor).isActive = true
+            
+            tableView.backgroundView = containerView;
+            tableView.separatorStyle = .none
+        }
+        else {
+            tableView.backgroundView = nil
+            tableView.separatorStyle = .singleLine
+        }
+        
         return _dataSource.count
     }
     
