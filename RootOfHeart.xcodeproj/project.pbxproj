@@ -34,6 +34,7 @@
 		FCA90B791E072E07005DD0A7 /* nb.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FCA90B761E072E07005DD0A7 /* nb.lproj */; };
 		FCAFCA501E0C1372000CB490 /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAFCA4F1E0C1372000CB490 /* LanguageTableViewController.swift */; };
 		FCAFCA521E0C14BC000CB490 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAFCA511E0C14BC000CB490 /* Language.swift */; };
+		FCC046B31E107AEA006B4DE2 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC046B21E107AEA006B4DE2 /* LoadingState.swift */; };
 		FCDCCBF01DFC4DFA00F235FC /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */; };
 		FCDCCBF21DFC4E0B00F235FC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -98,6 +99,7 @@
 		FCA90B761E072E07005DD0A7 /* nb.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nb.lproj; sourceTree = "<group>"; };
 		FCAFCA4F1E0C1372000CB490 /* LanguageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
 		FCAFCA511E0C14BC000CB490 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		FCC046B21E107AEA006B4DE2 /* LoadingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		FCDCCBEF1DFC4DFA00F235FC /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		FCDCCBF11DFC4E0B00F235FC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -246,6 +248,7 @@
 			children = (
 				FC73218B1DFCAACE00F3CC6E /* LaunchView.swift */,
 				FCAFCA511E0C14BC000CB490 /* Language.swift */,
+				FCC046B21E107AEA006B4DE2 /* LoadingState.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				FC63AB501DF57F2B0058A018 /* FileService.swift in Sources */,
 				FC01461C1E0B339200D7AC3C /* SettingsTabsViewController.swift in Sources */,
 				FC4E07AC1DE46AB7002CEB4C /* UIExtensions.swift in Sources */,
+				FCC046B31E107AEA006B4DE2 /* LoadingState.swift in Sources */,
 				FCAFCA501E0C1372000CB490 /* LanguageTableViewController.swift in Sources */,
 				FC7801851DCE526900B9A925 /* XkcdService.swift in Sources */,
 				FC4E90BA1E07EEA9000CBA16 /* NotificationService.swift in Sources */,

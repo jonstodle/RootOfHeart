@@ -37,7 +37,7 @@ final class ComicTableViewCell: UITableViewCell {
             dateLabel.text = comic.date.string(dateStyle: .short, timeStyle: .none)
         }
     }
-    private(set) var downloadState: loadingState = .notLoaded{
+    private(set) var downloadState: LoadingState = .notLoaded{
         didSet {
             if downloadState == .loading {
                 loadingActivityIndicator.startAnimating()
@@ -78,10 +78,4 @@ final class ComicTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-}
-
-enum loadingState {
-    case loading
-    case loaded
-    case notLoaded
 }
