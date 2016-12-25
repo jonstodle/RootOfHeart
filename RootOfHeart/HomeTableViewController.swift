@@ -155,7 +155,7 @@ final class HomeTableViewController: UITableViewController {
                     
                     if cell.downloadState == .loaded {
                         let newVc = self!.storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
-                        newVc.comic = self!.getCurrentSource()[indexPath.row]
+                        newVc.comic = self!._dataSource[indexPath.row]
                         self!.navigationController?.pushViewController(newVc, animated: true)
                     }
                     else {
@@ -197,15 +197,16 @@ final class HomeTableViewController: UITableViewController {
     
     // MARK: - Table View Data Source
     
-    fileprivate func getCurrentSource() -> Results<Comic> {
+    fileprivate var _dataSource: Results<Comic> {
         if !(comicSearchBar.text?.isEmpty ?? true) {
             return DataService.instance.search(for: comicSearchBar.text!)
         }
         else {
-            let i = headerSegmentedControl.selectedSegmentIndex
-            if i == 0 { return DataService.instance.favoritedComics }
-            if i == 2 { return DataService.instance.unreadComics }
-            return DataService.instance.comics
+            switch headerSegmentedControl.selectedSegmentIndex {
+            case 0: return DataService.instance.favoritedComics
+            case 2: return DataService.instance.unreadComics
+            default: return DataService.instance.comics
+            }
         }
     }
     
@@ -238,13 +239,13 @@ extension HomeTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return getCurrentSource().count
+        return _dataSource.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: _comicCellIdentifier, for: indexPath) as! ComicTableViewCell
         
-        cell.comic = getCurrentSource()[indexPath.row]
+        cell.comic = _dataSource[indexPath.row]
         
         return cell
     }
