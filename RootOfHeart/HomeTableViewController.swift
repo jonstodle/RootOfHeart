@@ -189,6 +189,8 @@ final class HomeTableViewController: UITableViewController {
     
     deinit {
         _allNotificationToken?.stop()
+        _favoritesNotificationToken?.stop()
+        _unreadNotificationToken?.stop()
     }
     
     
