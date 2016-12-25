@@ -100,6 +100,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
                 let homeController = navController.viewControllers.first as? HomeTableViewController {
                 navController.popToRootViewController(animated: false)
                 homeController.headerSegmentedControl?.selectedSegmentIndex = StateService.instance.launchView.value.rawValue
+                homeController.tableView.reloadData()
             }
         }
     }
