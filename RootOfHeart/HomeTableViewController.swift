@@ -243,9 +243,9 @@ extension HomeTableViewController {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             switch headerSegmentedControl.selectedSegmentIndex {
-            case 0: label.text = NSLocalizedString("You don't have any favorites", comment: ""); break
+            case 0: label.text = NSLocalizedString("You're favorite comics will show up here", comment: ""); break
             case 1: label.text = NSLocalizedString("Couldn't find any comics. Try reloading by pulling down", comment: ""); break
-            case 2: label.text = NSLocalizedString("You've all the recent comics.\nYou'll have to wait for new ones", comment: ""); break
+            case 2: label.text = NSLocalizedString("You've read all the recent comics.\nYou'll have to wait for new ones", comment: ""); break
             default: break
             }
             label.numberOfLines = 0
