@@ -64,3 +64,24 @@
 
 /*No comment provided by engineer.*/
 "The app needs to exit and be launched again to change language" = "Appen må avslutte og startes på ny for å bytte språk";
+
+/*No comment provided by engineer.*/
+"Couldn't find any comics. Try reloading by pulling down" = "Kunne ikke finne noen striper. Prøve å oppdatere ved å sveipe nedover";
+
+/*No comment provided by engineer.*/
+"Mark as\nfavorite" = "Merk som\nfavoritt";
+
+/*No comment provided by engineer.*/
+"Mark as\nread" = "Merk som\nlest";
+
+/*No comment provided by engineer.*/
+"Mark as\nunread" = "Merk som\nulest";
+
+/*No comment provided by engineer.*/
+"Remove as\nfavorite" = "Fjern som\nfavoritt";
+
+/*No comment provided by engineer.*/
+"You're favorite comics will show up here" = "Favorittstripene dine vil vises her";
+
+/*No comment provided by engineer.*/
+"You've read all the recent comics.\nYou'll have to wait for new ones" = "Du har lest alle de nye stripene.\nDu må nok vente på nye";
