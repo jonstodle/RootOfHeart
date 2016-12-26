@@ -95,7 +95,7 @@ final class ComicViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        comicImageView.kf.setImage(with: URL(string: comic.imageUrl), completionHandler: {
+        comicImageView.kf.setImage(with: URL(string: comic.imageUrl), options: [.onlyFromCache], completionHandler: {
             [weak self] _, _, _, _ in
             self!.postImageLoadSetup()
             UIView.animate(withDuration: 0.2, animations: {
