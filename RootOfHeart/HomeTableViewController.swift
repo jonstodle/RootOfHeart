@@ -274,4 +274,25 @@ extension HomeTableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let comic = _dataSource[indexPath.row]
+        
+        let unreadTitle = !comic.isRead ? NSLocalizedString("Mark as read", comment: "") : NSLocalizedString("Mark as unread", comment: "")
+        let unreadAction = UITableViewRowAction(style: .normal, title: unreadTitle, handler: {
+            _,_ in
+            DataService.instance.setComic(comic, asRead: !comic.isRead)
+        })
+        unreadAction.backgroundColor = UIColor.blue
+
+        let favoriteTitle = !comic.isFavorite ? NSLocalizedString("Mark as favorite", comment: "") : NSLocalizedString("Remove as favorite", comment: "")
+        let favoriteAction = UITableViewRowAction(style: .normal, title: favoriteTitle, handler: {
+            _,_ in
+            DataService.instance.setComic(comic, asFavorite: !comic.isFavorite)
+        })
+        
+        return [unreadAction, favoriteAction]
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {}
 }

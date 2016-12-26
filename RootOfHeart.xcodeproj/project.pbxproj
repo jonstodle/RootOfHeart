@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480494AE1B6FD3F0B68CBC27 /* Pods_RootOfHeartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CB3B9A273968AAE8C33596 /* Pods_RootOfHeartTests.framework */; };
+		DC7B1C1751D46017B4CCA533 /* Pods_RootOfHeart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1DE57299B5E7F7D77D0FA8 /* Pods_RootOfHeart.framework */; };
 		FC0146141E0ACFB000D7AC3C /* LinkButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0146131E0ACFB000D7AC3C /* LinkButtonTableViewCell.swift */; };
 		FC01461C1E0B339200D7AC3C /* SettingsTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01461B1E0B339200D7AC3C /* SettingsTabsViewController.swift */; };
 		FC02A8E71DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02A8E61DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift */; };
@@ -63,9 +65,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		19CB3B9A273968AAE8C33596 /* Pods_RootOfHeartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RootOfHeartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2859C2B1DE761A74F8CFDF35 /* Pods-RootOfHeartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeartTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeartTests/Pods-RootOfHeartTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C3D6AE060429C704A016224 /* Pods-RootOfHeart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeart/Pods-RootOfHeart.debug.xcconfig"; sourceTree = "<group>"; };
 		9C12D40F5D8CEE4DF8ADB74B /* Pods-RootOfHeartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeartTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeartTests/Pods-RootOfHeartTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BF1DE57299B5E7F7D77D0FA8 /* Pods_RootOfHeart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RootOfHeart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DDE96186BB712FB4BDE8B2 /* Pods-RootOfHeart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeart.release.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeart/Pods-RootOfHeart.release.xcconfig"; sourceTree = "<group>"; };
 		FC0146131E0ACFB000D7AC3C /* LinkButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkButtonTableViewCell.swift; sourceTree = "<group>"; };
 		FC01461B1E0B339200D7AC3C /* SettingsTabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTabsViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7B1C1751D46017B4CCA533 /* Pods_RootOfHeart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480494AE1B6FD3F0B68CBC27 /* Pods_RootOfHeartTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +139,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5C68BBCB63304785D60895A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF1DE57299B5E7F7D77D0FA8 /* Pods_RootOfHeart.framework */,
+				19CB3B9A273968AAE8C33596 /* Pods_RootOfHeartTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FC3FC6881DCB8E6C0069FDED = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +155,7 @@
 				FC3FC6A81DCB8E6C0069FDED /* RootOfHeartTests */,
 				FC3FC6921DCB8E6C0069FDED /* Products */,
 				0326B3193E51149F8728F2A2 /* Pods */,
+				5C68BBCB63304785D60895A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,20 +199,13 @@
 		FC3FC6B61DCB8F160069FDED /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FC4E90B81E07EE23000CBA16 /* NotificationServices */,
-				FC3FC6C21DCBB9340069FDED /* DataServices */,
-				FC3FC6B71DCB8F1D0069FDED /* XkcdServices */,
-			);
-			name = Services;
-			sourceTree = "<group>";
-		};
-		FC3FC6B71DCB8F1D0069FDED /* XkcdServices */ = {
-			isa = PBXGroup;
-			children = (
-				FC7801821DCE526900B9A925 /* Comic.swift */,
+				FC7801861DCE527200B9A925 /* DataService.swift */,
+				FC63AB4F1DF57F2B0058A018 /* FileService.swift */,
+				FC4E90B91E07EEA9000CBA16 /* NotificationService.swift */,
+				FC7321881DFC9F5400F3CC6E /* StateService.swift */,
 				FC7801831DCE526900B9A925 /* XkcdService.swift */,
 			);
-			name = XkcdServices;
+			name = Services;
 			sourceTree = "<group>";
 		};
 		FC3FC6BD1DCB8F8A0069FDED /* ViewControllers */ = {
@@ -217,16 +226,6 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		FC3FC6C21DCBB9340069FDED /* DataServices */ = {
-			isa = PBXGroup;
-			children = (
-				FC7801861DCE527200B9A925 /* DataService.swift */,
-				FC63AB4F1DF57F2B0058A018 /* FileService.swift */,
-				FC7321881DFC9F5400F3CC6E /* StateService.swift */,
-			);
-			name = DataServices;
-			sourceTree = "<group>";
-		};
 		FC4E07A81DE46A7A002CEB4C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,17 +234,10 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		FC4E90B81E07EE23000CBA16 /* NotificationServices */ = {
-			isa = PBXGroup;
-			children = (
-				FC4E90B91E07EEA9000CBA16 /* NotificationService.swift */,
-			);
-			name = NotificationServices;
-			sourceTree = "<group>";
-		};
 		FC73218A1DFCAAB500F3CC6E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FC7801821DCE526900B9A925 /* Comic.swift */,
 				FC73218B1DFCAACE00F3CC6E /* LaunchView.swift */,
 				FCAFCA511E0C14BC000CB490 /* Language.swift */,
 				FCC046B21E107AEA006B4DE2 /* LoadingState.swift */,
@@ -644,7 +636,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C3D6AE060429C704A016224 /* Pods-RootOfHeart.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X93LMNWC9P;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -660,7 +652,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C5DDE96186BB712FB4BDE8B2 /* Pods-RootOfHeart.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X93LMNWC9P;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
