@@ -75,10 +75,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         guard let navController = window?.rootViewController as? UINavigationController,
             let homeController = navController.viewControllers.first as? HomeTableViewController,
+            let storyBoard = homeController.storyboard,
             let comicNumber = notification.userInfo?["number"] as? Int else { return }
         
         navController.popViewController(animated: false)
-        let newVc = homeController.storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
+        let newVc = storyBoard.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
         newVc.comic = DataService.instance.getComic(number: comicNumber)!
         navController.pushViewController(newVc, animated: true)
     }
