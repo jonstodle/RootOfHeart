@@ -240,21 +240,44 @@ extension HomeTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if _dataSource.count == 0 {
             let containerView = UIView()
+            
+            let stackView = UIStackView()
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            stackView.axis = .vertical
+            stackView.distribution = .equalSpacing
+            stackView.alignment = .center
+            containerView.addSubview(stackView)
+            
+            let imageView = UIImageView()
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.heightAnchor.constraint(equalToConstant: 44).isActive = true
+            imageView.widthAnchor.constraint(equalToConstant: 44).isActive = true
+            stackView.addArrangedSubview(imageView)
+            
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
-            switch headerSegmentedControl.selectedSegmentIndex {
-            case 0: label.text = NSLocalizedString("You're favorite comics will show up here", comment: ""); break
-            case 1: label.text = NSLocalizedString("Couldn't find any comics. Try reloading by pulling down", comment: ""); break
-            case 2: label.text = NSLocalizedString("You've read all the recent comics.\nYou'll have to wait for new ones", comment: ""); break
-            default: break
-            }
             label.numberOfLines = 0
             label.textAlignment = .center
-            containerView.addSubview(label)
+            stackView.addArrangedSubview(label)
             
-            label.centerYAnchor.constraint(equalTo: containerView.layoutMarginsGuide.centerYAnchor).isActive = true
-            label.leadingAnchor.constraint(equalTo: containerView.layoutMarginsGuide.leadingAnchor).isActive = true
-            label.trailingAnchor.constraint(equalTo: containerView.layoutMarginsGuide.trailingAnchor).isActive = true
+            switch headerSegmentedControl.selectedSegmentIndex {
+            case 0:
+                label.text = NSLocalizedString("You're favorite comics will show up here", comment: "")
+                imageView.image = #imageLiteral(resourceName: "Favorite-Filled")
+                break
+            case 1:
+                label.text = NSLocalizedString("Couldn't find any comics. Try reloading by pulling down", comment: "")
+                break
+            case 2:
+                label.text = NSLocalizedString("You've read all the recent comics.\nYou'll have to wait for new ones", comment: "")
+                imageView.image = #imageLiteral(resourceName: "LaunchImage")
+                break
+            default: break
+            }
+            
+            stackView.centerYAnchor.constraint(equalTo: containerView.layoutMarginsGuide.centerYAnchor).isActive = true
+            stackView.leadingAnchor.constraint(equalTo: containerView.layoutMarginsGuide.leadingAnchor).isActive = true
+            stackView.trailingAnchor.constraint(equalTo: containerView.layoutMarginsGuide.trailingAnchor).isActive = true
             
             tableView.backgroundView = containerView;
             tableView.separatorStyle = .none
