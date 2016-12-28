@@ -251,7 +251,7 @@ extension HomeTableViewController {
             let imageView = UIImageView()
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.heightAnchor.constraint(equalToConstant: 44).isActive = true
-            imageView.widthAnchor.constraint(equalToConstant: 44).isActive = true
+            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor).isActive = true
             stackView.addArrangedSubview(imageView)
             
             let label = UILabel()
@@ -270,12 +270,12 @@ extension HomeTableViewController {
                 break
             case 2:
                 label.text = NSLocalizedString("You've read all the recent comics.\nYou'll have to wait for new ones", comment: "")
-                imageView.image = #imageLiteral(resourceName: "LaunchImage")
+                imageView.image = #imageLiteral(resourceName: "AppIcon-NoPadding")
                 break
             default: break
             }
             
-            stackView.centerYAnchor.constraint(equalTo: containerView.layoutMarginsGuide.centerYAnchor).isActive = true
+            stackView.topAnchor.constraint(equalTo: containerView.layoutMarginsGuide.centerYAnchor, constant: -44).isActive = true
             stackView.leadingAnchor.constraint(equalTo: containerView.layoutMarginsGuide.leadingAnchor).isActive = true
             stackView.trailingAnchor.constraint(equalTo: containerView.layoutMarginsGuide.trailingAnchor).isActive = true
             
