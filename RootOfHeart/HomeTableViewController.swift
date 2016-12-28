@@ -42,6 +42,10 @@ final class HomeTableViewController: UITableViewController {
         title = "√♥︎"
         navigationItem.title = title
         
+        headerSegmentedControl.setTitle(NSLocalizedString("Favorites", comment: ""), forSegmentAt: 0)
+        headerSegmentedControl.setTitle(NSLocalizedString("All", comment: ""), forSegmentAt: 1)
+        headerSegmentedControl.setTitle(NSLocalizedString("Unread", comment: ""), forSegmentAt: 2)
+        
         tableView.contentOffset = CGPoint(x: 0, y: headerView.frame.height)
         headerSegmentedControl.selectedSegmentIndex = StateService.instance.launchView.value.rawValue
         
