@@ -50,23 +50,23 @@ final class HomeTableViewController: UITableViewController {
         headerSegmentedControl.selectedSegmentIndex = StateService.instance.launchView.value.rawValue
         
         _allNotificationToken = DataService.instance.comics.addNotificationBlock({
-            [weak self] in
-            if self!.headerSegmentedControl.selectedSegmentIndex == 1{
-                self!.updateTableView(with: $0)
+            [unowned self] in
+            if self.headerSegmentedControl.selectedSegmentIndex == 1{
+                self.updateTableView(with: $0)
             }
         })
         
         _favoritesNotificationToken = DataService.instance.favoritedComics.addNotificationBlock({
-            [weak self] in
-            if self!.headerSegmentedControl.selectedSegmentIndex == 0{
-                self!.updateTableView(with: $0)
+            [unowned self] in
+            if self.headerSegmentedControl.selectedSegmentIndex == 0{
+                self.updateTableView(with: $0)
             }
         })
         
         _unreadNotificationToken = DataService.instance.unreadComics.addNotificationBlock({
-            [weak self] in
-            if self!.headerSegmentedControl.selectedSegmentIndex == 2{
-                self!.updateTableView(with: $0)
+            [unowned self] in
+            if self.headerSegmentedControl.selectedSegmentIndex == 2{
+                self.updateTableView(with: $0)
             }
         })
         
@@ -82,19 +82,19 @@ final class HomeTableViewController: UITableViewController {
         searchBarButton.rx
             .tap
             .subscribe(onNext:{
-                [weak self] _ in
-                if self!.comicSearchBar.isHidden { self!.tableView.setContentOffset(CGPoint(x: 0, y: -self!.topLayoutGuide.length), animated: true) }
-                UIView.transition(with: self!.comicSearchBar, duration: 0.3, options: [.transitionCrossDissolve], animations: {
-                    self!.comicSearchBar.isHidden = !self!.comicSearchBar.isHidden
+                [unowned self] _ in
+                if self.comicSearchBar.isHidden { self.tableView.setContentOffset(CGPoint(x: 0, y: -self.topLayoutGuide.length), animated: true) }
+                UIView.transition(with: self.comicSearchBar, duration: 0.3, options: [.transitionCrossDissolve], animations: {
+                    self.comicSearchBar.isHidden = !self.comicSearchBar.isHidden
                 }, completion: {
                     finished in
-                    if !self!.comicSearchBar.isHidden {
-                        self!.comicSearchBar.becomeFirstResponder()
+                    if !self.comicSearchBar.isHidden {
+                        self.comicSearchBar.becomeFirstResponder()
                     }
                     else {
-                        self!.comicSearchBar.resignFirstResponder()
-                        self!.comicSearchBar.text = ""
-                        self!.tableView.reloadData()
+                        self.comicSearchBar.resignFirstResponder()
+                        self.comicSearchBar.text = ""
+                        self.tableView.reloadData()
                     }
                 })
             })
@@ -111,16 +111,16 @@ final class HomeTableViewController: UITableViewController {
             .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {
-                [weak self] _ in
-                    self!.refreshControl?.endRefreshing()
+                [unowned self] _ in
+                    self.refreshControl?.endRefreshing()
             })
             .addDisposableTo(_disposeBag)
         
         headerSegmentedControl.rx
             .value
             .subscribe(onNext:{
-                [weak self] _ in
-                self!.tableView.reloadData()
+                [unowned self] _ in
+                self.tableView.reloadData()
             })
             .addDisposableTo(_disposeBag)
         
@@ -128,8 +128,8 @@ final class HomeTableViewController: UITableViewController {
             .text
             .debounce(0.8, scheduler: MainScheduler.instance)
             .subscribe(onNext: {
-                [weak self] _ in
-                self!.tableView.reloadData()
+                [unowned self] _ in
+                self.tableView.reloadData()
             })
             .addDisposableTo(_disposeBag)
         
@@ -137,16 +137,16 @@ final class HomeTableViewController: UITableViewController {
             .text
             .filter { $0?.isEmpty ?? true }
             .subscribe(onNext: {
-                [weak self] _ in
-                self!.tableView.reloadData()
+                [unowned self] _ in
+                self.tableView.reloadData()
             })
             .addDisposableTo(_disposeBag)
         
         comicSearchBar.rx
             .searchButtonClicked
             .subscribe(onNext: {
-                [weak self] _ in
-                self!.comicSearchBar.resignFirstResponder()
+                [unowned self] _ in
+                self.comicSearchBar.resignFirstResponder()
             })
             .addDisposableTo(_disposeBag)
         
@@ -154,13 +154,13 @@ final class HomeTableViewController: UITableViewController {
             .itemSelected
             .subscribe(
                 onNext:{
-                    [weak self] indexPath in
-                    let cell = self!.tableView.cellForRow(at: indexPath) as! ComicTableViewCell
+                    [unowned self] indexPath in
+                    let cell = self.tableView.cellForRow(at: indexPath) as! ComicTableViewCell
                     
                     if cell.downloadState == .loaded {
-                        let newVc = self!.storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
-                        newVc.comic = self!._dataSource[indexPath.row]
-                        self!.navigationController?.pushViewController(newVc, animated: true)
+                        let newVc = self.storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
+                        newVc.comic = self._dataSource[indexPath.row]
+                        self.navigationController?.pushViewController(newVc, animated: true)
                     }
                     else {
                         cell.downloadImage()
@@ -171,9 +171,9 @@ final class HomeTableViewController: UITableViewController {
         tableView.rx
             .willDisplayCell
             .subscribe(onNext: {
-                [weak self] _, indexPath in
+                [unowned self] _, indexPath in
                 
-                if indexPath.row >= (self!.tableView.numberOfRows(inSection: 0) - 3) {
+                if indexPath.row >= (self.tableView.numberOfRows(inSection: 0) - 3) {
                     DataService.instance.loadOldComics()
                 }
             })

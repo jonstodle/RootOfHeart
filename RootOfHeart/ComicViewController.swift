@@ -51,9 +51,9 @@ final class ComicViewController: UIViewController {
         doubleTapRecognizer.rx
             .event
             .subscribe(onNext: {
-                [weak self] _ in
-                let sv = self!.scrollView!
-                let iv = self!.comicImageView!
+                [unowned self] _ in
+                let sv = self.scrollView!
+                let iv = self.comicImageView!
                 
                 let horizontalFitScale = sv.frame.width / iv.bounds.width;
                 let verticalFitScale = sv.frame.height / iv.bounds.height;
@@ -71,13 +71,13 @@ final class ComicViewController: UIViewController {
             .flatMap({Observable.just($0).delay(0.3, scheduler: ConcurrentDispatchQueueScheduler(qos: .background)).takeUntil(doubleTapRecognizer.rx.event)})
             .observeOn(MainScheduler.instance)
             .subscribe(onNext:{
-                [weak self] _ in
-                self!.overlayViewController.comicImage = self!.comicImageView.image
+                [unowned self] _ in
+                self.overlayViewController.comicImage = self.comicImageView.image
                 
                 UIView.animate(withDuration: 0.3, animations: {
-                    let isVisible = self!.overlayContainerView.alpha != 0
-                    self!.overlayContainerView.isUserInteractionEnabled = !isVisible
-                    self!.overlayContainerView.alpha = isVisible ? 0 : 1
+                    let isVisible = self.overlayContainerView.alpha != 0
+                    self.overlayContainerView.isUserInteractionEnabled = !isVisible
+                    self.overlayContainerView.alpha = isVisible ? 0 : 1
                 })
             })
             .addDisposableTo(_disposeBag)
@@ -96,10 +96,10 @@ final class ComicViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         comicImageView.kf.setImage(with: URL(string: comic.imageUrl), options: [.onlyFromCache], completionHandler: {
-            [weak self] _, _, _, _ in
-            self!.postImageLoadSetup()
+            [unowned self] _, _, _, _ in
+            self.postImageLoadSetup()
             UIView.animate(withDuration: 0.2, animations: {
-                self!.comicImageView.alpha = 1
+                self.comicImageView.alpha = 1
             })
         })
     }
@@ -108,9 +108,9 @@ final class ComicViewController: UIViewController {
         let center = CGPoint(x: (scrollView.bounds.width / 2) + scrollView.contentOffset.x, y: (scrollView.bounds.height / 2) + scrollView.contentOffset.y)
         
         coordinator.animate(alongsideTransition: {
-            [weak self] context -> Void in
-            if self!.topImageViewConstraint.constant + self!.leadingImageViewConstraint.constant == 0 {
-            self!.scrollView.contentOffset = CGPoint(x: center.x - (size.width / 2), y: center.y - ((size.height - self!.layoutGuides) / 2))
+            [unowned self] context -> Void in
+            if self.topImageViewConstraint.constant + self.leadingImageViewConstraint.constant == 0 {
+            self.scrollView.contentOffset = CGPoint(x: center.x - (size.width / 2), y: center.y - ((size.height - self.layoutGuides) / 2))
             }
         }, completion: nil)
     }

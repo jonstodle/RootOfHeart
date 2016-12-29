@@ -50,10 +50,10 @@ final class ComicOverlayViewController: UIViewController {
         favoriteButton.rx
             .tap
             .subscribe(onNext:{
-                [weak self] _ in
-                DataService.instance.setComic(self!.comic, asFavorite: !self!.comic.isFavorite)
-                self!.comic = DataService.instance.getComic(number: self!.comic.number)!
-                self!.setFavoriteButtonImage()
+                [unowned self] _ in
+                DataService.instance.setComic(self.comic, asFavorite: !self.comic.isFavorite)
+                self.comic = DataService.instance.getComic(number: self.comic.number)!
+                self.setFavoriteButtonImage()
             })
             .addDisposableTo(_disposeBag)
         
@@ -64,8 +64,8 @@ final class ComicOverlayViewController: UIViewController {
         saveButtonTaps // Has not access to save photos
             .filter{PHPhotoLibrary.authorizationStatus() == .denied}
             .subscribe(onNext:{
-                [weak self] _ in
-                self!.displayMessage(message: NSLocalizedString("Go to Settings > √♥︎ and allow access to Photos", comment: ""), caption: NSLocalizedString("No access to photos", comment: ""))
+                [unowned self] _ in
+                self.displayMessage(message: NSLocalizedString("Go to Settings > √♥︎ and allow access to Photos", comment: ""), caption: NSLocalizedString("No access to photos", comment: ""))
             })
             .addDisposableTo(_disposeBag)
             
@@ -73,8 +73,8 @@ final class ComicOverlayViewController: UIViewController {
             .filter{PHPhotoLibrary.authorizationStatus() != .denied}
             .observeOn(SerialDispatchQueueScheduler(qos: .userInitiated))
             .subscribe(onNext:{
-                [weak self] _ in
-                guard let image = self!.comicImage else{return}
+                [unowned self] _ in
+                guard let image = self.comicImage else{return}
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             })
             .addDisposableTo(_disposeBag)
@@ -82,10 +82,10 @@ final class ComicOverlayViewController: UIViewController {
         shareButton.rx
             .tap
             .subscribe(onNext:{
-                [weak self] _ in
-                var shareData: [Any] = [self!.comic.title, self!.comic.webUrl.absoluteString]
-                if let image = self!.comicImage { shareData.insert(image, at: 0) }
-                self!.present(UIActivityViewController(activityItems: shareData, applicationActivities: nil), animated: true, completion: nil)
+                [unowned self] _ in
+                var shareData: [Any] = [self.comic.title, self.comic.webUrl.absoluteString]
+                if let image = self.comicImage { shareData.insert(image, at: 0) }
+                self.present(UIActivityViewController(activityItems: shareData, applicationActivities: nil), animated: true, completion: nil)
             })
             .addDisposableTo(_disposeBag)
     }

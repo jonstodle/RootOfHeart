@@ -27,8 +27,8 @@ final class LinkButtonTableViewCell: UITableViewCell {
         linkButton.rx
             .tap
             .subscribe(onNext: {
-                [weak self] _ in
-                guard let url = URL(string: self!.link) else { return }
+                [unowned self] _ in
+                guard let url = URL(string: self.link) else { return }
                 UIApplication.shared.openURL(url)
             })
             .addDisposableTo(_disposeBag)

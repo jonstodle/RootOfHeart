@@ -47,17 +47,17 @@ final class SettingsTableViewController: UITableViewController {
         tableView.rx
             .itemSelected
             .subscribe(onNext: {
-                [weak self] indexPath in
+                [unowned self] indexPath in
                 var newVc = UIViewController()
                 
                 switch indexPath.row {
-                case 0: newVc = self!.storyboard!.instantiateViewController(withIdentifier: "LaunchViewTableViewController") as! LaunchViewTableViewController; break
-                case 1: newVc = self!.storyboard!.instantiateViewController(withIdentifier: "LanguageTableViewController") as! LanguageTableViewController; break
+                case 0: newVc = self.storyboard!.instantiateViewController(withIdentifier: "LaunchViewTableViewController") as! LaunchViewTableViewController; break
+                case 1: newVc = self.storyboard!.instantiateViewController(withIdentifier: "LanguageTableViewController") as! LanguageTableViewController; break
                 default: return
                 }
                 
                 
-                self!.navigationController?.pushViewController(newVc, animated: true)
+                self.navigationController?.pushViewController(newVc, animated: true)
             })
             .addDisposableTo(_disposeBag)
     }

@@ -31,26 +31,26 @@ final class LanguageTableViewController: UITableViewController {
         tableView.rx
             .itemDeselected
             .subscribe(onNext: {
-                [weak self] indexPath in
-                self!.tableView.cellForRow(at: indexPath)?.accessoryType = .none
+                [unowned self] indexPath in
+                self.tableView.cellForRow(at: indexPath)?.accessoryType = .none
             })
             .addDisposableTo(_disposeBag)
         
         tableView.rx
             .itemSelected
             .subscribe(onNext: {
-                [weak self] indexPath in
-                self!.tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-                let language = self!.languages[indexPath.row]
+                [unowned self] indexPath in
+                self.tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+                let language = self.languages[indexPath.row]
                 StateService.instance.languageOverride.value = language.code
                 
-                if StateService.instance.languageOverride.value != self!.currentLanguageOverride
-                    && !self!.hasShownWarning{
-                    self!.hasShownWarning = true
+                if StateService.instance.languageOverride.value != self.currentLanguageOverride
+                    && !self.hasShownWarning{
+                    self.hasShownWarning = true
                     let alert = UIAlertController(title: NSLocalizedString("Changing language", comment: "Used in alert when changing language in app settings"), message: NSLocalizedString("The app needs to exit and be launched again to change language", comment: ""), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: NSLocalizedString("Exit now", comment: ""), style: .destructive, handler: { _ in exit(0) }))
                     alert.addAction(UIAlertAction(title: NSLocalizedString("Later", comment: ""), style: .default, handler: nil))
-                    self!.present(alert, animated: true, completion: nil)
+                    self.present(alert, animated: true, completion: nil)
                 }
             })
             .addDisposableTo(_disposeBag)

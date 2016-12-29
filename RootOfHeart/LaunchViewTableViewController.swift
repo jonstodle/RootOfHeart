@@ -37,18 +37,18 @@ final class LaunchViewTableViewController: UITableViewController {
         tableView.rx
             .itemDeselected
             .subscribe(onNext: {
-                [weak self] indexPath in
-                self!.tableView.cellForRow(at: indexPath)?.accessoryType = .none
+                [unowned self] indexPath in
+                self.tableView.cellForRow(at: indexPath)?.accessoryType = .none
             })
             .addDisposableTo(_disposeBag)
 
         tableView.rx
             .itemSelected
             .subscribe(onNext: {
-                [weak self] indexPath in
-                self!.tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+                [unowned self] indexPath in
+                self.tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
                 StateService.instance.launchView.value = LaunchView(rawValue: indexPath.row)!
-                _ = self!.navigationController?.popViewController(animated: true)
+                _ = self.navigationController?.popViewController(animated: true)
             })
             .addDisposableTo(_disposeBag)
     }
