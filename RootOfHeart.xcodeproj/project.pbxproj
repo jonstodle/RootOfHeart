@@ -171,18 +171,18 @@
 		FC3FC6931DCB8E6C0069FDED /* RootOfHeart */ = {
 			isa = PBXGroup;
 			children = (
-				FC4E90B71E07B7E5000CBA16 /* RootOfHeart.entitlements */,
-				FCA90B731E072DFA005DD0A7 /* Localization */,
-				FC73218A1DFCAAB500F3CC6E /* Models */,
-				FC4E07A81DE46A7A002CEB4C /* Extensions */,
 				FC7801881DCE528B00B9A925 /* AppDelegate.swift */,
-				FC3FC6BD1DCB8F8A0069FDED /* ViewControllers */,
-				FC3FC6B61DCB8F160069FDED /* Services */,
 				FC3FC69B1DCB8E6C0069FDED /* Assets.xcassets */,
-				FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */,
+				FC4E07A81DE46A7A002CEB4C /* Extensions */,
 				FC3FC6A01DCB8E6C0069FDED /* Info.plist */,
+				FC3FC69D1DCB8E6C0069FDED /* LaunchScreen.storyboard */,
+				FCA90B731E072DFA005DD0A7 /* Localization */,
 				FCA90B711E072DE1005DD0A7 /* Main.storyboard */,
+				FC73218A1DFCAAB500F3CC6E /* Models */,
+				FC4E90B71E07B7E5000CBA16 /* RootOfHeart.entitlements */,
+				FC3FC6B61DCB8F160069FDED /* Services */,
 				FCA90B2C1E04AE92005DD0A7 /* Translators.plist */,
+				FC3FC6BD1DCB8F8A0069FDED /* ViewControllers */,
 			);
 			path = RootOfHeart;
 			sourceTree = "<group>";
