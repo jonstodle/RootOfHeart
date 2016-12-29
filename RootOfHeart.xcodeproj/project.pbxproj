@@ -313,7 +313,7 @@
 					FC3FC6901DCB8E6C0069FDED = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = X93LMNWC9P;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -638,12 +638,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = X93LMNWC9P;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RootOfHeart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jonstodle.RootOfHeart;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonstodle.rootofheart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "25b240df-8b1c-4057-9804-7ad741835c0c";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS Dev";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -654,12 +657,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = X93LMNWC9P;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RootOfHeart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jonstodle.RootOfHeart;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonstodle.rootofheart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4b23efeb-5613-4d74-aad7-8d8b12e5606f";
+				PROVISIONING_PROFILE_SPECIFIER = "Root of Heart";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
