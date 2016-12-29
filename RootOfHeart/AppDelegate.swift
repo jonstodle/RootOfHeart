@@ -8,6 +8,9 @@
 
 import UIKit
 import RxSwift
+import MobileCenter
+import MobileCenterAnalytics
+import MobileCenterCrashes
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +19,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        MSMobileCenter.start("6ee0ec3a-ddd6-4c4f-82dc-776ef885fcc2", withServices:[
+            MSAnalytics.self,
+            MSCrashes.self
+            ])
+        #if DEBUG
+            MSMobileCenter.setEnabled(false)
+        #endif
+        
         prepareForForeground()
         
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
