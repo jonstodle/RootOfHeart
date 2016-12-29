@@ -73,9 +73,9 @@ final class HomeTableViewController: UITableViewController {
         settingsBarButton.rx
             .tap
             .subscribe(onNext: {
-                [weak self ] _ in
-                let newVc = self!.storyboard!.instantiateViewController(withIdentifier: "SettingsTabBarController")
-                self!.navigationController?.pushViewController(newVc, animated: true)
+                [unowned self] _ in
+                let newVc = self.storyboard!.instantiateViewController(withIdentifier: "SettingsTabBarController")
+                self.navigationController?.pushViewController(newVc, animated: true)
             })
             .addDisposableTo(_disposeBag)
         
