@@ -236,6 +236,9 @@ final class HomeTableViewController: UITableViewController {
 }
 
 extension HomeTableViewController {
+    
+    // MARK: - Table View Methods
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -322,4 +325,33 @@ extension HomeTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {}
+}
+
+extension HomeTableViewController {
+    
+    // MARK: - Scroll View Methods
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let visibleIndexPaths = tableView.indexPathsForVisibleRows else { return }
+        
+        for indexPath in visibleIndexPaths {
+            adjustTitleStackViewOffset(for: tableView.cellForRow(at: indexPath) as! ComicTableViewCell, with: indexPath)
+        }
+    }
+    
+    
+    
+    // MARK: - Helper Methods
+    
+    private func adjustTitleStackViewOffset(for cell: ComicTableViewCell, with indexPath: IndexPath) {
+        guard let superview = tableView.superview else { return }
+        let cellFrame = tableView.convert(tableView.rectForRow(at: indexPath), to: superview)
+        let cellCenterY = cellFrame.origin.y + (cellFrame.height / 2)
+        
+        let baseConstant = CGFloat(integerLiteral: 64)
+        let totalSlideLength = CGFloat(integerLiteral: 20)
+        let slidePercentage = cellCenterY / tableView.frame.height
+        
+        cell.titleStackViewTopConstraint.constant = baseConstant + (totalSlideLength * slidePercentage)
+    }
 }

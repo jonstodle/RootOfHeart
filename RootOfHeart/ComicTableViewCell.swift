@@ -19,6 +19,7 @@ final class ComicTableViewCell: UITableViewCell {
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleStackViewTopConstraint: NSLayoutConstraint!
     
     
     

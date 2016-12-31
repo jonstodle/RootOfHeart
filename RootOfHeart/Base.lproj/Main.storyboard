@@ -141,6 +141,7 @@
                                     <outlet property="loadingActivityIndicator" destination="6wF-jQ-i6z" id="hVZ-XJ-MMu"/>
                                     <outlet property="numberLabel" destination="rsE-6F-emi" id="YP9-9E-AQA"/>
                                     <outlet property="titleLabel" destination="3sx-hg-s6x" id="NX1-UI-wMk"/>
+                                    <outlet property="titleStackViewTopConstraint" destination="Rub-li-5BS" id="fkO-co-eCZ"/>
                                     <outlet property="unreadImageView" destination="OCm-ff-5du" id="Exd-Pt-7Vl"/>
                                 </connections>
                             </tableViewCell>
