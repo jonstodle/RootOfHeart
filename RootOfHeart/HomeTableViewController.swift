@@ -348,10 +348,10 @@ extension HomeTableViewController {
         let cellFrame = tableView.convert(tableView.rectForRow(at: indexPath), to: superview)
         let cellCenterY = cellFrame.origin.y + (cellFrame.height / 2)
         
-        let baseConstant = CGFloat(integerLiteral: 64)
-        let totalSlideLength = CGFloat(integerLiteral: 20)
+        let baseConstant = CGFloat(integerLiteral: 74)
+        let totalSlideLength = CGFloat(integerLiteral: 30)
         let slidePercentage = cellCenterY / tableView.frame.height
         
-        cell.titleStackViewTopConstraint.constant = baseConstant + (totalSlideLength * slidePercentage)
+        cell.titleStackViewTopConstraint.constant = (baseConstant - (totalSlideLength / 2)) + (totalSlideLength * slidePercentage)
     }
 }
