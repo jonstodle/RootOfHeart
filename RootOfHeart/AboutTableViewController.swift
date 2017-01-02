@@ -107,7 +107,7 @@ final class AboutTableViewController: UITableViewController {
             if indexPath.row == translators.count {
                 let cell = getLinkButtonCell()
                 cell.linkButton.setTitle(NSLocalizedString("Help translate", comment: ""), for: .normal)
-                cell.link = "https://poeditor.com/join/project/d30Zf6wupR"
+                cell.link = "https://poeditor.com/join/project/uejjV1asA6"
                 return cell
             }
             else {
