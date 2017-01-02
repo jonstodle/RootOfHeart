@@ -45,7 +45,6 @@ final class ComicOverlayViewController: UIViewController {
         numberLabel.text = "#\(comic.number)"
         dateLabel.text = comic.date.string(dateStyle: .short, timeStyle: .none)
         altTextLabel.text = comic.alt
-        setFavoriteButtonImage()
         
         favoriteButton.rx
             .tap
@@ -53,8 +52,13 @@ final class ComicOverlayViewController: UIViewController {
                 [unowned self] _ in
                 DataService.instance.setComic(self.comic, asFavorite: !self.comic.isFavorite)
                 self.comic = DataService.instance.getComic(number: self.comic.number)!
-                self.setFavoriteButtonImage()
             })
+            .addDisposableTo(_disposeBag)
+        
+        comic.rx.observe(Bool.self, "isFavorite")
+            .asDriver(onErrorJustReturn: false)
+            .map { $0 ?? false ? #imageLiteral(resourceName: "Favorite-Filled") : #imageLiteral(resourceName: "Favorite") }
+            .drive(onNext: { [unowned self] in self.favoriteButton.setImage($0, for: .normal) })
             .addDisposableTo(_disposeBag)
         
         let saveButtonTaps = saveButton.rx
@@ -93,13 +97,5 @@ final class ComicOverlayViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    // MARK: - Helper Methods
-    
-    private func setFavoriteButtonImage(){
-        favoriteButton.setImage(comic.isFavorite ? #imageLiteral(resourceName: "Favorite-Filled") : #imageLiteral(resourceName: "Favorite"), for: .normal)
     }
 }
