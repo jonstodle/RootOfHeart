@@ -12,7 +12,7 @@ import RxCocoa
 import RealmSwift
 import Kingfisher
 
-final class HomeTableViewController: UITableViewController, UIViewControllerPreviewingDelegate {
+final class HomeTableViewController: UITableViewController {
     
     // MARK: - Outlets
     
@@ -237,24 +237,6 @@ final class HomeTableViewController: UITableViewController, UIViewControllerPrev
             break
         }
     }
-    
-    
-    
-    // MARK: - UIViewControllerPreviewingDelegate
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        guard let newVc = storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as? ComicViewController,
-            let indexPath = tableView.indexPathForRow(at: location) else { return nil }
-        
-        newVc.comic = _dataSource[indexPath.row]
-        previewingContext.sourceRect = tableView.cellForRow(at: indexPath)!.frame
-        
-        return newVc
-    }
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        navigationController?.pushViewController(viewControllerToCommit, animated: false)
-    }
 }
 
 extension HomeTableViewController {
@@ -375,5 +357,26 @@ extension HomeTableViewController {
         let slidePercentage = cellCenterY / tableView.frame.height
         
         cell.titleStackViewTopConstraint.constant = (baseConstant - (totalSlideLength / 2)) + (totalSlideLength * slidePercentage)
+    }
+}
+
+extension HomeTableViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
+        
+        let newVc = ComicPreviewViewController(comic: _dataSource[indexPath.row])
+        newVc.prepareView()
+        previewingContext.sourceRect = tableView.cellForRow(at: indexPath)!.frame
+        
+        return newVc
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        guard let newVc = storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as? ComicViewController,
+            let oldVc = viewControllerToCommit as? ComicPreviewViewController else { return }
+        
+        newVc.comic = oldVc.comic
+        
+        navigationController?.pushViewController(newVc, animated: true)
     }
 }

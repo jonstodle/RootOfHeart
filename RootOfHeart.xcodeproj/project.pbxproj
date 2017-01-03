@@ -21,6 +21,7 @@
 		FC4E07AC1DE46AB7002CEB4C /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E07AB1DE46AB7002CEB4C /* UIExtensions.swift */; };
 		FC4E90BA1E07EEA9000CBA16 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E90B91E07EEA9000CBA16 /* NotificationService.swift */; };
 		FC63AB501DF57F2B0058A018 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC63AB4F1DF57F2B0058A018 /* FileService.swift */; };
+		FC6FC1E01E1BE7AA00EDBD28 /* ComicPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FC1DF1E1BE7A900EDBD28 /* ComicPreviewViewController.swift */; };
 		FC7321871DFC946300F3CC6E /* LaunchViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7321861DFC946300F3CC6E /* LaunchViewTableViewController.swift */; };
 		FC7321891DFC9F5400F3CC6E /* StateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7321881DFC9F5400F3CC6E /* StateService.swift */; };
 		FC73218C1DFCAACE00F3CC6E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73218B1DFCAACE00F3CC6E /* LaunchView.swift */; };
@@ -88,6 +89,7 @@
 		FC4E90B71E07B7E5000CBA16 /* RootOfHeart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RootOfHeart.entitlements; sourceTree = "<group>"; };
 		FC4E90B91E07EEA9000CBA16 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		FC63AB4F1DF57F2B0058A018 /* FileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
+		FC6FC1DF1E1BE7A900EDBD28 /* ComicPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicPreviewViewController.swift; sourceTree = "<group>"; };
 		FC7321861DFC946300F3CC6E /* LaunchViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewTableViewController.swift; sourceTree = "<group>"; };
 		FC7321881DFC9F5400F3CC6E /* StateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateService.swift; sourceTree = "<group>"; };
 		FC73218B1DFCAACE00F3CC6E /* LaunchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				FC0146131E0ACFB000D7AC3C /* LinkButtonTableViewCell.swift */,
 				FC01461B1E0B339200D7AC3C /* SettingsTabsViewController.swift */,
 				FCAFCA4F1E0C1372000CB490 /* LanguageTableViewController.swift */,
+				FC6FC1DF1E1BE7A900EDBD28 /* ComicPreviewViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6FC1E01E1BE7AA00EDBD28 /* ComicPreviewViewController.swift in Sources */,
 				FC7321891DFC9F5400F3CC6E /* StateService.swift in Sources */,
 				FC73218C1DFCAACE00F3CC6E /* LaunchView.swift in Sources */,
 				FC78018B1DCE529600B9A925 /* HomeTableViewController.swift in Sources */,
