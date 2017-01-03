@@ -183,7 +183,6 @@
 				FC73218A1DFCAAB500F3CC6E /* Models */,
 				FC4E90B71E07B7E5000CBA16 /* RootOfHeart.entitlements */,
 				FC3FC6B61DCB8F160069FDED /* Services */,
-				FCA90B2C1E04AE92005DD0A7 /* Translators.plist */,
 				FC3FC6BD1DCB8F8A0069FDED /* ViewControllers */,
 			);
 			path = RootOfHeart;
@@ -251,6 +250,7 @@
 		FCA90B731E072DFA005DD0A7 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				FCA90B2C1E04AE92005DD0A7 /* Translators.plist */,
 				FCA90B741E072E07005DD0A7 /* Base.lproj */,
 				FCA90B751E072E07005DD0A7 /* en.lproj */,
 				FCA90B761E072E07005DD0A7 /* nb.lproj */,
