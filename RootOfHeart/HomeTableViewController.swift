@@ -339,7 +339,8 @@ extension HomeTableViewController {
         guard let visibleIndexPaths = tableView.indexPathsForVisibleRows else { return }
         
         for indexPath in visibleIndexPaths {
-            adjustTitleStackViewOffset(for: tableView.cellForRow(at: indexPath) as! ComicTableViewCell, with: indexPath)
+            guard let cell = tableView.cellForRow(at: indexPath) as? ComicTableViewCell else { continue }
+            adjustTitleStackViewOffset(for: cell, with: indexPath)
         }
     }
     
