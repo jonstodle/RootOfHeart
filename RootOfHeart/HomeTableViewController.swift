@@ -12,7 +12,7 @@ import RxCocoa
 import RealmSwift
 import Kingfisher
 
-final class HomeTableViewController: UITableViewController {
+final class HomeTableViewController: UITableViewController, UIViewControllerPreviewingDelegate {
     
     // MARK: - Outlets
     
@@ -69,6 +69,10 @@ final class HomeTableViewController: UITableViewController {
                 self.updateTableView(with: $0)
             }
         })
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        }
         
         settingsBarButton.rx
             .tap
@@ -232,6 +236,24 @@ final class HomeTableViewController: UITableViewController {
             // Handle error
             break
         }
+    }
+    
+    
+    
+    // MARK: - UIViewControllerPreviewingDelegate
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let newVc = storyboard?.instantiateViewController(withIdentifier: "ComicViewController") as? ComicViewController,
+            let indexPath = tableView.indexPathForRow(at: location) else { return nil }
+        
+        newVc.comic = _dataSource[indexPath.row]
+        previewingContext.sourceRect = tableView.cellForRow(at: indexPath)!.frame
+        
+        return newVc
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: false)
     }
 }
 
