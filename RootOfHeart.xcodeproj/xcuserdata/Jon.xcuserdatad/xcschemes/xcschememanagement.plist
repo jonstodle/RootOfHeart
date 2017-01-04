@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>MostRecentComicExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
+		<key>MostRecentComicWidget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
 		<key>RootOfHeart.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>FC3FC6A41DCB8E6C0069FDED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC6FC1FA1E1D1C1300EDBD28</key>
 		<dict>
 			<key>primary</key>
 			<true/>
