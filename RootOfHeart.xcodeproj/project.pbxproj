@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		295F49AB51396BEF9AF1A20E /* Pods_MostRecentComicWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263AE3F3E4BACF5A9CC67B91 /* Pods_MostRecentComicWidget.framework */; };
 		480494AE1B6FD3F0B68CBC27 /* Pods_RootOfHeartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CB3B9A273968AAE8C33596 /* Pods_RootOfHeartTests.framework */; };
 		DC7B1C1751D46017B4CCA533 /* Pods_RootOfHeart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1DE57299B5E7F7D77D0FA8 /* Pods_RootOfHeart.framework */; };
 		FC0146141E0ACFB000D7AC3C /* LinkButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0146131E0ACFB000D7AC3C /* LinkButtonTableViewCell.swift */; };
@@ -26,6 +27,8 @@
 		FC6FC2001E1D1C1300EDBD28 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FC1FF1E1D1C1300EDBD28 /* TodayViewController.swift */; };
 		FC6FC2031E1D1C1300EDBD28 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6FC2011E1D1C1300EDBD28 /* MainInterface.storyboard */; };
 		FC6FC2071E1D1C1300EDBD28 /* MostRecentComicWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FC6FC1FB1E1D1C1300EDBD28 /* MostRecentComicWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC6FC20C1E1E1E1000EDBD28 /* XkcdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801831DCE526900B9A925 /* XkcdService.swift */; };
+		FC6FC20D1E1E1E1F00EDBD28 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7801821DCE526900B9A925 /* Comic.swift */; };
 		FC7321871DFC946300F3CC6E /* LaunchViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7321861DFC946300F3CC6E /* LaunchViewTableViewController.swift */; };
 		FC7321891DFC9F5400F3CC6E /* StateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7321881DFC9F5400F3CC6E /* StateService.swift */; };
 		FC73218C1DFCAACE00F3CC6E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC73218B1DFCAACE00F3CC6E /* LaunchView.swift */; };
@@ -89,11 +92,14 @@
 
 /* Begin PBXFileReference section */
 		19CB3B9A273968AAE8C33596 /* Pods_RootOfHeartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RootOfHeartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		263AE3F3E4BACF5A9CC67B91 /* Pods_MostRecentComicWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MostRecentComicWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2859C2B1DE761A74F8CFDF35 /* Pods-RootOfHeartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeartTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeartTests/Pods-RootOfHeartTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C3D6AE060429C704A016224 /* Pods-RootOfHeart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeart/Pods-RootOfHeart.debug.xcconfig"; sourceTree = "<group>"; };
+		7F75F14E451627871B07EE8C /* Pods-MostRecentComicWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MostRecentComicWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-MostRecentComicWidget/Pods-MostRecentComicWidget.release.xcconfig"; sourceTree = "<group>"; };
 		9C12D40F5D8CEE4DF8ADB74B /* Pods-RootOfHeartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeartTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeartTests/Pods-RootOfHeartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1DE57299B5E7F7D77D0FA8 /* Pods_RootOfHeart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RootOfHeart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DDE96186BB712FB4BDE8B2 /* Pods-RootOfHeart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootOfHeart.release.xcconfig"; path = "Pods/Target Support Files/Pods-RootOfHeart/Pods-RootOfHeart.release.xcconfig"; sourceTree = "<group>"; };
+		FA919641E57FE5722C7652F4 /* Pods-MostRecentComicWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MostRecentComicWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MostRecentComicWidget/Pods-MostRecentComicWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		FC0146131E0ACFB000D7AC3C /* LinkButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkButtonTableViewCell.swift; sourceTree = "<group>"; };
 		FC01461B1E0B339200D7AC3C /* SettingsTabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTabsViewController.swift; sourceTree = "<group>"; };
 		FC02A8E61DF8B9E20079FEC9 /* HomeTableViewHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewHeaderViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6FC1FD1E1D1C1300EDBD28 /* NotificationCenter.framework in Frameworks */,
+				295F49AB51396BEF9AF1A20E /* Pods_MostRecentComicWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +179,8 @@
 				C5DDE96186BB712FB4BDE8B2 /* Pods-RootOfHeart.release.xcconfig */,
 				9C12D40F5D8CEE4DF8ADB74B /* Pods-RootOfHeartTests.debug.xcconfig */,
 				2859C2B1DE761A74F8CFDF35 /* Pods-RootOfHeartTests.release.xcconfig */,
+				FA919641E57FE5722C7652F4 /* Pods-MostRecentComicWidget.debug.xcconfig */,
+				7F75F14E451627871B07EE8C /* Pods-MostRecentComicWidget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 				BF1DE57299B5E7F7D77D0FA8 /* Pods_RootOfHeart.framework */,
 				19CB3B9A273968AAE8C33596 /* Pods_RootOfHeartTests.framework */,
 				FC6FC1FC1E1D1C1300EDBD28 /* NotificationCenter.framework */,
+				263AE3F3E4BACF5A9CC67B91 /* Pods_MostRecentComicWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -357,9 +367,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC6FC20A1E1D1C1300EDBD28 /* Build configuration list for PBXNativeTarget "MostRecentComicWidget" */;
 			buildPhases = (
+				F2B0F200A8B8530A168E31A0 /* [CP] Check Pods Manifest.lock */,
 				FC6FC1F71E1D1C1300EDBD28 /* Sources */,
 				FC6FC1F81E1D1C1300EDBD28 /* Frameworks */,
 				FC6FC1F91E1D1C1300EDBD28 /* Resources */,
+				EF11830B7EA871F0BE2DC5D9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -549,6 +561,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RootOfHeartTests/Pods-RootOfHeartTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EF11830B7EA871F0BE2DC5D9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MostRecentComicWidget/Pods-MostRecentComicWidget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2B0F200A8B8530A168E31A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -595,6 +637,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6FC2001E1D1C1300EDBD28 /* TodayViewController.swift in Sources */,
+				FC6FC20D1E1E1E1F00EDBD28 /* Comic.swift in Sources */,
+				FC6FC20C1E1E1E1000EDBD28 /* XkcdService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,6 +854,7 @@
 		};
 		FC6FC2081E1D1C1300EDBD28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA919641E57FE5722C7652F4 /* Pods-MostRecentComicWidget.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = X93LMNWC9P;
 				INFOPLIST_FILE = MostRecentComicWidget/Info.plist;
@@ -824,6 +869,7 @@
 		};
 		FC6FC2091E1D1C1300EDBD28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F75F14E451627871B07EE8C /* Pods-MostRecentComicWidget.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = X93LMNWC9P;
 				INFOPLIST_FILE = MostRecentComicWidget/Info.plist;
@@ -873,6 +919,7 @@
 				FC6FC2091E1D1C1300EDBD28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
