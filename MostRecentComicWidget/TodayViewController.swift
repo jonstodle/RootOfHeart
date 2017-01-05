@@ -32,6 +32,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         }
         
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.rx
+            .event
+            .subscribe(onNext: {
+                [unowned self] event in
+                guard let context = self.extensionContext else { return }
+                
+                context.open(URL(string: "RootOfHeart:openCurrentComic=1")!)
+            })
+            .addDisposableTo(_disposeBag)
+        view.addGestureRecognizer(tapRecognizer)
+        
         updateImage().subscribe().addDisposableTo(_disposeBag)
     }
     
