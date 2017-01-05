@@ -20,26 +20,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Si6-Zw-rDv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eP-5o-URw">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PyX-mo-ffb">
-                                        <rect key="frame" x="0.0" y="21" width="320" height="79"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PyX-mo-ffb">
+                                <rect key="frame" x="5" y="5" width="310" height="90"/>
+                            </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Si6-Zw-rDv" secondAttribute="bottom" id="5lS-QQ-o3m"/>
-                            <constraint firstAttribute="trailing" secondItem="Si6-Zw-rDv" secondAttribute="trailing" id="Na9-Na-FrE"/>
-                            <constraint firstItem="Si6-Zw-rDv" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="mcA-K0-52I"/>
-                            <constraint firstItem="Si6-Zw-rDv" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="zYc-pK-qUl"/>
+                            <constraint firstItem="PyX-mo-ffb" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="5" id="L6D-7T-PVI"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="PyX-mo-ffb" secondAttribute="bottom" constant="5" id="QB0-Qw-kqr"/>
+                            <constraint firstItem="PyX-mo-ffb" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="5" id="QD9-T5-6z9"/>
+                            <constraint firstAttribute="trailing" secondItem="PyX-mo-ffb" secondAttribute="trailing" constant="5" id="Zyg-L8-050"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -50,7 +39,6 @@
                     <size key="freeformSize" width="320" height="100"/>
                     <connections>
                         <outlet property="comicImageView" destination="PyX-mo-ffb" id="gUT-uT-Fn3"/>
-                        <outlet property="titleLabel" destination="1eP-5o-URw" id="jaU-Hm-JHk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

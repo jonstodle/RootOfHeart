@@ -16,7 +16,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var comicImageView: UIImageView!
     
     
@@ -79,8 +78,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             .flatMap {
                 [unowned self] comic -> Observable<NCUpdateResult> in
                 guard let comic = comic else { return Observable.just(NCUpdateResult.failed) }
-                
-                self.titleLabel.text = "#\(comic.number) - \(comic.title)"
                 
                 return Observable<NCUpdateResult>.create {
                     [unowned self] o in
