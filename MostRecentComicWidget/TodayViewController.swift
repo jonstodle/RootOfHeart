@@ -30,6 +30,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if #available(iOSApplicationExtension 10.0, *) {
             extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         }
+        else {
+            preferredContentSize = CGSize(width: 0, height: 300)
+        }
         
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.rx
