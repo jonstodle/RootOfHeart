@@ -83,7 +83,7 @@ final class DataService{
         try! _realm.write {
             comic.isRead = asRead
         }
-        NotificationService.setBadgeToUnreadCount()
+        _ = NotificationService.setBadgeToUnreadCount()
         NotificationService.clearNotification(forComic: comic)
     }
     

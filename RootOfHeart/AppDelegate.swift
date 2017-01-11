@@ -74,21 +74,22 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         DataService.instance.refresh()
             .subscribe(onNext: {
-            result in
-            guard let result = result else {
-                completionHandler(.failed)
-                return
-            }
-            
-            for comic in result {
-                NotificationService.scheduleNotification(forComic: comic)
-            }
-            
-            NotificationService.setBadgeToUnreadCount()
-            
-            completionHandler(result.count > 0 ? .newData : .noData)
-        })
-        .addDisposableTo(_disposeBag)
+                result in
+                guard let result = result else {
+                    completionHandler(.failed)
+                    return
+                }
+                
+                let badgeUpdate = NotificationService.setBadgeToUnreadCount()
+                if badgeUpdate.from != badgeUpdate.to {
+                    for comic in result {
+                        NotificationService.scheduleNotification(forComic: comic)
+                    }
+                }
+                
+                completionHandler(result.count > 0 ? .newData : .noData)
+            })
+            .addDisposableTo(_disposeBag)
     }
     
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
