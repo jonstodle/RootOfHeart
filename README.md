@@ -7,3 +7,7 @@ xkcd is "A webcomic of romance, sarcasm, math, and language." It covers everythi
 The comic is penned by Randall Munroe.
 
 Enjoy.
+
+## Release Checklist
+
+1. Update version and build number in project
