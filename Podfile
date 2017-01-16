@@ -28,7 +28,6 @@ target 'MostRecentComicWidget' do
 
   pod 'Kingfisher', '~> 3.0'
   pod 'RxSwift', '~> 3.0'
-  pod 'RealmSwift'
   pod 'SwiftDate', '~> 4.0'
   pod 'Alamofire', '~> 4.0'
   pod 'SwiftyJSON'
