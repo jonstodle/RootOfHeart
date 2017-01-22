@@ -414,7 +414,7 @@
 					FC6FC1FA1E1D1C1300EDBD28 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = X93LMNWC9P;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -862,6 +862,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonstodle.rootofheart.MostRecentComicWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "25b240df-8b1c-4057-9804-7ad741835c0c";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -871,12 +873,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F75F14E451627871B07EE8C /* Pods-MostRecentComicWidget.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = X93LMNWC9P;
 				INFOPLIST_FILE = MostRecentComicWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonstodle.rootofheart.MostRecentComicWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6c88a9e3-43a2-4aee-b6e3-aee076ce4789";
+				PROVISIONING_PROFILE_SPECIFIER = "RootOfHeart MostRecentComicWidget";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
