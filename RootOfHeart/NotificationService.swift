@@ -35,8 +35,10 @@ final class NotificationService {
         })
     }
     
-    static func setBadgeToUnreadCount() {
+    static func setBadgeToUnreadCount() -> (from: Int, to: Int) {
+        let fromCount = UIApplication.shared.applicationIconBadgeNumber
         UIApplication.shared.applicationIconBadgeNumber = DataService.instance.unreadComics.count
+        return (from: fromCount, to: UIApplication.shared.applicationIconBadgeNumber)
     }
     
     static func clearAllNotifications() {

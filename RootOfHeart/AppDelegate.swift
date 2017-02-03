@@ -32,6 +32,12 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .alert], categories: nil))
         
+        if let _ = launchOptions?[UIApplicationLaunchOptionsKey.url] {
+            if let navController = window?.rootViewController as? UINavigationController {
+                navController.popToRootViewController(animated: false)
+            }
+        }
+        
         return true
     }
     
@@ -68,35 +74,30 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         DataService.instance.refresh()
             .subscribe(onNext: {
-            result in
-            guard let result = result else {
-                completionHandler(.failed)
-                return
-            }
-            
-            for comic in result {
-                NotificationService.scheduleNotification(forComic: comic)
-            }
-            
-            NotificationService.setBadgeToUnreadCount()
-            
-            completionHandler(result.count > 0 ? .newData : .noData)
-        })
-        .addDisposableTo(_disposeBag)
+                result in
+                guard let result = result else {
+                    completionHandler(.failed)
+                    return
+                }
+                
+                let badgeUpdate = NotificationService.setBadgeToUnreadCount()
+                if badgeUpdate.from != badgeUpdate.to {
+                    for comic in result {
+                        NotificationService.scheduleNotification(forComic: comic)
+                    }
+                }
+                
+                completionHandler(result.count > 0 ? .newData : .noData)
+            })
+            .addDisposableTo(_disposeBag)
     }
     
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         guard application.applicationState != .active else { return }
         
-        guard let navController = window?.rootViewController as? UINavigationController,
-            let homeController = navController.viewControllers.first as? HomeTableViewController,
-            let storyBoard = homeController.storyboard,
-            let comicNumber = notification.userInfo?["number"] as? Int else { return }
+        guard let comicNumber = notification.userInfo?["number"] as? Int else { return }
         
-        navController.popViewController(animated: false)
-        let newVc = storyBoard.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
-        newVc.comic = DataService.instance.getComic(number: comicNumber)!
-        navController.pushViewController(newVc, animated: true)
+        navigateTo(DataService.instance.getComic(number: comicNumber)!)
     }
     
     
@@ -119,6 +120,17 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
                 homeController.tableView.reloadData()
             }
         }
+    }
+    
+    func navigateTo(_ comic: Comic) {
+        guard let navController = window?.rootViewController as? UINavigationController,
+            let homeController = navController.viewControllers.first as? HomeTableViewController,
+            let storyBoard = homeController.storyboard else { return }
+        
+        navController.popViewController(animated: false)
+        let newVc = storyBoard.instantiateViewController(withIdentifier: "ComicViewController") as! ComicViewController
+        newVc.comic = comic
+        navController.pushViewController(newVc, animated: true)
     }
     
     

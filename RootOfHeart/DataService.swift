@@ -83,7 +83,7 @@ final class DataService{
         try! _realm.write {
             comic.isRead = asRead
         }
-        NotificationService.setBadgeToUnreadCount()
+        _ = NotificationService.setBadgeToUnreadCount()
         NotificationService.clearNotification(forComic: comic)
     }
     
@@ -131,7 +131,7 @@ final class DataService{
         
         _addSubject
             .filter{ $0 != nil }
-            .buffer(timeSpan: 5, count: 10, scheduler: ConcurrentDispatchQueueScheduler(qos: .background))
+            .buffer(timeSpan: 2, count: 10, scheduler: ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {
                 [unowned self] comics -> Void in
