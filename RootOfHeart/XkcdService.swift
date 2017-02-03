@@ -93,7 +93,7 @@ final public class XkcdClient{
         comic.year = json["year"].stringValue
         comic.alt = json["alt"].stringValue
         comic.transcript = json["transcript"].stringValue
-        comic.imageUrl = json["img"].stringValue.replacingOccurrences(of: "http", with: "https")
+        comic.imageUrl = json["img"].stringValue
         comic.link = json["link"].stringValue
         comic.safeTitle = json["safe_title"].stringValue
         comic.news = json["news"].stringValue

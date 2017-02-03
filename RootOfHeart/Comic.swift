@@ -37,6 +37,6 @@ final class Comic : Object{
 }
 
 extension Comic {
-    var webUrl: URL{return URL(string: "http://xkcd.com/\(number)")!}
+    var webUrl: URL{return URL(string: "https://xkcd.com/\(number)")!}
     var date: DateInRegion { return try! DateInRegion(string: "\(day).\(month).\(year)", format: .custom("dd.MM.yyyy")) }
 }
