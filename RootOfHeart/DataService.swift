@@ -141,6 +141,8 @@ final class DataService{
                 }
             })
             .addDisposableTo(_disposeBag)
+        
+        fixWebUrls()
     }
     
     
@@ -193,5 +195,29 @@ final class DataService{
                 comic?.isRead = true
                 return comic
             })
+    }
+    
+    private func fixWebUrls(){
+        Observable<Comic>.from(comics)
+            .filter{ $0.imageUrl.contains("httpss") }
+            .map{ comic in
+                let newComic = Comic()
+                newComic.title = comic.title
+                newComic.number = comic.number
+                newComic.link = comic.link
+                newComic.safeTitle = comic.safeTitle
+                newComic.day = comic.day
+                newComic.month = comic.month
+                newComic.year = comic.year
+                newComic.news = comic.news
+                newComic.alt = comic.alt
+                newComic.transcript = comic.transcript
+                newComic.imageUrl = comic.imageUrl.replacingOccurrences(of: "httpss", with: "https")
+                newComic.isRead = comic.isRead
+                newComic.isFavorite = comic.isFavorite
+                return newComic
+            }
+            .subscribe(onNext: { [unowned self] in self._addSubject.onNext($0) })
+            .addDisposableTo(_disposeBag)
     }
 }
