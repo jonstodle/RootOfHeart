@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.2
+* Remove analytics and crash reporting
+
 ## 1.1.1
 * Fix comic images not loading
 
