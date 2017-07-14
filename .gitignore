@@ -81,3 +81,5 @@ fastlane/test_output
 ## Other
 *.xccheckout
 *.xcscmblueprint
+
+.DS_Store
